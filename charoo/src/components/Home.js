@@ -1,6 +1,6 @@
 import React from 'react'
 import Share from "./Share"
-import '../stylesheets/App.css'
+// import '../stylesheets/App.css'
 
 const Landing = () => {
     return (
