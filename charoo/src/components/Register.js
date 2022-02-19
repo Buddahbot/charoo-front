@@ -4,9 +4,10 @@ import {useNavigate} from 'react-router-dom'
 
 const  Register = () => {
 
-const [name, setName] = useState('')
-const [email, setEmail] = useState('')
-const [password, setPassword] = useState('')
+  const [firstName, setfirstName] = useState('')
+  const [lastName, setlastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
 
 let navigate = useNavigate()
@@ -15,7 +16,8 @@ let navigate = useNavigate()
     e.preventDefault()
 
     const newUser = { // creates new object with name,email, password
-      name: name, // using useStates
+      firstName: firstName,
+      lastName: lastName, // using useStates
       email: email,
       password: password
     }
@@ -38,9 +40,17 @@ let navigate = useNavigate()
                   type="text"
                   className="form-control"
                   name="first_name"
-                  placeholder="Enter your first name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Firstname"
+                  value={firstName}
+                  onChange={(e) => setfirstName(e.target.value)}
+                />
+                  <input
+                  type="text"
+                  className="form-control"
+                  name="last_name"
+                  placeholder="Lastname"
+                  value={lastName}
+                  onChange={(e) => setlastName(e.target.value)}
                 />
               </div>
               
@@ -50,7 +60,7 @@ let navigate = useNavigate()
                   type="email"
                   className="form-control"
                   name="email"
-                  placeholder="Enter email"
+                  placeholder="E-Mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
