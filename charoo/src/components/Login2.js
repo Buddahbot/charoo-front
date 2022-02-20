@@ -39,7 +39,7 @@ export default function Login2() {
 
                                 <form class="signin-form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control text-white fs-3 inputbg" placeholder="Username" required />
+                                        <input type="email" class="form-control text-white fs-3 inputbg" placeholder="Email" required />
                                     </div>
                                     <div class="form-group">
 
@@ -53,7 +53,7 @@ export default function Login2() {
                                     </div>
 
                                     <div class="form-group ">
-                                        <button type="submit" class="form-control btn btnSign submit fs-3 ">SIGN IN</button>
+                                        <button type="submit" class="form-control btn btnSign submit fs-3 ">LOG IN</button>
                                     </div>
                                     <div class="form-group d-md-flex">
                                         <div class="w-50">
