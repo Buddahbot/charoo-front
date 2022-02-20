@@ -4,9 +4,11 @@ import '../stylesheets/login.css'
 import '../stylesheets/App.css'
 
 
-export default function Login2() {
+
+export default function Login() {
 
 
+    // hide/show password
     function password_show_hide() {
         var x = document.getElementById("password");
         var show_eye = document.getElementById("show_eye");
