@@ -26,63 +26,64 @@ export default function Login() {
     }
 
     return (
-        <div><body class="img fullheight " style={{ backgroundImage: `url(${BG})` }}>
-            <section class="ftco-section">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-6 text-center mb-5">
-                            <h2 class="heading-section hover14">Welcome to Charoo!</h2>
+        <div>
+            <div class="img fullheight " style={{ backgroundImage: `url(${BG})` }}>
+                <section class="ftco-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-center mb-5">
+                                <h2 class="heading-section hover14">Welcome to Charoo!</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="login-wrap p-0">
-                                {/* <h3 class="mb-4 text-center">Have an account?</h3> */}
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="login-wrap p-0">
+                                    {/* <h3 class="mb-4 text-center">Have an account?</h3> */}
 
-                                <form class="signin-form">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control text-white fs-3 inputbg" placeholder="Email" required />
-                                    </div>
-                                    <div class="form-group">
-
-                                        <input name="password" id="password" type="password" class="form-control inputbg text-white fs-3 " placeholder="Password" required aria-label="password" aria-describedby="basic-addon1" />
-
-                                        <span class=" field-icon " onClick={password_show_hide}>
-                                            <i class="fa fs-2 fa-eye" id="show_eye"></i>
-                                            <i class="fa fs-2 fa-eye-slash d-none" id="hide_eye"></i>
-                                        </span>
-
-                                    </div>
-
-                                    <div class="form-group ">
-                                        <button type="submit" class="form-control btn btnSign submit fs-3 ">LOG IN</button>
-                                    </div>
-                                    <div class="form-group d-md-flex">
-                                        <div class="w-50">
-                                            <label class="checkbox-wrap checkbox-primary">Remember Me
-                                                <input type="checkbox" />
-                                                <span class="checkmark"></span>
-                                            </label>
+                                    <form class="signin-form">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control text-white fs-3 inputbg" placeholder="Email" required />
                                         </div>
-                                        <div class="w-50 text-md-right">
-                                            <a href="#" style={{ color: '#fff', fontSize: '16px', textDecoration: 'none' }}>Forgot Password</a>
+                                        <div class="form-group">
+
+                                            <input name="password" id="password" type="password" class="form-control inputbg text-white fs-3 " placeholder="Password" required aria-label="password" aria-describedby="basic-addon1" />
+
+                                            <span class=" field-icon " onClick={password_show_hide}>
+                                                <i class="fa fs-2 fa-eye" id="show_eye"></i>
+                                                <i class="fa fs-2 fa-eye-slash d-none" id="hide_eye"></i>
+                                            </span>
+
                                         </div>
+
+                                        <div class="form-group ">
+                                            <button type="submit" class="form-control btn btnSign submit fs-3 ">LOG IN</button>
+                                        </div>
+                                        <div class="form-group d-md-flex">
+                                            <div class="w-50">
+                                                <label class="checkbox-wrap checkbox-primary">Remember Me
+                                                    <input type="checkbox" />
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <div class="w-50 text-md-right">
+                                                <a href="#" style={{ color: '#fff', fontSize: '16px', textDecoration: 'none' }}>Forgot Password</a>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <p class="text-center signWith">&mdash; Or Sign In With &mdash;</p>
+
+                                    <div class="social d-flex text-center">
+                                        <a href="#" class="px-2 py-2 mr-md-1 nodec "><span class=" mr-2"></span> Facebook</a>
+                                        <a href="#" class="px-2 py-2 ml-md-1 nodec"><span class=" mr-2"></span> Twitter</a>
                                     </div>
-                                </form>
 
-                                <p class="text-center signWith">&mdash; Or Sign In With &mdash;</p>
-
-                                <div class="social d-flex text-center">
-                                    <a href="#" class="px-2 py-2 mr-md-1 nodec "><span class=" mr-2"></span> Facebook</a>
-                                    <a href="#" class="px-2 py-2 ml-md-1 nodec"><span class=" mr-2"></span> Twitter</a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-        </body></div>
+            </div></div>
     )
 }

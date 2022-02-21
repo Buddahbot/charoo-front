@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../stylesheets/Navbar.css'
 import $ from 'jquery';
-import Logo2 from '../Img/Charoo.png'
+import Logo2 from '../Img/logo4.png'
 
 
 

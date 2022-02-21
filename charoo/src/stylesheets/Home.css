@@ -1,8 +1,18 @@
-.home-container{
-    background-image: url('../Img/header0.jpg');
-    background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Bodoni+Moda:wght@800&display=swap');
 
-    height: 500px;
+
+.home-container{
+    background-image: url('../Img/hawaii.jpeg');
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    height: 89vh;
+}
+
+.headerTitle {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 40px;
+
 }
