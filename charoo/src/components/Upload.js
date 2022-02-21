@@ -36,9 +36,7 @@ const Uploload = () => {
                 eventUpload(newEvent)
             
             }
-    // const imageUrl = url
-    // console.log(imageUrl)
-    //         eventUpload(imageUrl)
+   
 
 return (
 <div>
@@ -54,7 +52,7 @@ return (
                 name="sportstype"
                 placeholder="sportstype"
                 value={sport}
-                onChange={(e) => setSport(e.target.value)}
+                  onChange={(e) => setSport(e.target.value)}
                 />
         <h1>Uploaded image will be displayed here</h1>
         <img src={url}/>
