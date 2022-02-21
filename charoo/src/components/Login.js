@@ -20,7 +20,7 @@ const Login = () => {
         
         login(user).then(res => {
             if(res) {
-                navigate('/profile')
+              navigate('./profile')
             }
         })
 

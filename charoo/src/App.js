@@ -8,7 +8,8 @@ import Profile from "./components/Profile";
 import Home from './components/Home'
 import ErrorPage from "./components/ErrorPage";
 import Footer from "./components/Footer";
-
+import Event from "./components/Event"
+import Uploload from "./components/Upload"
 const App = () => {
   return (
     <>
@@ -19,6 +20,8 @@ const App = () => {
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/profile" element={<Profile />} />
+        <Route exact path="/event" element={<Event />} />
+        <Route exact path="/upload" element={<Uploload />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 
