@@ -36,7 +36,7 @@ const Uploload = () => {
                 eventUpload(newEvent)
             
             }
-   
+//this sends information with help of eventUpload function 
 
 return (
 <div>

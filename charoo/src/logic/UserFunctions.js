@@ -46,3 +46,4 @@ export const eventUpload = eventData => {
     .then(res => console.log('event created'))
     .catch(err => console.log(err))
 }
+//this posts on mongoDB through backEnd
