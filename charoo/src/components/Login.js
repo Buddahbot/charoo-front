@@ -1,6 +1,6 @@
 import React from 'react'
 import BG from '../Img/4.jpg'
-import '../stylesheets/login.css'
+import '../stylesheets/LoginRegister.css'
 import '../stylesheets/App.css'
 import { useState } from 'react'
 import { login } from '../logic/UserFunctions'

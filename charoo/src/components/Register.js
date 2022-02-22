@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { register } from '../logic/UserFunctions'
 import { useNavigate } from 'react-router-dom'
 import BG from '../Img/together.jpg'
-import '../stylesheets/login.css'
+import '../stylesheets/LoginRegister.css'
 import '../stylesheets/App.css'
+
 
 const Register = () => {
 
