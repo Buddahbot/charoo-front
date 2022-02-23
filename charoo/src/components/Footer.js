@@ -6,35 +6,44 @@ import Logo from '../Img/Logo2.png'
 export default function Footer() {
     return (
         <div>
-            <div class="footer-basic">
-                <footer>
-                    <div className='logo'>
+
+            {/* <div className='logo'>
                         <img src={Logo} height='190px' alt='Logo' />
-                    </div>
+                    </div> */}
 
-
-                    <div class="social">
-                        <a href="#">
-                            <i class="icon ion-social-instagram"></i>
-                        </a>
-                        <a href="#">
-                            <i class="icon ion-social-snapchat"></i></a><a href="#">
-                            <i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i>
-                        </a>
+            <footer class="footer-clean">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Hosting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Legacy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                            <h3>Careers</h3>
+                            <ul>
+                                <li><a href="#">Job openings</a></li>
+                                <li><a href="#">Employee success</a></li>
+                                <li><a href="#">Benefits</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                            <p class="copyright">Charoo! © 2022</p>
+                        </div>
                     </div>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><Link to="/">Home</Link></li>
-                        <li class="list-inline-item"><Link to="/about">About Us</Link></li>
-                        <li class="list-inline-item"><Link to="" style={{ cursor: 'default' }}>Challenge</Link></li>
-                        <li class="list-inline-item"><Link to="" style={{ cursor: 'default' }}>Donate</Link></li>
-                        <li class="list-inline-item"><Link to="" style={{ cursor: 'default' }}>Privacy Policy</Link></li>
-                        {/* <li class="list-inline-item"><Link to="" style={{ cursor: 'default' }}>Contact</Link></li> */}
-                    </ul>
-                    <p class="copyright">Charoo © 2022</p>
-                </footer>
-            </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+                </div>
+            </footer>
 
         </div>
     )
