@@ -24,8 +24,11 @@ export default function Login() {
 
 
         login(user).then(res => {
+
+
             if (res) {
                 navigate('/profile')
+
             }
         })
 
