@@ -1,0 +1,12 @@
+.carousel{
+    margin-top: 100px;
+    background-color: white;
+    height: 100%;
+}
+
+.item {
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
