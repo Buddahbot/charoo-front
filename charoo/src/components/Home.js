@@ -142,11 +142,11 @@ const Landing = () => {
                 <h2 className='text-center'>What would you like to do ? </h2>
                 <div className='what-to-do-imgs justify-content-center'>
 
-                    <NavLink style={{ textDecoration: 'none' }} to='/'>
+                    <NavLink style={{ textDecoration: 'none' }} to='/donate'>
                         <div className=' what-imgs' style={{ backgroundImage: `url(${Donate})` }}> <div className='carousel-text'> <h1 className=''>Donate</h1> </div>
                         </div>
                     </NavLink>
-                    <NavLink style={{ textDecoration: 'none' }} to='/'>
+                    <NavLink style={{ textDecoration: 'none' }} to='/up1'>
                         <div className=' what-imgs' style={{ backgroundImage: `url(${Sport})` }}> <div className='carousel-text'> <h1 className=''>Create challenge</h1> </div>
                         </div>
                     </NavLink>
