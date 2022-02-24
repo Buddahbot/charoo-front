@@ -25,25 +25,41 @@ export const login = user => {
 }
 
 export const userInfo = (userId) => {
-    return axios.get(`localhost:3002/user/${userId}`)
+    return axios.get(`http://localhost:3002/user/${userId}`)
                 .then(res => (res.data))
                 .catch(err => console.log(err))
 }
 
-export const eventUpload = eventData => {
+export const eventUpload = event => {
     return axios.post('http://localhost:3002/event/create', {
-                sportstype : eventData.sportstype,
-                distance : eventData.distance,
-                start : eventData.start,
-                country : eventData.country,
-                monetaryGoal : eventData.monetaryGoal,
-                eventTitle : eventData.eventTitle,
-                description : eventData.description,
-                imageUrl : eventData.imageUrl,
-                charity : eventData.charity,
-                dateCreated : eventData.dateCreated
+                sport : event.sport,
+                distance : event.distance,
+                start : event.start,
+                country : event.country,
+                monetaryGoal : event.monetaryGoal,
+                eventTitle : event.eventTitle,
+                description : event.description,
+                imageUrl : event.imageUrl,
+                charity : event.charity,
+                dateCreated : event.dateCreated
     })
     .then(res => console.log('event created'))
     .catch(err => console.log(err))
 }
 //this posts on mongoDB through backEnd
+
+
+// export const events = () => {
+//     return axios.get('localhost:3002/event')
+//                 .then(res => (res.data))
+//                 .catch(err => console.log(err))
+// }
+
+export const events = async () => {
+    try {
+        const res = await axios.get('http://localhost:3000/event')
+        console.log(res.data)
+    } catch (err) {
+        console.error(err)
+    }
+}
