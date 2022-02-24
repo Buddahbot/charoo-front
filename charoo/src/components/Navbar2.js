@@ -9,7 +9,13 @@ export default function Navbar2() {
                 <div class="container">
                     <a class="navbar-brand" href="/"><img src={Logo2} height='45px' alt='Logo' /></a>
 
-                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <button class="navbar-toggler" >
+
+                        {/* <span class="visually-hidden">Toggle navigation</span> */}
+
+                        <span class="navbar-toggler-icon"></span>
+
+                    </button>
 
                     <div id="navcol-2" class="collapse navbar-collapse  ">
                         <ul class="navbar-nav left ms-auto">

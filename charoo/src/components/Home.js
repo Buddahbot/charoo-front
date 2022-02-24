@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { register } from '../logic/UserFunctions'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import BG from '../Img/hawaii.jpeg'
 // import BG from '../Img/child-jogging.jpg'
 import '../stylesheets/Home.css'
 import Carousel from './Carousel'
-
+import '../stylesheets/App.css'
+import Donate from '../Img/headerpic1.jpg'
+import Sport from '../Img/CBD-sport-1.jpg'
 
 const Landing = () => {
 
@@ -58,21 +60,21 @@ const Landing = () => {
     return (
         <div className="home-container">
 
-            <div class="header img fullheight " style={{ backgroundImage: `url(${BG})` }}>
-                <section class="ftco-section">
+            <div class="header img " style={{ backgroundImage: `url(${BG})` }}>
+                <div class="ftco-section">
                     <div className="container">
                         <div class=" row ">
                             <div class="col-md-6 col-lg-4">
-                                <div class=" login-wrap p-0">
+                                <div class=" login-wrap  ">
 
-                                    <div class=" col-md-6 text-center mb-5">
-                                        <h2 class="heading-section headerTitle hover14">Welcome to Charoo!</h2>
+                                    <div class=" justify-content-center text-center mb-5">
+                                        <h2 class="heading-section headerTitle  hover14 ">Welcome to Charoo!</h2>
                                     </div>
                                     <form class="signin-form" noValidate onSubmit={createUser}>
                                         <div className="form-group">
                                             <input
                                                 type="text"
-                                                className="form-control text-white fs-3 inputbg"
+                                                className="form-control text-white fs-3 inputbg-home"
                                                 name="first_name"
                                                 placeholder="Firstname"
                                                 value={firstName}
@@ -84,7 +86,7 @@ const Landing = () => {
                                         <div className="form-group">
                                             <input
                                                 type="text"
-                                                className="form-control text-white fs-3 inputbg"
+                                                className="form-control text-white fs-3 inputbg-home"
                                                 name="last_name"
                                                 placeholder="Lastname"
                                                 value={lastName}
@@ -96,7 +98,7 @@ const Landing = () => {
                                         <div className="form-group">
                                             <input
                                                 type="email"
-                                                className="form-control text-white fs-3 inputbg"
+                                                className="form-control text-white fs-3 inputbg-home"
                                                 name="email"
                                                 placeholder="Email"
                                                 required
@@ -106,7 +108,7 @@ const Landing = () => {
                                         </div>
 
                                         <div className="form-group">
-                                            <input name="password" id="password" type="password" class="form-control inputbg text-white fs-3 " placeholder="Password" required aria-label="password" aria-describedby="basic-addon1" value={password}
+                                            <input name="password" id="password" type="password" class="form-control inputbg-home text-white fs-3 " placeholder="Password" required aria-label="password" aria-describedby="basic-addon1" value={password}
                                                 onChange={(e) => setPassword(e.target.value)} />
 
                                             <span class=" field-icon " onClick={password_show_hide}>
@@ -133,9 +135,31 @@ const Landing = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-            <Carousel />
+
+            <div className='what-to-do' >
+                <h2 className='text-center'>What would you like to do ? </h2>
+                <div className='what-to-do-imgs justify-content-center'>
+
+                    <NavLink style={{ textDecoration: 'none' }} to='/'>
+                        <div className=' what-imgs' style={{ backgroundImage: `url(${Donate})` }}> <div className='carousel-text'> <h1 className=''>Donate</h1> </div>
+                        </div>
+                    </NavLink>
+                    <NavLink style={{ textDecoration: 'none' }} to='/'>
+                        <div className=' what-imgs' style={{ backgroundImage: `url(${Sport})` }}> <div className='carousel-text'> <h1 className=''>Create challenge</h1> </div>
+                        </div>
+                    </NavLink>
+
+
+                </div>
+
+            </div>
+            <div className='events'>
+                <h2 className='text-center' >Current & Ended Events:</h2>
+                <Carousel />
+            </div>
+
         </div >
     )
 }

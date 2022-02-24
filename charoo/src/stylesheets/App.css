@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Bodoni+Moda:wght@800&family=Poppins&display=swap');
 
+h2 {
+	font-family: 'Poppins', sans-serif;
+    font-size: 3rem !important;
+    color: black;
+    font-weight: 400 !important;
+}
 
 /* effects: */
 .shadow:hover {
