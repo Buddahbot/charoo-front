@@ -7,7 +7,7 @@ import '../stylesheets/Home.css'
 import Carousel from './Carousel'
 import '../stylesheets/App.css'
 import Donate from '../Img/headerpic1.jpg'
-import Sport from '../Img/CBD-sport-1.jpg'
+import Sport from '../Img/run.jpg'
 
 const Landing = () => {
 
@@ -74,7 +74,7 @@ const Landing = () => {
                                         <div className="form-group">
                                             <input
                                                 type="text"
-                                                className="form-control text-white fs-3 inputbg-home"
+                                                className="form-control  fs-3 inputbg-home"
                                                 name="first_name"
                                                 placeholder="Firstname"
                                                 value={firstName}
@@ -86,7 +86,7 @@ const Landing = () => {
                                         <div className="form-group">
                                             <input
                                                 type="text"
-                                                className="form-control text-white fs-3 inputbg-home"
+                                                className="form-control  fs-3 inputbg-home"
                                                 name="last_name"
                                                 placeholder="Lastname"
                                                 value={lastName}
@@ -98,7 +98,7 @@ const Landing = () => {
                                         <div className="form-group">
                                             <input
                                                 type="email"
-                                                className="form-control text-white fs-3 inputbg-home"
+                                                className="form-control  fs-3 inputbg-home"
                                                 name="email"
                                                 placeholder="Email"
                                                 required
@@ -108,7 +108,7 @@ const Landing = () => {
                                         </div>
 
                                         <div className="form-group">
-                                            <input name="password" id="password" type="password" class="form-control inputbg-home text-white fs-3 " placeholder="Password" required aria-label="password" aria-describedby="basic-addon1" value={password}
+                                            <input name="password" id="password" type="password" class="form-control inputbg-home  fs-3 " placeholder="Password" required aria-label="password" aria-describedby="basic-addon1" value={password}
                                                 onChange={(e) => setPassword(e.target.value)} />
 
                                             <span class=" field-icon " onClick={password_show_hide}>

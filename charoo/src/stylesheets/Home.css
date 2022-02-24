@@ -18,15 +18,15 @@
 }
 
 
-.what-to-do{
 
+.what-to-do{
     padding-top: 100px;
 }
 
 .what-to-do-imgs{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 100px;
+    padding-top: 90px;
     text-decoration: none;
     color: white;
     font-size: 16px;
@@ -38,7 +38,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin: 0px 20px;
+    margin: 20px 20px;
 
     display: flex;
     flex-direction: row;

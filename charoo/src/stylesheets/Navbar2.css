@@ -17,6 +17,11 @@
     font-size: 14px;
   }
 
+  /* .navbar-brand{
+    position:absolute;
+    padding-left: 40px;
+  } */
+
   .left {
     display: flex;
     padding-left: 0;
@@ -35,11 +40,6 @@
     }
   }
   
-  /* @media (max-width:1000px) {
-    .collapse{
-overflow: hidden;
-    }
-  } */
 
   .navigation-clean .navbar-brand {
     font-weight: bold;
@@ -102,4 +102,10 @@ overflow: hidden;
 
   .dropdown-menu a {
       font-size: 14px;
+  }
+
+  .hidden-navbar{
+    
+    border: 0px !important;
+    z-index: 5;
   }

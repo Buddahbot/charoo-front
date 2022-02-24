@@ -9,13 +9,31 @@ export default function Navbar2() {
                 <div class="container">
                     <a class="navbar-brand" href="/"><img src={Logo2} height='45px' alt='Logo' /></a>
 
-                    <button class="navbar-toggler" >
+                    <div id="navcol-2" class="navbar-toggler hidden-navbar">
+                        <ul class="navbar-nav burger ms-auto">
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle nav-link"
+                                    id="dropdownMenu2"
+                                    aria-expanded="false"
+                                    aria-haspopup="true"
+                                    data-toggle="dropdown"
+                                    href="#">
+                                    <i class="fa fa-bars fs-3 text-dark"></i>
+                                </a>
 
-                        {/* <span class="visually-hidden">Toggle navigation</span> */}
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <a class="dropdown-item" href="#">My account</a>
+                                    <a class="dropdown-item" href="#">Login</a>
+                                    <a class="dropdown-item" href="#">Join</a>
+                                    <a class="dropdown-item" href="#">About Us</a>
+                                    <a class="dropdown-item" href="#">How It Works</a>
 
-                        <span class="navbar-toggler-icon"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-                    </button>
+
 
                     <div id="navcol-2" class="collapse navbar-collapse  ">
                         <ul class="navbar-nav left ms-auto">
@@ -40,6 +58,7 @@ export default function Navbar2() {
                                     href="#">
                                     <i class="fa fa-bars fs-3 text-dark"></i>
                                 </a>
+
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <a class="dropdown-item" href="#">My account</a>
                                     <a class="dropdown-item" href="#">Donate</a>

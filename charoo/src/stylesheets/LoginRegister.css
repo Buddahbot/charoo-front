@@ -39,26 +39,27 @@
   color: rgba(15, 16, 27, 0.973) !important;
   font-weight: 400;
   opacity: 1;
-  padding-left: 25px !important;
+  
 }
 
 .inputbg::placeholder {
   color: rgba(255, 255, 255, 0.973) !important;
   opacity: 1;
-  padding-left: 25px !important;
+ 
 }
 
 /* input during writing inside :  */
 input:focus{
   outline: none !important;
   border:1px solid white !important;
-  padding-left: 25px !important;
+   padding-left: 25px ; 
 }
+
 
 .inputbg-home:focus{
   outline: none !important;
   border:1px solid white !important;
-  padding-left: 25px !important;
+   padding-left: 25px !important; 
   color: rgba(15, 16, 27, 0.973) !important;
   font-weight: 400;
 }
@@ -155,7 +156,7 @@ body {
    
     border: 1px solid transparent;
     border-radius: 40px !important;
-    padding-left: 20px;
+     padding-left: 20px; 
     padding-right: 20px;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
@@ -220,4 +221,6 @@ body {
       color: #fbceb5; }
   
  
-      
+  :is(.inputbg-home, .inputbg):not(:focus) {
+        padding-left: 25px;
+    }
