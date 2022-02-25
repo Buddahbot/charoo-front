@@ -25,7 +25,7 @@ export const login = user => {
 }
 
 export const userInfo = (userId) => {
-    return axios.get(`https://charoo.herokuapp.com//user/${userId}`)
+    return axios.get(`https://charoo.herokuapp.com/user/${userId}`)
                 .then(res => (res.data))
                 .catch(err => console.log(err))
 }
