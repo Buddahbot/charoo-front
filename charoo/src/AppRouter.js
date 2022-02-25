@@ -16,6 +16,7 @@ import Up2 from "./components/Up2";
 import Up3 from "./components/Up3"
 import Up4 from "./components/Up4"
 import Donate from "./components/Donate";
+import Donate2 from "./components/Donate2";
 
 const AppRouter = () => {
   return (
@@ -35,6 +36,7 @@ const AppRouter = () => {
         <Route exact path="/up3" element={<Up3 />} />
         <Route exact path="/up4" element={<Up4 />} />
         <Route exact path="/donate" element={<Donate />} />
+        <Route exact path="/donate2" element={<Donate2/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 
