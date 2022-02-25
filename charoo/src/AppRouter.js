@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 
 import Navbar2 from "./components/Navbar2";
 import Login from "./components/Login";
-import LoginOLD from "./components/LoginOLD";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
 import Home from './components/Home'
@@ -22,7 +21,6 @@ const AppRouter = () => {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
-        <Route exact path="/loginOLD" element={<LoginOLD />} />
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/howItWorks" element={<HowItWorks />} />
