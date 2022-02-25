@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const register = abc => {
-    return axios.post('http://localhost:3002/auth/register', {
+    return axios.post('https://charoo.herokuapp.com/auth/register', {
         firstName: abc.firstName,
         lastName: abc.lastName,
         email : abc.email,
@@ -12,7 +12,7 @@ export const register = abc => {
 }
 
 export const login = user => {
-    return axios.post('http://localhost:3002/auth/login', {
+    return axios.post('https://charoo.herokuapp.com/auth/login', {
         email : user.email,
         password : user.password
     })
@@ -25,13 +25,13 @@ export const login = user => {
 }
 
 export const userInfo = (userId) => {
-    return axios.get(`http://localhost:3002/user/${userId}`)
+    return axios.get(`https://charoo.herokuapp.com//user/${userId}`)
                 .then(res => (res.data))
                 .catch(err => console.log(err))
 }
 
 export const eventUpload = event => {
-    return axios.post('http://localhost:3002/event/create', {
+    return axios.post('https://charoo.herokuapp.com/event/create', {
                 sport : event.sport,
                 distance : event.distance,
                 start : event.start,
@@ -57,7 +57,7 @@ export const eventUpload = event => {
 
 export const events = async () => {
     try {
-        const res = await axios.get('http://localhost:3000/event')
+        const res = await axios.get('https://charoo.herokuapp.com/event')
         console.log(res.data)
     } catch (err) {
         console.error(err)
