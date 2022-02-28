@@ -26,10 +26,6 @@ const AppRouter = () => {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
-<<<<<<< HEAD
-=======
-        <Route exact path="/loginOLD" element={<LoginOLD />} /> 
->>>>>>> 7a21c1d449fc0950429548062f66558755761307
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/howItWorks" element={<HowItWorks />} />
@@ -38,7 +34,7 @@ const AppRouter = () => {
         <Route exact path="/up3" element={<Up3 />} />
         <Route exact path="/up4" element={<Up4 />} />
         <Route exact path="/donate" element={<Donate />} />
-        <Route exact path="/donate2" element={<Donate2/>} />
+        <Route exact path="/donate2/:id" element={<Donate2/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 

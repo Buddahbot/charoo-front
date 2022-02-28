@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export const register = abc => {
     return axios.post('https://charoo.herokuapp.com/auth/register', {
         firstName: abc.firstName,
@@ -62,4 +63,22 @@ export const events = async () => {
     } catch (err) {
         console.error(err)
     }
+}
+
+
+// donations
+
+export const donationCreation = donation => {
+    return axios.post('https://charoo.herokuapp.com/donation/create', {
+                eventTitle : donation.sport,
+                createdBy : donation.distance,
+                amount : donation.comments.amount,
+                date: donation.comments.date,
+                comments: { donatedBy : donation.comments.donatedBy,
+                payMethod : donation.comments.payMethod,
+                paymentId : donation.comments.payMethod.paymentId,
+                }
+    })
+    .then(res => console.log('event created'))
+    .catch(err => console.log(err))
 }

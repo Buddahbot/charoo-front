@@ -23,7 +23,7 @@ const Up4 = ()=> {
             dateCreated: event.dateCreated,
         } 
 
-        eventUpload(newEvent)
+        eventUpload(newEvent) // passes newEvent as argument to function eventupload. eventUpload is sitting in logic/UserFunctions
         navigate('./Profile')
     }
     
