@@ -17,10 +17,10 @@
     font-size: 14px;
   }
 
-  /* .navbar-brand{
-    position:absolute;
-    padding-left: 40px;
-  } */
+  .navbar-brand{
+    /* position: absolute;
+    padding-left: 40px; */
+  }
 
   .left {
     display: flex;
@@ -107,5 +107,5 @@
   .hidden-navbar{
     
     border: 0px !important;
-    z-index: 5;
+    z-index: 2;
   }

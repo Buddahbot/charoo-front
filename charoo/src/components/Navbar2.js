@@ -6,8 +6,10 @@ export default function Navbar2() {
     return (
         <div>
             <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+
+                <a class="navbar-brand" href="/"><img src={Logo2} height='45px' alt='Logo' /></a>
                 <div class="container">
-                    <a class="navbar-brand" href="/"><img src={Logo2} height='45px' alt='Logo' /></a>
+
 
                     <div id="navcol-2" class="navbar-toggler hidden-navbar">
                         <ul class="navbar-nav burger ms-auto">
@@ -22,11 +24,11 @@ export default function Navbar2() {
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a class="dropdown-item" href="#">My account</a>
-                                    <a class="dropdown-item" href="#">Login</a>
-                                    <a class="dropdown-item" href="#">Join</a>
-                                    <a class="dropdown-item" href="#">About Us</a>
-                                    <a class="dropdown-item" href="#">How It Works</a>
+                                    <a class="dropdown-item" href="/profile">My account</a>
+                                    <a class="dropdown-item" href="/login">Login</a>
+                                    <a class="dropdown-item" href="/register">Join</a>
+                                    <a class="dropdown-item" href="/about">About Us</a>
+                                    <a class="dropdown-item" href="/howitworks">How It Works</a>
 
                                 </div>
                             </li>
@@ -60,9 +62,9 @@ export default function Navbar2() {
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a class="dropdown-item" href="#">My account</a>
-                                    <a class="dropdown-item" href="#">Donate</a>
-                                    <a class="dropdown-item" href="#">Create Challange</a>
+                                    <a class="dropdown-item" href="/profile">My account</a>
+                                    <a class="dropdown-item" href="/donate">Donate</a>
+                                    <a class="dropdown-item" href="/up1">Create Challange</a>
                                     <a class="dropdown-item" href="#">Challenges</a>
                                     <a class="dropdown-item" href="#">Partnerships</a>
                                 </div>

@@ -25,32 +25,32 @@ export default () => {
                 rightChevron={<i class="fa fa-chevron-right" style={{ color: "rgba(33,37,41,0.89)", fontSize: '30px' }} ></i>}
                 outsideChevron
                 chevronWidth={chevronWidth}
-
+                alwaysShowChevrons
             >
 
                 <NavLink style={{ textDecoration: 'none' }} to="/">
-                    <div className='carousele-item ' style={{ backgroundImage: `url(${BG1})` }}>
+                    <div className='carousele-item carousele-margin ' style={{ backgroundImage: `url(${BG1})` }}>
                         <div className='carousel-text'>
                             <h1 className=''>ZYX card</h1>
                         </div> </div> </NavLink>
 
-                <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item' style={{ backgroundImage: `url(${BG2})` }}>
+                <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item carousele-margin' style={{ backgroundImage: `url(${BG2})` }}>
                     <div className='carousel-text'> <h1 className=''>ZYX card</h1> </div>
                 </div></NavLink>
 
-                <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item ' style={{ backgroundImage: `url(${BG3})` }}>
+                <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item carousele-margin ' style={{ backgroundImage: `url(${BG3})` }}>
                     <div className='carousel-text'> <h1 className=''>ZYX card</h1> </div>
                 </div></NavLink>
 
-                <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item' style={{ backgroundImage: `url(${BG4})` }}>
-                    <div className='carousel-text'>   <h1 className=''>ZYX card</h1> </div>
-                </div></NavLink>
-
-                <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item' style={{ backgroundImage: `url(${BG5})` }}>
+                <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item carousele-margin' style={{ backgroundImage: `url(${BG4})` }}>
                     <div className='carousel-text'> <h1 className=''>ZYX card</h1> </div>
                 </div></NavLink>
 
-                <NavLink style={{ textDecoration: 'none' }} to="/">   <div className='carousele-item' style={{ backgroundImage: `url(${BG6})` }}>
+                <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item carousele-margin' style={{ backgroundImage: `url(${BG5})` }}>
+                    <div className='carousel-text'> <h1 className=''>ZYX card</h1> </div>
+                </div></NavLink>
+
+                <NavLink style={{ textDecoration: 'none' }} to="/">   <div className='carousele-item carousele-margin' style={{ backgroundImage: `url(${BG6})` }}>
                     <div className='carousel-text'>  <h1 className=''>ZYX card</h1> </div>
                 </div></NavLink>
 

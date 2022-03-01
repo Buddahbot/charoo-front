@@ -75,9 +75,12 @@ export default function Login() {
                                     </div>
                                     <div class="form-group">
 
-                                        <input name="password" id="password" type="password" class="form-control inputbg text-white fs-3 " placeholder="Password" required
+                                        <input name="password" id="password" type="password" class="form-control inputbg text-white fs-3 "
+                                            min='5'
+                                            placeholder="Password" required
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
+
                                             aria-label="password" aria-describedby="basic-addon1" />
 
                                         <span class=" field-icon " onClick={password_show_hide}>

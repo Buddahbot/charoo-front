@@ -120,7 +120,7 @@ const Landing = () => {
                                         <div class="form-group ">
                                             <button
                                                 type="submit"
-                                                className="form-control btn btnSign submit fs-3"
+                                                className="form-control btn btnSign submit fs-3 "
                                             >JOIN
                                             </button>
                                         </div>
