@@ -11,7 +11,9 @@ import Moment from 'moment';
 
 const Up4 = () => {
     const [event, setEvent] = useContext(EventContext)
+
     let navigate = useNavigate()
+
     const createEvent = (e) => {
         e.preventDefault()
 
@@ -28,7 +30,7 @@ const Up4 = () => {
             dateCreated: event.dateCreated,
         }
 
-        eventUpload(newEvent)
+        eventUpload(newEvent) // passes newEvent as argument to function eventupload. eventUpload is sitting in logic/UserFunctions
         navigate('./Profile')
     }
     const goBack = () => {
@@ -87,7 +89,7 @@ const Up4 = () => {
                                     class="form-control btn-light btn btnSign-back submit fs-3 ">BACK</button>
 
                                 <button type="submit" onClick={createEvent} class="form-control btn btnSign submit fs-3 ">CREATE NOW</button>
-
+                                {/* we get the event id directly after the event creator posted the new event. For this to happen we just use the user id and fetch the latest event the user has created. Also, we should write the event id into the user table as well, just to have a list of all event ids in the user table. We could use this list to display all the user events in his account. */}
                             </div>
                         </form>
                     </div>

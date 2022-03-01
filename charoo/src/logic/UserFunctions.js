@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export const register = abc => {
     return axios.post('https://charoo.herokuapp.com/auth/register', {
         firstName: abc.firstName,
@@ -25,7 +26,7 @@ export const login = user => {
 }
 
 export const userInfo = (userId) => {
-    return axios.get(`https://charoo.herokuapp.com//user/${userId}`)
+    return axios.get(`https://charoo.herokuapp.com/user/${userId}`)
                 .then(res => (res.data))
                 .catch(err => console.log(err))
 }
@@ -62,4 +63,23 @@ export const events = async () => {
     } catch (err) {
         console.error(err)
     }
+}
+
+
+// donations
+
+export const donationUpload = donation => {
+    return axios.post('https://charoo.herokuapp.com/donation/create', {
+                eventTitle : donation.eventTitle,
+                createdBy : donation.createdBy,
+                donations: {
+                            donatedBy: donation.userId,
+                            date: donation.date,
+                            amount: donation.donationAmount,
+                            //payMethod : donation.donations.payMethod,
+                            comments: donation.checkedOne,
+                            }
+                })
+    .then(res => console.log('event created'))
+    .catch(err => console.log(err))
 }

@@ -4,7 +4,7 @@ import axios from "axios";
 export const DonateContext = createContext();
 
 export const DonateController = (props) => {
-    const [event, setEvent] = useState([]);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchEvents = async () => {
@@ -14,7 +14,7 @@ export const DonateController = (props) => {
             "https://charoo.herokuapp.com/event/?limit=21"
             )
             .then((res) => {
-            setEvent(res.data);
+            setData(res.data);
             });
         setLoading(false);
         } catch (error) {
@@ -22,12 +22,13 @@ export const DonateController = (props) => {
         }
     };
 
+
     useEffect(() => {
         fetchEvents();
     }, []);
 
     return (
-        <DonateContext.Provider value={[event, setEvent]}>
+        <DonateContext.Provider value={[data, setData]}>
         {!loading && props.children}
         </DonateContext.Provider>
     );
