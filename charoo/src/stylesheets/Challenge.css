@@ -79,4 +79,33 @@ font-size: 40px;
 
 .item-preview{
     padding: 10px;
+    width: 110px;
+}
+
+.event-info  {
+margin-bottom: 50px;
+}
+
+.event-details {
+    display: flex;
+    /* flex-wrap: wrap; */
+    }
+
+/* .event-details h4 {
+border-bottom: 2px solid rgba(128, 128, 128, 0.397) ;
+width: 50%;
+} */
+
+.item-preview .fa {
+/* display: flex  !important; */
+}
+.event-details  i {
+    width: 60px;
+    height: 40px;
+    background: linear-gradient(to left, rgb(112, 101, 214), rgb(230, 106, 213));
+    border-bottom: 2px solid ;
+    border-radius: 10px;
+  
+    
+   
 }

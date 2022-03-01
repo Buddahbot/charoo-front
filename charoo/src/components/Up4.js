@@ -6,6 +6,8 @@ import { eventUpload } from '../logic/UserFunctions';
 import BG from '../Img/shoes.jpg'
 import '../stylesheets/Challenge.css'
 import '../stylesheets/LoginRegister.css'
+import Moment from 'moment';
+
 
 const Up4 = () => {
     const [event, setEvent] = useContext(EventContext)
@@ -33,32 +35,13 @@ const Up4 = () => {
         navigate("/Up3");
     }
 
+    const changeTimeFormat = (date) => {
+        // return Moment(date).format('dddd, Do MMMM YYYY, h:mm a')
+        return Moment(date).format('DD.MM.YYYY, h:mm a')
+    }
 
     console.log(event)
     return (
-        // <div>
-        //     <div>
-        //         <h1>PREVIEW</h1>
-
-        //         <h3>{event.eventTitle}</h3>
-
-        //         <img src={event.imageUrl} style={{ width: "300px" }} />
-
-        //         <p>Description: {event.description}</p>
-        //         <p>Type of Challenge: {event.sport}</p>
-        //         <p>Distance: {event.distance}</p>
-        //         <p>Start of Challenge{event.start}</p>
-        //         <p>Where: {event.country}</p>
-        //         <p>Donations go to: {event.charity}</p>
-        //         <p>Donation Collection Goal: {event.monetaryGoal}</p>
-
-        //     </div>
-
-
-        //     <button onClick={createEvent}>CREATE NOW</button>
-
-        // </div>
-
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
             <div class=" justify-content-center text-center ">
                 <h2 class="heading-section title-create-challenge">Create challenge - Step 4 / 4</h2>
@@ -68,28 +51,32 @@ const Up4 = () => {
                     <h2 class=" subtitle-create-challenge" style={{ paddingBottom: "5%" }}>PREVIEW</h2>
                 </div>
                 <div class="row  justify-content-center  ">
-                    <div class=" col-md-6 col-lg-7">
+                    <div class=" col-md-6 col-lg-8">
 
                         <form class="signin-form  ">
 
-                            <div class="form-group">
-                                <div className='d-flex justify-content-center '>
+                            <div class="form-group ">
+                                <div className='d-flex text-center  '>
                                     <div className=' what-imgs' style={{ backgroundImage: `url(${event.imageUrl})` }}> <div className='carousel-text'> <h1>{event.eventTitle}</h1> </div>
                                     </div>
                                 </div>
+                                <div className=' '>
+                                    <div className='event-details text-center mt-5 '>
+                                        <h4 className='item-preview'> <i class="fa fa-trophy py-3 mb-3 "></i> <h4>{event.sport}</h4> </h4>
+                                        <h4 className='item-preview'> <i class="fa fa-road py-3 mb-3"></i> <h4>{event.distance} km</h4> </h4>
+                                        <h4 className='item-preview'><i class="fa fa-clock-o  py-3 mb-3 justify-content-center"></i> <h4 className=''>{changeTimeFormat(event.start)}
+                                        </h4> </h4>
+                                        <h4 className='item-preview'> <i class="fa fa-map-marker mb-3 py-3 "></i>  <h4>{event.country}</h4> </h4>
+                                        <h4 className='item-preview'> <i class="fa fa-group py-3 mb-3 "></i> <h4>{event.charity}</h4> </h4>
+                                        <h4 className='item-preview'> <i class="fa fa-crosshairs py-3 mb-3"></i> <h4>{event.monetaryGoal} Euro</h4> </h4>
+                                    </div>
+                                </div>
 
-
-                                {/* <img src={event.imageUrl} className='charity-img' style={{ width: "500px" }} />
-                                <h2 class="heading-section title-create-challenge">{event.eventTitle}</h2> */}
-
-                                <h3></h3>
-                                <h2 className='item-preview'> <i class="fa fa-pencil"></i> {event.description}</h2>
-                                <h2 className='item-preview'> <i class="fa fa-trophy"></i> {event.sport}</h2>
-                                <h2 className='item-preview'> <i class="fa fa-road"></i> {event.distance} km</h2>
-                                <h2 className='item-preview'><i class="fa fa-calendar-check-o"></i> {event.start}</h2>
-                                <h2 className='item-preview'> <i class="fa fa-map-marker"></i> {event.country}</h2>
-                                <h2 className='item-preview'> <i class="fa fa-group"></i> {event.charity}</h2>
-                                <h2 className='item-preview'> <i class="fa fa-crosshairs"></i> {event.monetaryGoal} Euro</h2>
+                                <div className='event-info '>
+                                    <h4 className=' d-flex text-center mt-5 '>
+                                        {event.description}
+                                    </h4>
+                                </div>
 
                             </div>
 

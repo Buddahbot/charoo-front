@@ -44,15 +44,6 @@ const Up3 = () => {
 
 
     return (
-        // <div>
-        //     <form onSubmit={handleSubmit} >
-        //         <h2>Charity</h2>   <input value={charity}
-        //             placeholder='Please enter Unicef'
-        //             onChange={(e) => setCharity(e.target.value)} />
-        //         <button type='submit'>Next</button>
-
-        //     </form>
-        // </div>
 
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer-charity'>
 

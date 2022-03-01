@@ -7,7 +7,6 @@ import '../stylesheets/Challenge.css'
 import '../stylesheets/LoginRegister.css'
 
 
-
 const Up1 = () => {
     const [event, setEvent] = useContext(EventContext)
     const [sport, setSport] = useState('')
@@ -26,25 +25,6 @@ const Up1 = () => {
         navigate('/Up2')
     }
 
-    const ChangeInputValue = (value) => {
-        this.setState({
-            name: { start }
-        });
-    }
-
-    const ChangeInputValueDistance = (value) => {
-        this.setState({
-            name: { distance }
-        });
-    }
-
-    const ChangeInputValueGoal = (value) => {
-        this.setState({
-            name: { monetaryGoal }
-        });
-    }
-
-
     const goBack = () => {
         navigate(-1);
     }
@@ -52,38 +32,6 @@ const Up1 = () => {
 
     return (
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
-            {/* 
-            <form className='d-flex flex-column align-items-center justify-content-center whiteboard' onSubmit={handleSubmit} >
-
-                <div> <h2>Sport</h2>
-
-                    <input value={sport} placeholder='enter type of sports' onChange={(e) => setSport(e.target.value)} /> 
-                    
-                    </div>
-
-                <div> <h2>Distance: </h2>
-
-                    <input className='' value={distance} placeholder='enter distance' onChange={(e) => setDistance(e.target.value)} />
-
-                    <h2>Km</h2>  </div>
-
-                <div> <h2>Start</h2>
-                    <input value={start} placeholder='start of challenge' onChange={(e) => setStart(e.target.value)} />
-                    <h2>Datum</h2>  </div>
-//
-                <div> <h2>Country</h2>
-                    <input value={country} placeholder='Country' onChange={(e) => setCountry(e.target.value)} /></div>
-
-                <div> <h2>Min Donation Amount</h2>
-                    <input value={monetaryGoal} placeholder='donation amount' onChange={(e) => setMonetaryGoal(e.target.value)} />
-                    <h2>Euro</h2>  </div>
-
-
-                <button type='submit'>Next</button>
-
-            </form> */}
-
-
 
             <div class=" justify-content-center text-center ">
                 <h2 class="heading-section title-create-challenge">Create challenge - Step 1 / 4</h2>
@@ -96,7 +44,6 @@ const Up1 = () => {
 
                             <div class="form-group">
 
-
                                 <input type="text" class="form-control fs-3 inputbg-home"
 
                                     value={sport} placeholder='Type of Running Sport' onChange={(e) => setSport(e.target.value)}
@@ -104,32 +51,19 @@ const Up1 = () => {
                                     required />
                             </div>
 
-                            {/* <div class="form-group">
-                                            <input type="number" class="form-control  fs-3 inputbg-home" min="0"
-                                                value={distance} placeholder='Distance in Km' onChange={(e) => setDistance(e.target.value)}
-                                                required />
-                                        </div> */}
-
                             <div class="form-group">
                                 <input type="text" class="form-control  fs-3 inputbg-home"
                                     onFocus={(e) => e.target.type = 'number'}
-                                    onChange={e => ChangeInputValueDistance(e.target.value)}
+                                    onChange={e => setDistance(e.target.value)}
                                     min="0"
-                                    placeholder='Distance in Km' onChange={(e) => setDistance(e.target.value)}
+                                    placeholder='Distance in Km'
                                     required />
                             </div>
-
-                            {/* <div class="form-group">
-                                            <input type="date" class="form-control  fs-3 inputbg-home"
-                                                value={start} placeholder='Date The Challenge' onChange={(e) => setStart(e.target.value)}
-                                                required />
-                                        </div> */}
 
                             <div class="form-group">
                                 <input
                                     type="text"
                                     onFocus={(e) => e.target.type = 'datetime-local'} class="form-control  fs-3 inputbg-home"
-                                    onChange={e => ChangeInputValue(e.target.value)}
                                     placeholder='Starting Date' onChange={(e) => setStart(e.target.value)}
                                     required />
                             </div>
@@ -147,7 +81,7 @@ const Up1 = () => {
                                 <input type="text"
                                     min="5" max="5000" class="form-control  fs-3 inputbg-home"
                                     onFocus={(e) => e.target.type = 'number'}
-                                    onChange={e => ChangeInputValueGoal(e.target.value)} placeholder='Donation Goal in Euro ' onChange={(e) => setMonetaryGoal(e.target.value)}
+                                    placeholder='Donation Goal in Euro ' onChange={(e) => setMonetaryGoal(e.target.value)}
                                     required />
                             </div>
 

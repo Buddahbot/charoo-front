@@ -31,7 +31,6 @@ const Up2 = () => {
         })
             .then(resp => resp.json())
             .then(data => {
-                // console.log('cokolwiek' + JSON.stringify(data))
                 setImageData(data);
                 setLoading(false);
             })
@@ -63,31 +62,6 @@ const Up2 = () => {
 
 
     return (
-        //         <div>
-
-        //             <div> <h2>Step 1:</h2>  <input type="file" onChange={(e) => setImage(e.target.files[0])}></input> </div>
-
-        //             <div> <h2>Step 2:</h2>
-        //                 <button onClick={uploadImage}>Upload</button> </div>
-
-        //             <div>  <h2>Step 3:</h2>
-        //                 <form onSubmit={handleSubmit} >
-        //                     <h2>Challenge Title</h2> <input value={eventTitle}
-        //                         placeholder='Please enter a title'
-        //                         onChange={(e) => setEventTitle(e.target.value)} />
-
-        //                     <br />
-
-        //                     <h2>Description</h2> <input value={description}
-        //                         placeholder='Description'
-        //                         onChange={(e) => setDescription(e.target.value)} />
-
-        //                     <button type='submit'>Next</button>
-        //                 </form>  </div>
-
-        //             <img src={url} />
-        //         </div>
-
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
 
             <div class=" justify-content-center text-center ">
@@ -132,7 +106,7 @@ const Up2 = () => {
                             <div class="form-group mt-5">
 
                                 <input type="text" class="form-control fs-3 inputbg-home font-weight-bold"
-                                    maxLength={20}
+                                    maxLength={35}
                                     value={eventTitle}
                                     placeholder='Challenge Title'
                                     onChange={(e) => setEventTitle(e.target.value)}
@@ -141,19 +115,10 @@ const Up2 = () => {
 
                             <div class="form-group">
 
-                                {/* <input type="text" class="form-control   fs-3 inputbg-home"
-                                    value={description}
-                                    placeholder='Description'
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    maxLength='100'
-                                    required /> */}
-
                                 <label for="exampleFormControlTextarea1"> </label>
                                 <textarea class="form-control form-control-lg inputbg-home fs-3" id="exampleFormControlTextarea1" rows="5" placeholder="Write your description [optional]" onChange={(e) => setDescription(e.target.value)} value={description} ></textarea>
 
                             </div>
-
-
 
                             <div class="form-group d-flex ">
 
