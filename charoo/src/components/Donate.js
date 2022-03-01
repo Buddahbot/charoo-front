@@ -23,7 +23,7 @@ const Donate = ()=> {
             {data.data.map((e) => {
                 return (<>
                         
-                        <Link to={`/donate2/${e._id}`}>
+                        <Link to={`/donate2/${e._id}`}> 
                             <h1>{e.charity}</h1>
                             <h3>{e.eventTitle}</h3>
                             <p>{e.sportstype}</p>
@@ -34,8 +34,9 @@ const Donate = ()=> {
                             <p>{e.imageUrl}</p>
                             <p>{e.description}</p>
                             <p>{e.dateCreated}</p>
-                            <p>{e._id}</p>
-                        </Link>
+                            <p>{e._id}</p> 
+                            <p>{e.user.firstName}</p> //subobject
+                        </Link> 
                 </>
                 )
             })}

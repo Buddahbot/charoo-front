@@ -68,17 +68,18 @@ export const events = async () => {
 
 // donations
 
-export const donationCreation = donation => {
+export const donationUpload = donation => {
     return axios.post('https://charoo.herokuapp.com/donation/create', {
-                eventTitle : donation.sport,
-                createdBy : donation.distance,
-                amount : donation.comments.amount,
-                date: donation.comments.date,
-                comments: { donatedBy : donation.comments.donatedBy,
-                payMethod : donation.comments.payMethod,
-                paymentId : donation.comments.payMethod.paymentId,
-                }
-    })
+                eventTitle : donation.eventTitle,
+                createdBy : donation.createdBy,
+                donations: {
+                            donatedBy: donation.userId,
+                            date: donation.date,
+                            amount: donation.donationAmount,
+                            //payMethod : donation.donations.payMethod,
+                            comments: donation.checkedOne,
+                            }
+                })
     .then(res => console.log('event created'))
     .catch(err => console.log(err))
 }

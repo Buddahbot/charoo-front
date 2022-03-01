@@ -6,7 +6,9 @@ import { eventUpload } from '../logic/UserFunctions';
 
 const Up4 = ()=> {
     const [event, setEvent] = useContext(EventContext)
+
     let navigate = useNavigate()
+
     const createEvent = (e) => {
         e.preventDefault()
     
@@ -48,7 +50,7 @@ const Up4 = ()=> {
                     </div>
                     
                     <>
-                        <button onClick={createEvent}>CREATE NOW</button>
+                        <button onClick={createEvent}>CREATE NOW</button> // we get the event id directly after the event creator posted the new event. For this to happen we just use the user id and fetch the latest event the user has created. Also, we should write the event id into the user table as well, just to have a list of all event ids in the user table. We could use this list to display all the user events in his account.
                     </>
         </>
     )
