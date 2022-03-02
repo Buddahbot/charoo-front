@@ -45,7 +45,7 @@ const Donate2 = () => {
       donatedBy: userId,
       donationAmount: donationAmount,
       }
-    );
+    )
 
     navigate('/Donate3')
 
