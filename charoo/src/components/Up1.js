@@ -32,11 +32,12 @@ const Up1 = () => {
             id: decoded.user._id,
         })
     }    
-    let navigate = useNavigate();
-
+        let navigate = useNavigate();
+ 
+    console.log(user.id)
     const handleSubmit = (e) => {
         e.preventDefault()
-        setEvent({ ...event, user: user, sportstype: sportstype, distance: distance, start: start, country: country, monetaryGoal: monetaryGoal });
+        setEvent({ ...event, user: user.id, sportstype: sportstype, distance: distance, start: start, country: country, monetaryGoal: monetaryGoal });
         console.log(event)
         navigate('/Up2')
     }

@@ -14,6 +14,9 @@ const Up4 = () => {
 
     let navigate = useNavigate()
 
+    console.log(event)
+    
+ 
     const createEvent = (e) => {
         e.preventDefault()
 
@@ -30,6 +33,7 @@ const Up4 = () => {
             charity: event.charity,
             dateCreated: event.dateCreated,
         }
+        console.log(event.user.id)
         console.log(newEvent)
         eventUpload(newEvent) // passes newEvent as argument to function eventupload. eventUpload is sitting in logic/UserFunctions
         //navigate('./Profile')
@@ -43,7 +47,7 @@ const Up4 = () => {
         return Moment(date).format('DD.MM.YYYY, h:mm a')
     }
 
-    console.log(event)
+  
     return (
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
             <div class=" justify-content-center text-center ">

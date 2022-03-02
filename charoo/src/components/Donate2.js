@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect  } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { DonateContext } from '../context/DonateContext';
-import { donationUpload } from '../logic/UserFunctions'
 import { DonationToPaymentContext } from '../context/DonationToPaymentContext';
 import jwt_decode from "jwt-decode";
 
@@ -12,7 +11,7 @@ const Donate2 = () => {
 
     const { id } = useParams();
       
-      const [userId, setUserId] = useState({
+      const [userId, setUserId] = useState({      // ID of DONATION MONSTER 
         id: "",
         firstName: "" 
       })
@@ -40,17 +39,19 @@ const Donate2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     
-    setDonationToPayment({createdBy: tempEvent.user._id,
-                          eventTitle: tempEvent.eventTitle, 
-                        //monetaryGoal: tempEvent.monetaryGoal, 
-                        //charity: tempEvent.charity, 
-                          donationAmount: donationAmount,  });
+    setDonationToPayment({
+      eventTitle: tempEvent.eventTitle,
+      createdBy: tempEvent.user._id,
+      donatedBy: userId,
+      donationAmount: donationAmount,
+      }
+    );
 
     navigate('/Donate3')
 
     console.log(donationToPayment)
 }
-console.log(tempEvent)
+console.log(tempEvent) // EVENT OF CREATOR + USER OBJECT 
     return (
       <div><h1>Donating Monster {userId.firstName} </h1>
 
