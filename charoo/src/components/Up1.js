@@ -15,11 +15,9 @@ const Up1 = () => {
     const [start, setStart] = useState(Date)
     const [country, setCountry] = useState('')
     const [monetaryGoal, setMonetaryGoal] = useState(Number)
-    const [userInfo, setUserInfo] = useState({
+    const [user, setUser] = useState({
         id : "",
-        firstName: "",
-        lastName: "",
-        email: "",
+        
     })
 
     useEffect(() => {
@@ -30,17 +28,15 @@ const Up1 = () => {
         const token = await localStorage.usertoken
         const decoded = await jwt_decode(token)
         console.log(decoded)
-        setUserInfo({
+        setUser({
             id: decoded.user._id,
-            firstName: decoded.user.firstName,
-            lastName: decoded.user.lastName,
         })
     }    
     let navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setEvent({ ...event, userInfo: userInfo, sportstype: sportstype, distance: distance, start: start, country: country, monetaryGoal: monetaryGoal });
+        setEvent({ ...event, user: user, sportstype: sportstype, distance: distance, start: start, country: country, monetaryGoal: monetaryGoal });
         console.log(event)
         navigate('/Up2')
     }

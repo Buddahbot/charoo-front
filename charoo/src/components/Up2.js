@@ -6,7 +6,7 @@ import BG from '../Img/shoes.jpg'
 import '../stylesheets/Challenge.css'
 import '../stylesheets/LoginRegister.css'
 import Spinner from './Spinner'
-import { data } from "jquery";
+
 
 const Up2 = () => {
     const [event, setEvent] = useContext(EventContext)
@@ -14,7 +14,7 @@ const Up2 = () => {
     const [eventTitle, setEventTitle] = useState()
     const [description, setDescription] = useState()
     const [loading, setLoading] = useState(false)
-    const [imageData, setImageData] = useState({}); //for cloudinary
+    const [imageData, setImageData] = useState(''); //for cloudinary
     const [image, setImage] = useState("");//for cloudinary
     console.log(event)
 
@@ -46,8 +46,10 @@ const Up2 = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setEvent({ ...event, eventTitle: eventTitle, description: description, imageUrl: imageData.url })
+        console.log(event)
         navigate('/Up3')
 
+// console.log(eventTitle)
     }
 
     const goBack = () => {
