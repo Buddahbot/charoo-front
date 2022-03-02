@@ -18,8 +18,9 @@ const Up4 = () => {
         e.preventDefault()
 
         const newEvent = {
+            user: event.userInfo,
             imageUrl: event.imageUrl,
-            sport: event.sport,
+            sportstype: event.sportstype,
             distance: event.distance,
             start: event.start,
             country: event.country,
@@ -31,7 +32,7 @@ const Up4 = () => {
         }
 
         eventUpload(newEvent) // passes newEvent as argument to function eventupload. eventUpload is sitting in logic/UserFunctions
-        navigate('./Profile')
+        //navigate('./Profile')
     }
     const goBack = () => {
         navigate("/Up3");
@@ -64,7 +65,7 @@ const Up4 = () => {
                                 </div>
                                 <div className=' '>
                                     <div className='event-details text-center mt-5 '>
-                                        <h4 className='item-preview'> <i class="fa fa-trophy py-3 mb-3 "></i> <h4>{event.sport}</h4> </h4>
+                                        <h4 className='item-preview'> <i class="fa fa-trophy py-3 mb-3 "></i> <h4>{event.sportstype}</h4> </h4>
                                         <h4 className='item-preview'> <i class="fa fa-road py-3 mb-3"></i> <h4>{event.distance} km</h4> </h4>
                                         <h4 className='item-preview'><i class="fa fa-clock-o  py-3 mb-3 justify-content-center"></i> <h4 className=''>{changeTimeFormat(event.start)}
                                         </h4> </h4>

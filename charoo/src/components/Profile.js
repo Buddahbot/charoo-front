@@ -5,7 +5,8 @@ const Profile = () => {
 
   const [details, setDetails] = useState({
     id : "",
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
   });
 
@@ -19,7 +20,8 @@ const Profile = () => {
     console.log(decoded);
     setDetails({
       id : decoded.user._id,
-      name: decoded.user.name,
+      firstName: decoded.user.firstName,
+      lastName: decoded.user.lastName,
       email: decoded.user.email,
     })
 
@@ -38,8 +40,12 @@ const Profile = () => {
               <td>{details.id}</td>
             </tr>
             <tr>
-              <td>Name</td>
-              <td>{details.name}</td>
+              <td> First Name</td>
+              <td>{details.firstName}</td>
+            </tr>
+            <tr>
+              <td> Last Name</td>
+              <td>{details.lastName}</td>
             </tr>
             <tr>
               <td>Email</td>

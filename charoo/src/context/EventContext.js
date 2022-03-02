@@ -6,7 +6,7 @@ export const EventController = (props) => {
 
     const [event, setEvent] = useState({
         imageUrl: '',
-        sport: '',
+        sportstype: '',
         distance: Number,
         start: Date,
         country: '',
