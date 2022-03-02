@@ -1,6 +1,7 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { EventContext } from '../context/EventContext';
 import { useNavigate } from 'react-router-dom';
+import jwt_decode from "jwt-decode";
 // import { NavLink } from "react-router-dom";
 import BG from '../Img/shoes.jpg'
 import '../stylesheets/Challenge.css'
@@ -9,18 +10,37 @@ import '../stylesheets/LoginRegister.css'
 
 const Up1 = () => {
     const [event, setEvent] = useContext(EventContext)
-    const [sport, setSport] = useState('')
+    const [sportstype, setSportstype] = useState('')
     const [distance, setDistance] = useState(Number)
     const [start, setStart] = useState(Date)
     const [country, setCountry] = useState('')
     const [monetaryGoal, setMonetaryGoal] = useState(Number)
+    const [userInfo, setUserInfo] = useState({
+        id : "",
+        firstName: "",
+        lastName: "",
+        email: "",
+    })
 
+    useEffect(() => {
+    getUserInfo()
+    }, [])
 
+    const getUserInfo = async () => {
+        const token = await localStorage.usertoken
+        const decoded = await jwt_decode(token)
+        console.log(decoded)
+        setUserInfo({
+            id: decoded.user._id,
+            firstName: decoded.user.firstName,
+            lastName: decoded.user.lastName,
+        })
+    }    
     let navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setEvent({ ...event, sport: sport, distance: distance, start: start, country: country, monetaryGoal: monetaryGoal });
+        setEvent({ ...event, userInfo: userInfo, sportstype: sportstype, distance: distance, start: start, country: country, monetaryGoal: monetaryGoal });
         console.log(event)
         navigate('/Up2')
     }
@@ -46,7 +66,7 @@ const Up1 = () => {
 
                                 <input type="text" class="form-control fs-3 inputbg-home"
 
-                                    value={sport} placeholder='Type of Running Sport' onChange={(e) => setSport(e.target.value)}
+                                    value={sportstype} placeholder='Type of Running Sport' onChange={(e) => setSportstype(e.target.value)}
 
                                     required />
                             </div>

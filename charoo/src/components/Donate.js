@@ -15,7 +15,7 @@ const Donate = ()=> {
     const handleClick = () => {
         navigate('/donate2')
     }
-
+    console.log(data)
     return (
         <>
             <h1>DONATION MONSTER</h1>

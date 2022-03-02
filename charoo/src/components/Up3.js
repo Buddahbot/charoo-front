@@ -30,7 +30,7 @@ const Up3 = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        setEvent({ ...event, charity: 'unicef' });
+        setEvent({ ...event, charity: charity });
         console.log(event)
         navigate('/Up4')
     }
@@ -72,27 +72,26 @@ const Up3 = () => {
                             alwaysShowChevrons
                         >
 
-                            <NavLink style={{ textDecoration: 'none' }} to="/">
-                                <div className='carousele-item carousele-charity-margin ' style={{ backgroundImage: `url(${BG1})` }}>
-                                </div> </NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} value={'unicef'} onClick={(e) => setCharity(e.target.value)} to=""> <div className='carousele-item carousele-charity-margin '  style={{ backgroundImage: `url(${BG1})` }}>
+                            </div> </NavLink>
 
-                            <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG2})` }}>
-
-                            </div></NavLink>
-
-                            <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG3})` }}>
+                            <NavLink style={{ textDecoration: 'none' }} value={'American Red Cross'} onClick={(e) => setCharity(e.target.value)} to="">  <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG2})` }} >
 
                             </div></NavLink>
 
-                            <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG4})` }}>
+                            <NavLink style={{ textDecoration: 'none' }} value={'WCS'} onClick={(e) => setCharity(e.target.value)} to="">  <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG3})` }}  >
 
                             </div></NavLink>
 
-                            <NavLink style={{ textDecoration: 'none' }} to="/">  <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG5})` }}>
+                            <NavLink style={{ textDecoration: 'none' }} value={'WFF'} onClick={(e) => setCharity(e.target.value)} to="">  <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG4})` }} >
 
                             </div></NavLink>
 
-                            <NavLink style={{ textDecoration: 'none' }} to="/">   <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG6})` }}>
+                            <NavLink style={{ textDecoration: 'none' }} value={'Direct Relief'} onClick={(e) => setCharity(e.target.value)} to="">  <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG5})` }} >
+
+                            </div></NavLink>
+
+                            <NavLink style={{ textDecoration: 'none' }} value={'IUCN'} onClick={(e) => setCharity(e.target.value)} to="">   <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG6})` }} >
 
                             </div></NavLink>
 
