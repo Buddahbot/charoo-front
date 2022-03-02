@@ -33,7 +33,7 @@ export const userInfo = (userId) => {
 
 export const eventUpload = event => {
     return axios.post('https://charoo.herokuapp.com/event/create', {
-                user: event.userInfo,
+                user: {id : event.user},
                 sportstype : event.sportstype,
                 distance : event.distance,
                 start : event.start,
