@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 
+
 export const register = abc => {
     return axios.post('https://charoo.herokuapp.com/auth/register', {
         firstName: abc.firstName,
@@ -32,8 +33,9 @@ export const userInfo = (userId) => {
 }
 
 export const eventUpload = event => {
+    console.log(event)
     return axios.post('https://charoo.herokuapp.com/event/create', {
-                user: {id : event.user},
+                user: event.user,
                 sportstype : event.sportstype,
                 distance : event.distance,
                 start : event.start,
@@ -49,13 +51,6 @@ export const eventUpload = event => {
     .catch(err => console.log(err))
 }
 //this posts on mongoDB through backEnd
-
-
-// export const events = () => {
-//     return axios.get('localhost:3002/event')
-//                 .then(res => (res.data))
-//                 .catch(err => console.log(err))
-// }
 
 export const events = async () => {
     try {
@@ -81,6 +76,6 @@ export const donationUpload = donation => {
                             comments: donation.checkedOne,
                             }
                 })
-    .then(res => console.log('event created'))
+    .then(res => console.log('donation created'))
     .catch(err => console.log(err))
 }
