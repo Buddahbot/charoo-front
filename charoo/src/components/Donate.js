@@ -35,7 +35,7 @@ const Donate = ()=> {
                             <p>{e.description}</p>
                             <p>{e.dateCreated}</p>
                             <p>{e._id}</p> 
-                            <p>{e.user.firstName}</p> //subobject
+                       {/* // <p>{e.user.firstName}</p> //subobject */}
                         </Link> 
                 </>
                 )

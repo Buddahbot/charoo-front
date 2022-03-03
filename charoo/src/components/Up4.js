@@ -14,11 +14,14 @@ const Up4 = () => {
 
     let navigate = useNavigate()
 
+    console.log(event)
+
+
     const createEvent = (e) => {
         e.preventDefault()
 
         const newEvent = {
-            user: event.userInfo,
+            user: event.user,
             imageUrl: event.imageUrl,
             sportstype: event.sportstype,
             distance: event.distance,
@@ -30,7 +33,8 @@ const Up4 = () => {
             charity: event.charity,
             dateCreated: event.dateCreated,
         }
-
+        console.log(event.user.id)
+        console.log(newEvent)
         eventUpload(newEvent) // passes newEvent as argument to function eventupload. eventUpload is sitting in logic/UserFunctions
         navigate('/Up5')
     }
@@ -44,7 +48,7 @@ const Up4 = () => {
         return Moment(date).format('DD.MM.YYYY, h:mm a')
     }
 
-    console.log(event)
+
     return (
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
             <div class=" justify-content-center text-center ">
@@ -66,13 +70,28 @@ const Up4 = () => {
                                 </div>
                                 <div className=' '>
                                     <div className='event-details text-center mt-5 '>
-                                        <h4 className='item-preview'> <i class="fa fa-trophy py-3 mb-3 "></i> <h4>{event.sportstype}</h4> </h4>
-                                        <h4 className='item-preview'> <i class="fa fa-road py-3 mb-3"></i> <h4>{event.distance} km</h4> </h4>
-                                        <h4 className='item-preview'><i class="fa fa-clock-o  py-3 mb-3 justify-content-center"></i> <h4 className=''>{changeTimeFormat(event.start)}
-                                        </h4> </h4>
-                                        <h4 className='item-preview'> <i class="fa fa-map-marker mb-3 py-3 "></i>  <h4>{event.country}</h4> </h4>
-                                        <h4 className='item-preview'> <i class="fa fa-group py-3 mb-3 "></i> <h4>{event.charity}</h4> </h4>
-                                        <h4 className='item-preview'> <i class="fa fa-crosshairs py-3 mb-3"></i> <h4>{event.monetaryGoal} Euro</h4> </h4>
+                                        <h4 className='item-preview'>
+                                            <i class="fa fa-trophy py-3 mb-3 "></i>
+                                            <h4>{event.sportstype}</h4> </h4>
+                                        <h4 className='item-preview'>
+                                            <i class="fa fa-road py-3 mb-3"></i>
+                                            <h4>{event.distance} km</h4> </h4>
+                                        <h4 className='item-preview'>
+                                            <i class="fa fa-clock-o  py-3 mb-3 justify-content-center"></i>
+                                            <h4 className=''>{changeTimeFormat(event.start)}
+                                            </h4>
+                                        </h4>
+                                        <h4 className='item-preview'>
+                                            <i class="fa fa-map-marker mb-3 py-3 "></i>
+                                            <h4>{event.country}</h4>
+                                        </h4>
+                                        <h4 className='item-preview'>
+                                            <i class="fa fa-group py-3 mb-3 "></i>
+                                            <h4>{event.charity}</h4> </h4>
+                                        <h4 className='item-preview'>
+                                            <i class="fa fa-crosshairs py-3 mb-3"></i>
+                                            <h4>{event.monetaryGoal} Euro</h4>
+                                        </h4>
                                     </div>
                                 </div>
 

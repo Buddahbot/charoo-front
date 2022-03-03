@@ -8,30 +8,12 @@ import jwt_decode from "jwt-decode";
 const Donate3 = () => {
     const [donationToPayment, setDonationToPayment] = useContext(DonationToPaymentContext)
     const [checkedOne, setCheckedOne] = useState(false);
-    const [userId, setUserId] = useState({
-        id : "",
-    })
 
-    let navigate = useNavigate()
-    
-   
-
-    useEffect(() => {
-    getUserId()
-    }, [])
-    
-    const getUserId = async () => {
-        const token = await localStorage.usertoken
-        const decoded = await jwt_decode(token)
-        console.log(decoded)
-        setUserId({
-        id : decoded.user._id
-        })
-    }
     const handleChangeOne = () => {
         setCheckedOne(true);
     }
-
+    console.log(donationToPayment.firstName)
+    
     const createDonation = (e) => {
             e.preventDefault()
 
@@ -39,9 +21,8 @@ const Donate3 = () => {
                     eventTitle: donationToPayment.eventTitle,
                     createdBy: donationToPayment.createdBy,
                     donations: {
-                        donatedBy: userId,
+                        donatedBy: donationToPayment.donatedBy.userId,
                         amount: donationToPayment.donationAmount,
-                        //paymentMethod : 
                         comments: checkedOne,
             }
         }
@@ -50,7 +31,7 @@ const Donate3 = () => {
         donationUpload(newDonation)
         //navigate('./DonationThanks')
     }
-console.log(donationToPayment.createdBy)
+
     return (
             <>
             <h3> I like my donation and First Name, Surname  <br></br> to be seen on the Ethereum blockchain so I inspire others to donate as well.

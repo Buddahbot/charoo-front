@@ -10,7 +10,6 @@ import { data } from "jquery";
 
 const Up2 = () => {
     const [event, setEvent] = useContext(EventContext)
-
     const [eventTitle, setEventTitle] = useState()
     const [description, setDescription] = useState()
     const [loading, setLoading] = useState(false)
@@ -88,12 +87,6 @@ const Up2 = () => {
                                         <i className="fa fs-3 fa-cloud-upload" /> <br /> Choose picture
 
                                     </label>
-
-                                    {/* <div className="file-preview" >
-                                    <br />{imageData.original_filename}
-                                    </div> */}
-
-                                    {/* <button class="form-control btn btn-Upload submit fs-3 " >Upload</button> */}
 
                                 </div>
                                 {
