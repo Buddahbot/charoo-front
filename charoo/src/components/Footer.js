@@ -7,27 +7,23 @@ export default function Footer() {
     return (
         <div>
 
-            {/* <div className='logo'>
-                        <img src={Logo} height='190px' alt='Logo' />
-                    </div> */}
-
             <footer class="footer-clean">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-4 col-md-3 item">
                             <h3>Services</h3>
                             <ul>
-                                <li><a href="#">Web design</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">Hosting</a></li>
+                                <li><a href="/donate">Donate</a></li>
+                                <li><a href="#">Challenges</a></li>
+                                <li><a href="#">Partnerships</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-3 item">
-                            <h3>About</h3>
+                            <h3>About Us</h3>
                             <ul>
-                                <li><a href="#">Company</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Legacy</a></li>
+                                <li><a href="/about">Company</a></li>
+                                <li><a href="/about">Team</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-3 item">

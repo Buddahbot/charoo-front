@@ -15,14 +15,14 @@ const Up2 = () => {
     const [description, setDescription] = useState()
     const [loading, setLoading] = useState(false)
     const [imageData, setImageData] = useState({}); //for cloudinary
-    const [image, setImage] = useState("");//for cloudinary
     console.log(event)
 
     const uploadImage = (e) => {
-        setLoading(true);
         e.preventDefault()
+        setLoading(true);
+
         const data = new FormData()
-        data.append("file", image)
+        data.append("file", e.target.files[0])
         data.append("upload_preset", "wycqxffu")
         data.append("cloud_name", "dhwqgta90")
         fetch("https://api.cloudinary.com/v1_1/dhwqgta90/image/upload", {
@@ -30,9 +30,10 @@ const Up2 = () => {
             body: data
         })
             .then(resp => resp.json())
-            .then(data => {
-                setImageData(data);
+            .then(json => {
                 setLoading(false);
+                setImageData(json);
+
             })
             .catch(err => {
                 setLoading(false);
@@ -81,7 +82,9 @@ const Up2 = () => {
                                     <label className="custom-file-upload">
                                         <input type="file"
                                             multiple
-                                            style={{ display: 'none' }} onChange={(e) => setImage(e.target.files[0])} />
+                                            style={{ display: 'none' }}
+
+                                            onChange={uploadImage} />
                                         <i className="fa fs-3 fa-cloud-upload" /> <br /> Choose picture
 
                                     </label>
@@ -90,7 +93,7 @@ const Up2 = () => {
                                     <br />{imageData.original_filename}
                                     </div> */}
 
-                                    <button class="form-control btn btn-Upload submit fs-3 " onClick={uploadImage}>Upload</button>
+                                    {/* <button class="form-control btn btn-Upload submit fs-3 " >Upload</button> */}
 
                                 </div>
                                 {

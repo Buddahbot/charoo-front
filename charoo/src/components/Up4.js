@@ -32,8 +32,9 @@ const Up4 = () => {
         }
 
         eventUpload(newEvent) // passes newEvent as argument to function eventupload. eventUpload is sitting in logic/UserFunctions
-        //navigate('./Profile')
+        navigate('/Up5')
     }
+
     const goBack = () => {
         navigate("/Up3");
     }

@@ -16,11 +16,25 @@ import styled from "styled-components";
 const DivShare = styled.div`
 padding-right:10px;
 display:flex;
+justify-content: center;
+
 `;
 
 const DivShareInner = styled.div`
 display:inline-block;
 padding-right:10px;
+
+-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+
+
+&:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    
+  }
 `;
 
 const ShareRecipe = () => {

@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Bodoni+Moda:wght@800&display=swap');
 
 
+
 .home-container{
     background-color: white;
 }
 
 .header {
+    padding-left: 60px;
     height: 90vh;
-    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .what-to-do{

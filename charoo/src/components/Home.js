@@ -62,7 +62,7 @@ const Landing = () => {
 
             <div class="header img " style={{ backgroundImage: `url(${BG})` }}>
                 <div class="ftco-section">
-                    <div className="container">
+                    <div className="">
                         <div class=" row ">
                             <div class="col-md-6 col-lg-4">
                                 <div class=" login-wrap  ">
@@ -108,10 +108,10 @@ const Landing = () => {
                                         </div>
 
                                         <div className="form-group">
-                                            <input name="password" id="password" type="password" class="form-control inputbg-home  fs-3 " placeholder="Password" required aria-label="password" aria-describedby="basic-addon1" value={password}
+                                            <input name="password" id="password" type="password" class="form-control inputbg-home fs-3 " placeholder="Password" required aria-label="password" aria-describedby="basic-addon1" value={password}
                                                 onChange={(e) => setPassword(e.target.value)} />
 
-                                            <span class=" field-icon " onClick={password_show_hide}>
+                                            <span style={{ color: 'rgb(24, 22, 22)' }} class=" field-icon " onClick={password_show_hide}>
                                                 <i class="fa fs-2 fa-eye" id="show_eye"></i>
                                                 <i class="fa fs-2 fa-eye-slash d-none" id="hide_eye"></i>
                                             </span>
