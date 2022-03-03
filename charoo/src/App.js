@@ -1,7 +1,8 @@
 import AppRouter from './AppRouter'
 import { DonateController } from './context/DonateContext';
 import {EventController} from './context/EventContext'
-import {DonationToPaymentController} from './context/DonationToPaymentContext'
+import {DonationController} from './context/DonationContext'
+import {SingleEvController} from './context/SingleEvContext'
 // import react moralis
 
 function App() {
@@ -17,9 +18,11 @@ function App() {
 
       <EventController>
         <DonateController>
-          <DonationToPaymentController>
+          <DonationController>
+            <SingleEvController>
             <AppRouter />
-          </DonationToPaymentController>
+            </SingleEvController>
+          </DonationController>
         </DonateController>
       </EventController>
 

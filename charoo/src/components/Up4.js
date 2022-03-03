@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { EventContext } from '../context/EventContext';
 import { useNavigate } from 'react-router-dom'
 // import { NavLink } from "react-router-dom";
@@ -8,18 +8,21 @@ import '../stylesheets/Challenge.css'
 import '../stylesheets/LoginRegister.css'
 import Moment from 'moment';
 
+import axios from 'axios'
 
 const Up4 = () => {
     const [event, setEvent] = useContext(EventContext)
+    
 
     let navigate = useNavigate()
 
-    console.log(event)
+    // console.log(event)
     
  
     const createEvent = (e) => {
         e.preventDefault()
-
+        
+     
         const newEvent = {
             user: event.user,
             imageUrl: event.imageUrl,
@@ -33,11 +36,13 @@ const Up4 = () => {
             charity: event.charity,
             dateCreated: event.dateCreated,
         }
-        console.log(event.user.id)
-        console.log(newEvent)
-        eventUpload(newEvent) // passes newEvent as argument to function eventupload. eventUpload is sitting in logic/UserFunctions
-        //navigate('./Profile')
+        // console.log(event.user.id)
+        // console.log(newEvent)
+        eventUpload(newEvent)
     }
+
+
+
     const goBack = () => {
         navigate("/Up3");
     }
@@ -50,6 +55,8 @@ const Up4 = () => {
   
     return (
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
+
+
             <div class=" justify-content-center text-center ">
                 <h2 class="heading-section title-create-challenge">Create challenge - Step 4 / 4</h2>
             </div>
@@ -90,6 +97,7 @@ const Up4 = () => {
                                         <h4 className='item-preview'>
                                             <i class="fa fa-crosshairs py-3 mb-3"></i>
                                             <h4>{event.monetaryGoal} Euro</h4>
+
                                         </h4>
                                     </div>
                                 </div>
@@ -97,13 +105,20 @@ const Up4 = () => {
                                 <div className='event-info '>
                                     <h4 className=' d-flex text-center mt-5 '>
                                         {event.description}
+                                        {/* {singleEv.map((e) => {
+                                            return (
+                                                <>
+                                                    <h1>{e.data}</h1>
+                                                </>
+                                            )
+                                        })} */}
                                     </h4>
                                 </div>
 
                             </div>
-
+                    
                             <div class="form-group d-flex ">
-
+                            
                                 <button
                                     onClick={goBack}
                                     class="form-control btn-light btn btnSign-back submit fs-3 ">BACK</button>

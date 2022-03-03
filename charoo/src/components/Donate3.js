@@ -1,30 +1,28 @@
 import {useContext, useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
-import { DonationToPaymentContext } from '../context/DonationToPaymentContext';
+import { DonationContext } from '../context/DonationContext';
 import { donationUpload } from '../logic/UserFunctions';
 
 import jwt_decode from "jwt-decode";
 
 const Donate3 = () => {
-    const [donationToPayment, setDonationToPayment] = useContext(DonationToPaymentContext)
+    const [donation, setDonation] = useContext(DonationContext)
     const [checkedOne, setCheckedOne] = useState(false);
 
     const handleChangeOne = () => {
         setCheckedOne(true);
     }
-    console.log(donationToPayment.firstName)
+    console.log(typeof donation.amount)
     
     const createDonation = (e) => {
             e.preventDefault()
 
         const newDonation = {
-                    eventTitle: donationToPayment.eventTitle,
-                    createdBy: donationToPayment.createdBy,
-                    donations: {
-                        donatedBy: donationToPayment.donatedBy.userId,
-                        amount: donationToPayment.donationAmount,
-                        comments: checkedOne,
-            }
+                    eventTitle: donation.eventTitle,
+                    createdBy: donation.createdBy,
+                    donatedBy: donation.donatedBy,
+                    amount: donation.amount,
+                    comments: checkedOne,
         }
         console.log(newDonation)
 

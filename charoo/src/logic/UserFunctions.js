@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import { useState } from 'react';
 
 
 export const register = abc => {
@@ -33,7 +33,9 @@ export const userInfo = (userId) => {
 }
 
 export const eventUpload = event => {
-    console.log(event)
+
+
+    // console.log(event)
     return axios.post('https://charoo.herokuapp.com/event/create', {
                 user: event.user,
                 sportstype : event.sportstype,
@@ -50,11 +52,11 @@ export const eventUpload = event => {
     .then(res => console.log('event created'))
     .catch(err => console.log(err))
 }
-//this posts on mongoDB through backEnd
+
 
 export const events = async () => {
     try {
-        const res = await axios.get('https://charoo.herokuapp.com/event')
+        const res = await axios.get('https://charoo.herokuapp.com/event/')
         console.log(res.data)
     } catch (err) {
         console.error(err)
@@ -69,9 +71,9 @@ export const donationUpload = donation => {
                 eventTitle : donation.eventTitle,
                 createdBy : donation.createdBy,
                 donations: {
-                            donatedBy: donation.userId,
-                            date: donation.date,
-                            amount: donation.donationAmount,
+                            donatedBy: donation.donatedBy,
+                            
+                            amount: parseInt(donation.amount), // important to parseInt to make it a number, not string
                             //payMethod : donation.donations.payMethod,
                             comments: donation.checkedOne,
                             }

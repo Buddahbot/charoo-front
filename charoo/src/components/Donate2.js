@@ -1,13 +1,13 @@
 import { useContext, useState, useEffect  } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { DonateContext } from '../context/DonateContext';
-import { DonationToPaymentContext } from '../context/DonationToPaymentContext';
+import { DonationContext } from '../context/DonationContext';
 import jwt_decode from "jwt-decode";
 
 const Donate2 = () => {
     const [data, setData] = useContext(DonateContext)
-    const [donationToPayment, setDonationToPayment] = useContext(DonationToPaymentContext)
-    const [donationAmount, setDonationAmount] = useState('')
+    const [donation, setDonation] = useContext(DonationContext)
+    const [amount, setAmount] = useState()
 
     const { id } = useParams();
       
@@ -39,30 +39,29 @@ const Donate2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     
-    setDonationToPayment({
+    setDonation({
       eventTitle: tempEvent.eventTitle,
       createdBy: tempEvent.user._id,
-      donatedBy: userId,
-      donationAmount: donationAmount,
+      donatedBy: userId.id,
+      amount: amount,
       }
     )
 
     navigate('/Donate3')
 
-    console.log(donationToPayment)
+    console.log(typeof amount)
 }
 console.log(tempEvent) // EVENT OF CREATOR + USER OBJECT 
     return (
       <div><h1>Donating Monster {userId.firstName} </h1>
 
-       
         <p><img src={tempEvent.imageUrl} style={{ width: "300px" }}></img></p>
         <h1>Challenge Title: {tempEvent.eventTitle}</h1>
         <h1>Start: {tempEvent.dateCreated}</h1>
         <h1>Description: {tempEvent.description}</h1>
         
         <form onSubmit={handleSubmit} >
-        <input value={donationAmount} placeholder='Amount you donate' onChange={(e) => setDonationAmount(e.target.value)} />
+        <input value={amount} placeholder='Amount you donate' type='number' onChange={(e) => setAmount(e.target.value)} />
         <button type='submit'>Donate Now</button>
         </form>
 
