@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { EventContext } from '../context/EventContext';
 import { useNavigate } from 'react-router-dom'
 // import { NavLink } from "react-router-dom";
@@ -7,7 +7,7 @@ import BG from '../Img/shoes.jpg'
 import '../stylesheets/Challenge.css'
 import '../stylesheets/LoginRegister.css'
 import Moment from 'moment';
-
+import axios from 'axios'
 
 const Up4 = () => {
     const [event, setEvent] = useContext(EventContext)
@@ -15,7 +15,6 @@ const Up4 = () => {
     let navigate = useNavigate()
 
     console.log(event)
-
 
     const createEvent = (e) => {
         e.preventDefault()
@@ -44,7 +43,6 @@ const Up4 = () => {
     }
 
     const changeTimeFormat = (date) => {
-        // return Moment(date).format('dddd, Do MMMM YYYY, h:mm a')
         return Moment(date).format('DD.MM.YYYY, h:mm a')
     }
 
@@ -98,6 +96,13 @@ const Up4 = () => {
                                 <div className='event-info '>
                                     <h4 className=' d-flex text-center mt-5 '>
                                         {event.description}
+                                        {/* {singleEv.map((e) => {
+                                            return (
+                                                <>
+                                                    <h1>{e.data}</h1>
+                                                </>
+                                            )
+                                        })} */}
                                     </h4>
                                 </div>
 

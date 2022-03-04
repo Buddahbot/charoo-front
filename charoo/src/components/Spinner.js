@@ -8,7 +8,7 @@ function Spinner() {
             <div class="spin" id="loader2"></div>
             <div class="spin" id="loader3"></div>
             <div class="spin" id="loader4"></div>
-            <span id="text">LOADING...</span>
+            <span id="text">Loading...</span>
 
         </div>
     )

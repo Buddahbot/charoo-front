@@ -2,6 +2,7 @@
 .spin-container {
   text-align: center;
   margin-top: 100px;
+  height: 280px !important;
 }
 .spin {
   /* border: 3px solid #0d4b9f; */
@@ -63,7 +64,7 @@
   }
 }
 #text {
-  color: #1f1d20;
+  color: #3f0a5a;
   font-family: Arial;
   font-size: 15px;
   position: relative;

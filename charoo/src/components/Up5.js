@@ -5,8 +5,9 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import CountDown from './CountDown';
 import '../stylesheets/App.css'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
-// import { NavLink } from "react-router-dom";
+import { useContext, useState, useEffect } from 'react';
+import axios from 'axios'
+import jwt_decode from 'jwt-decode';
 // import ReactDOM from "react-dom";
 // import FaFacebook from "react-icons/lib/fa/facebook";
 // import { ShareButton } from "react-custom-share";
@@ -14,8 +15,56 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export default function Up5() {
 
+    const [user, setUser] = useState({
+        id: "",
+
+    })
+    const [events, setEvents] = useState([])
+
+
+    useEffect(() => {
+        getUserInfo()
+        shareEvent()
+        //filterEvent()
+    }, [])
+
+    const getUserInfo = async () => {
+        const token = await localStorage.usertoken
+        const decoded = await jwt_decode(token)
+        // console.log(decoded)
+        setUser({
+            id: decoded.user._id,
+        })
+    }
+
+    console.log(user.id)
+
+    const shareEvent = async () => {
+        try {
+            await axios.get('https://charoo.herokuapp.com/event')
+                .then(res => setEvents(res.data))
+                .then(() => filterEvent())
+        } catch {
+            console.log('error')
+        }
+    }
+
+
+    console.log(events)
+
+    const iD = '621e3781d083ddd88c83ad59'
+
+    const filterEvent = () => {
+        const userEvents = events.data.filter(event => event.user._id === iD)
+        console.log(userEvents)
+    }
+
+    // return eachObj => eachObj.user._id === iD
+
+    // link to copy : 
     let link = 'https://discord.com/channels/641221910146842644/907894478885507082'
 
+    // countdown:
     let state = {
         value: '',
         copied: false,
