@@ -1,27 +1,18 @@
 import { useContext, useState, useEffect} from 'react';
-
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode';
-// import { NavLink } from "react-router-dom";
-// import ReactDOM from "react-dom";
-// import FaFacebook from "react-icons/lib/fa/facebook";
-// import { ShareButton } from "react-custom-share"
+
 const Up5 = props => {
-     
-      const [user, setUser] = useState({
-        id : "",
-        
-    })
+      
     const [events, setEvents] = useState([])
-
-
-    useEffect(() => {
-    getUserInfo()
-      shareEvent()
-      //filterEvent()
-    }, [])
-
+    const [loading, setLoading] = useState(true)
+    
+    const [user, setUser] = useState({
+              id : "",
+              
+    })
+  
     const getUserInfo = async () => {
         const token = await localStorage.usertoken
         const decoded = await jwt_decode(token)
@@ -31,42 +22,47 @@ const Up5 = props => {
         })
     }    
 
-console.log(user.id)
+  console.log(user.id)
+      
+    useEffect(() => {
+        getUserInfo()
+        shareEvent()
 
-  
-  
-    const shareEvent = async () => {
-      try {
-        await axios.get('https://charoo.herokuapp.com/event')        
-          .then(res => setEvents(res.data))         
-          .then(() => filterEvent())
-    } catch {
-      console.log('error')
-      }
-    }
+    }, []) 
+
+  const shareEvent = async () => {
+    //const iD = '621e3781d083ddd88c83ad59'
+          const iD = user.id
+            console.log(user.id)
+          try { 
+              await axios.get('https://charoo.herokuapp.com/event')        
+                .then((res) => {
+                  setLoading(false)
+                  setEvents(res.data.data.filter(event => event.user._id === iD.toString))
+                  
+                }) 
                 
-            
-  
+          } catch {
+            console.log('error')
+            }
+          }     
   console.log(events)
+  
+  
 
-  const iD = '621e3781d083ddd88c83ad59'
+  
+  
 
-  const filterEvent = () => {
-        const userEvents = events.data.filter(event => event.user._id === iD)
-        console.log(userEvents)
-  }
-
+  
     // return eachObj => eachObj.user._id === iD
- 
-  
 
-  
   return (
       <div>
 
 
 
-          Hello
+      Hello
+    <br></br>
           {user.id}
           
       </div>
