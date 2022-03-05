@@ -36,13 +36,15 @@ width: auto;
 margin-bottom: 6%;
 margin-top: 6%;
 font-size: 40px;
+border-top: white 2px solid;
+border-bottom: white 2px solid;
+ background-color: rgba(0, 0, 0, 0.534);
 }
 
 .subtitle-create-challenge{
     color: rgb(66, 64, 64);
     text-shadow: 10px 10px 15px rgba(23, 23, 23, 0.336);
     font-size: 30px;
-    
 }
 
 .btn-charity{
@@ -58,8 +60,9 @@ font-size: 40px;
     background: linear-gradient(to left, rgb(112, 101, 214), rgb(230, 106, 213));
     border: 2px solid #ccc;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 8px 14px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .custom-file-upload:hover{

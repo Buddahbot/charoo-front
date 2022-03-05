@@ -1,0 +1,39 @@
+.container-event{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* height: 95vh; */
+}
+
+.img-event{
+   
+    width: 80%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    text-transform: uppercase;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+     
+}
+
+.title-event h1 {
+font-size: 50px;
+color:white;
+width: 100%;
+align-items: flex-start;
+width: 100%;
+border-top: white 3px solid;
+border-bottom: white 3px solid;
+ background-color: rgba(0, 0, 0, 0.473);
+}
+
+.event-details-where{
+    display: flex;
+    flex-direction: row;
+}

@@ -84,7 +84,7 @@ const Up2 = () => {
                                             style={{ display: 'none' }}
 
                                             onChange={uploadImage} />
-                                        <i className="fa fs-3 fa-cloud-upload" /> <br /> Choose picture
+                                        <i className="fa fs-2 fa-cloud-upload" /> <br /> Choose picture
 
                                     </label>
 

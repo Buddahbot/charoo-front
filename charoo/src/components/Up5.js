@@ -95,7 +95,7 @@ export default function Up5() {
 
                     <h5>or just click on the one of the icons:</h5>
 
-                    <h5 >  <Share /></h5>
+                    <h5>  <Share /></h5>
 
                     <div className='w-100 d-flex flex-row text-center justify-content-center pt-5 '>
                         <div style={{ width: '60%' }} class="form-group d-flex ">

@@ -17,6 +17,7 @@ import Up5 from "./components/Up5"
 import Donate from "./components/Donate";
 import Donate2 from "./components/Donate2";
 import Donate3 from "./components/Donate3";
+import EventPage from "./components/EventPage";
 
 const AppRouter = () => {
   return (
@@ -35,6 +36,7 @@ const AppRouter = () => {
         <Route exact path="/up3" element={<Up3 />} />
         <Route exact path="/up4" element={<Up4 />} />
         <Route exact path="/up5" element={<Up5 />} />
+        <Route exact path="/event" element={<EventPage />} />
         <Route exact path="/donate" element={<Donate />} />
         <Route exact path="/donate2/:id" element={<Donate2 />} />
         <Route exact path="/donate3" element={<Donate3 />} />
