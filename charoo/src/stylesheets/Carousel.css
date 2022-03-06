@@ -1,7 +1,8 @@
 
 
 .carousele-item {
-    height: 38vh;
+    /* height: 38vh; */
+    height: 250px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -13,13 +14,13 @@
     justify-content: center;
     align-items: flex-end;
     box-shadow: 10px 10px 15px rgba(23, 23, 23, 0.9);
-  
 
   -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
     }
+
 
 .carousele-margin {
      margin-bottom: 100px;
@@ -31,6 +32,13 @@
       margin-bottom: 100px;
       margin-top: 20%;
       margin-right: 25px;
+     }
+
+
+.carousele-item:focus {
+  border: 4px rgb(0, 89, 255) solid;
+  -webkit-transform: scale(1.3);
+  transform: scale(1.1);
      }
 
 .carousele-item:hover {

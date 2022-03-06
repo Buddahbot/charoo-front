@@ -50,7 +50,7 @@ const Up4 = () => {
     return (
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
             <div class=" justify-content-center text-center ">
-                <h2 class="heading-section title-create-challenge">Create challenge - Step 4 / 4</h2>
+                <h2 class="heading-section title-create-challenge">Create Challenge - Step 4 / 4</h2>
             </div>
             <div className='whiteboard form-challenge' >
                 <div class="justify-content-center text-center">

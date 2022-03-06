@@ -22,6 +22,8 @@ const Up3 = () => {
     const [charity, setCharity] = useState(event.charity)
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const chevronWidth = 80;
+    const [style, setStyle] = useState("carousele-item carousele-charity-margin");
+
 
 
     let navigate = useNavigate();
@@ -40,6 +42,9 @@ const Up3 = () => {
         navigate("/Up2");
     }
 
+    const changeStyle = () => {
+        setStyle("carousele-item-active carousele-charity-margin");
+    };
 
     // setCharity('unicef')
 
@@ -74,39 +79,39 @@ const Up3 = () => {
                         >
 
                             <div style={{ textDecoration: 'none' }} onClick={(e) => setCharity('Unicef')} >
-                                <div className='carousele-item carousele-charity-margin ' style={{ backgroundImage: `url(${BG1})` }}>
+                                <div tabindex="-1" className='carousele-item carousele-charity-margin ' style={{ backgroundImage: `url(${BG1})` }} >
                                 </div>
                             </div>
 
                             <div style={{ textDecoration: 'none' }} onClick={(e) => setCharity("American Red Cross")} >
-                                <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG2})` }} >
+                                <div tabindex="-1" className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG2})` }} >
                                 </div>
                             </div>
 
                             <div style={{ textDecoration: 'none' }} onClick={(e) => setCharity('WCS')} >
-                                <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG3})` }}  >
+                                <div tabindex="-1" className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG3})` }}  >
                                 </div>
                             </div>
 
                             <div style={{ textDecoration: 'none' }} onClick={(e) => setCharity('WFF')} >
-                                <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG4})` }} >
+                                <div tabindex="-1" className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG4})` }} >
                                 </div>
                             </div>
 
                             <div style={{ textDecoration: 'none' }} onClick={(e) => setCharity('Direct Relief')} >
-                                <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG5})` }} >
+                                <div tabindex="-1" className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG5})` }} >
                                 </div>
                             </div>
 
                             <div style={{ textDecoration: 'none' }} onClick={(e) => setCharity('IUCN')} >
-                                <div className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG6})` }} >
+                                <div tabindex="-1" className='carousele-item carousele-charity-margin' style={{ backgroundImage: `url(${BG6})` }} >
                                 </div>
                             </div>
 
                         </ItemsCarousel>
                     </div>
                     <div>
-                        <h1> You selected: {charity}  </h1><br></br>
+
                     </div>
 
                     <div class="form-group btn-charity d-flex">
