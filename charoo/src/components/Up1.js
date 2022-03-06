@@ -10,11 +10,12 @@ import '../stylesheets/LoginRegister.css'
 
 const Up1 = () => {
     const [event, setEvent] = useContext(EventContext)
-    const [sportstype, setSportstype] = useState('')
-    const [distance, setDistance] = useState(Number)
-    const [start, setStart] = useState(Date)
-    const [country, setCountry] = useState('')
-    const [monetaryGoal, setMonetaryGoal] = useState(Number)
+    console.log(event)
+    const [sportstype, setSportstype] = useState(event.sportstype)
+    const [distance, setDistance] = useState(event.distance)
+    const [start, setStart] = useState(event.start)
+    const [country, setCountry] = useState(event.country)
+    const [monetaryGoal, setMonetaryGoal] = useState(event.monetaryGoal)
     const [user, setUser] = useState({
         id : "",
         
@@ -62,14 +63,15 @@ const Up1 = () => {
                             <div class="form-group">
 
                                 <input type="text" class="form-control fs-3 inputbg-home"
-
-                                    value={sportstype} placeholder='Type of Running Sport' onChange={(e) => setSportstype(e.target.value)}
-
+                                    value={sportstype}
+                                    placeholder='Type of Running Sport' 
+                                    onChange={(e) => setSportstype(e.target.value)}
                                     required />
                             </div>
 
                             <div class="form-group">
                                 <input type="text" class="form-control  fs-3 inputbg-home"
+                                    value={distance}
                                     onFocus={(e) => e.target.type = 'number'}
                                     onChange={e => setDistance(e.target.value)}
                                     min="0"
@@ -79,16 +81,20 @@ const Up1 = () => {
 
                             <div class="form-group">
                                 <input
-                                    type="text"
-                                    onFocus={(e) => e.target.type = 'datetime-local'} class="form-control  fs-3 inputbg-home"
-                                    placeholder='Starting Date' onChange={(e) => setStart(e.target.value)}
+                                    type="text" class="form-control  fs-3 inputbg-home"
+                                    value={start}
+                                    onFocus={(e) => e.target.type = 'datetime-local'}
+                                    onChange={(e) => setStart(e.target.value)} 
+                                    placeholder='Starting Date' 
                                     required />
                             </div>
 
                             <div class="form-group">
 
                                 <input type="text" class="form-control  fs-3 inputbg-home"
-                                    value={country} placeholder='Place e.g. Berlin, Germany' onChange={(e) => setCountry(e.target.value)}
+                                    value={country} 
+                                    placeholder='Place e.g. Berlin, Germany' 
+                                    onChange={(e) => setCountry(e.target.value)}
                                     required />
                             </div>
 
@@ -97,8 +103,10 @@ const Up1 = () => {
 
                                 <input type="text"
                                     min="5" max="5000" class="form-control  fs-3 inputbg-home"
+                                    value={monetaryGoal}
                                     onFocus={(e) => e.target.type = 'number'}
-                                    placeholder='Donation Goal in Euro ' onChange={(e) => setMonetaryGoal(e.target.value)}
+                                    placeholder='Donation Goal in Euro ' 
+                                    onChange={(e) => setMonetaryGoal(e.target.value)}
                                     required />
                             </div>
 
