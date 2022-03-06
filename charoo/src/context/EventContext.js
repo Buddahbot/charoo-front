@@ -5,7 +5,7 @@ export const EventContext = createContext()
 export const EventController = (props) => {
 
     const [event, setEvent] = useState({
-        
+
         imageUrl: '',
         sportstype: '',
         distance: '',

@@ -17,12 +17,12 @@ const Up1 = () => {
     const [country, setCountry] = useState(event.country)
     const [monetaryGoal, setMonetaryGoal] = useState(event.monetaryGoal)
     const [user, setUser] = useState({
-        id : "",
-        
+        id: "",
+
     })
 
     useEffect(() => {
-    getUserInfo()
+        getUserInfo()
     }, [])
 
     const getUserInfo = async () => {
@@ -32,9 +32,9 @@ const Up1 = () => {
         setUser({
             id: decoded.user._id,
         })
-    }    
-        let navigate = useNavigate();
- 
+    }
+    let navigate = useNavigate();
+
     console.log(user.id)
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -52,7 +52,7 @@ const Up1 = () => {
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
 
             <div class=" justify-content-center text-center ">
-                <h2 class="heading-section title-create-challenge">Create challenge - Step 1 / 4</h2>
+                <h2 class="heading-section title-create-challenge">Create Challenge - Step 1 / 4</h2>
             </div>
             <div className='whiteboard form-challenge' >
                 <div class="row  justify-content-center  ">
@@ -64,7 +64,7 @@ const Up1 = () => {
 
                                 <input type="text" class="form-control fs-3 inputbg-home"
                                     value={sportstype}
-                                    placeholder='Type of Running Sport' 
+                                    placeholder='Type of Running Sport'
                                     onChange={(e) => setSportstype(e.target.value)}
                                     required />
                             </div>
@@ -84,16 +84,16 @@ const Up1 = () => {
                                     type="text" class="form-control  fs-3 inputbg-home"
                                     value={start}
                                     onFocus={(e) => e.target.type = 'datetime-local'}
-                                    onChange={(e) => setStart(e.target.value)} 
-                                    placeholder='Starting Date' 
+                                    onChange={(e) => setStart(e.target.value)}
+                                    placeholder='Starting Date'
                                     required />
                             </div>
 
                             <div class="form-group">
 
                                 <input type="text" class="form-control  fs-3 inputbg-home"
-                                    value={country} 
-                                    placeholder='Place e.g. Berlin, Germany' 
+                                    value={country}
+                                    placeholder='Place e.g. Berlin, Germany'
                                     onChange={(e) => setCountry(e.target.value)}
                                     required />
                             </div>
@@ -105,7 +105,7 @@ const Up1 = () => {
                                     min="5" max="5000" class="form-control  fs-3 inputbg-home"
                                     value={monetaryGoal}
                                     onFocus={(e) => e.target.type = 'number'}
-                                    placeholder='Donation Goal in Euro ' 
+                                    placeholder='Donation Goal in Euro '
                                     onChange={(e) => setMonetaryGoal(e.target.value)}
                                     required />
                             </div>

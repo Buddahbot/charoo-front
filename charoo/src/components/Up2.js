@@ -10,8 +10,8 @@ import { data } from "jquery";
 
 const Up2 = () => {
     const [event, setEvent] = useContext(EventContext)
-    const [eventTitle, setEventTitle] = useState()
-    const [description, setDescription] = useState()
+    const [eventTitle, setEventTitle] = useState(event.eventTitle)
+    const [description, setDescription] = useState(event.description)
     const [loading, setLoading] = useState(false)
     const [imageData, setImageData] = useState({}); //for cloudinary
     console.log(event)
@@ -65,7 +65,7 @@ const Up2 = () => {
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
 
             <div class=" justify-content-center text-center ">
-                <h2 class="heading-section title-create-challenge">Create challenge - Step 2 / 4 </h2>
+                <h2 class="heading-section title-create-challenge">Create Challenge - Step 2 / 4 </h2>
             </div>
             <div className='whiteboard form-challenge' >
                 <div class="row  justify-content-center  ">

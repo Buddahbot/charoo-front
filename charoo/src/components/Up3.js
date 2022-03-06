@@ -19,7 +19,7 @@ import BG6 from '../Img/IUCN.jpg'
 const Up3 = () => {
 
     const [event, setEvent] = useContext(EventContext)
-    const [charity, setCharity] = useState('')
+    const [charity, setCharity] = useState(event.charity)
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const chevronWidth = 80;
 
@@ -49,7 +49,7 @@ const Up3 = () => {
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer-charity'>
 
             <div class=" justify-content-center text-center ">
-                <h2 class="heading-section title-create-challenge">Create challenge - Step 3 / 4 </h2>
+                <h2 class="heading-section title-create-challenge">Create Challenge - Step 3 / 4 </h2>
             </div>
             <div className='whiteboard form-challenge' >
 
