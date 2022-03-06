@@ -1,0 +1,65 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+.header-container2 {
+    height: 90vh !important;
+  text-align:center;
+  background-image: url('../Img/pll2.jpg');
+  background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+  color:rgb(243, 243, 243);
+  font-family:'Roboto';
+  font-weight:800;
+  font-size:70px;
+  padding-top:40vh;
+  height:300px;
+  overflow:hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
+  
+}
+
+.header-container2 div {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.header-container2 div:first-of-type {   
+  animation: showup 7s infinite;
+}
+
+.header-container2 div:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+.header-container2 div:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+  
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-400px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:70%}
+    80% {opacity:1;}
+    100% {opacity:0;width:80%;}
+}
+ */

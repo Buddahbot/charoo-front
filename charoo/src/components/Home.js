@@ -8,6 +8,7 @@ import Carousel from './Carousel'
 import '../stylesheets/App.css'
 import Donate from '../Img/headerpic1.jpg'
 import Sport from '../Img/run.jpg'
+import Header from './Header'
 
 const Landing = () => {
 
@@ -68,7 +69,7 @@ const Landing = () => {
                                 <div class=" login-wrap  ">
 
                                     <div class=" justify-content-center text-center mb-5">
-                                        <h2 style={{ fontSize: '4vh' }} class="heading-section headerTitle pb-5 hover14 ">Welcome to Charoo!</h2>
+                                        <h2 style={{ fontSize: '4vh', borderTop: "white 2px solid", borderBottom: "white 2px solid", backgroundColor: "rgba(0, 0, 0, 0.534)", marginBottom: '20px' }} class="  heading-section headerTitle hover14 ">Welcome to Charoo!</h2>
                                     </div>
                                     <form class="signin-form" noValidate onSubmit={createUser}>
                                         <div className="form-group">
