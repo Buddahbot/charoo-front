@@ -1,9 +1,40 @@
 import React from 'react'
 import Logo2 from '../Img/logo4.png'
 import '../stylesheets/Navbar.css'
+import { useState, useEffect } from "react";
+import jwt_decode from "jwt-decode";
+
 
 export default function Navbar2() {
 
+    const [user, setUser] = useState({
+      firstName: ""
+    });
+    const [loading, setLoading]= useState(true)
+
+    let loggedin = 'Login';
+    
+    useEffect(() => {
+        getUserInfo();
+      }, []);
+    
+    const getUserInfo = async () => {
+        try{
+            const token = await localStorage.usertoken;
+            token && setLoading(false)
+            const decoded = await jwt_decode(token);
+            console.log("decoded", decoded);
+            setUser({
+            firstName: decoded.user.firstName
+                    })
+                } catch (e) {
+                console.log(e)
+                 }
+             }
+    
+    if (loading === false) {loggedin = user.firstName}
+    else {loggedin = 'Login'}
+    console.log(loading)
 
     return (
         <div>
@@ -26,7 +57,7 @@ export default function Navbar2() {
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <a class="dropdown-item" href="/profile">My account</a>
-                                    <a class="dropdown-item" href="/login">Login</a>
+                                    <a class="dropdown-item" href="/login">{loggedin}</a>
                                     <a class="dropdown-item" href="/register">Join</a>
                                     <a class="dropdown-item" href="/about">About Us</a>
                                     <a class="dropdown-item" href="/howitworks">How It Works</a>
@@ -46,7 +77,8 @@ export default function Navbar2() {
                     <div id="navcol-2" style={{ justifyContent: "flex-end", marginLeft: '30%' }} class="collapse navbar-collapse">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a style={{ paddingLeft: '3px', paddingRight: '15px' }} class="nav-link" href="profile"><i class="fa fa-user-o fs-3 ms-auto"></i></a></li>
-                            <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link " href="login">Login</a></li>
+                            <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link " href="login">{loggedin}</a></li>
+
                             <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link" href="#">|</a></li>
                             <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '0px' }} class="nav-link" href="register">Join</a></li>
                         </ul> </div>

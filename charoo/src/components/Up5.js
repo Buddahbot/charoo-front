@@ -16,9 +16,9 @@ const Up5 = props => {
     const [user, setUser] = useState({
         id: "",
     })
+    const [loading, setLoading]= useState(true)
     useEffect(() => {
         getUserInfo()
-        shareEvent()
     }, [])
     // const [loading, setLoading] = useState(true)
 
@@ -29,6 +29,7 @@ const Up5 = props => {
         setUser({
             id: decoded.user._id,
         })
+        shareEvent()
     }
 
     const shareEvent = async () => {
@@ -38,8 +39,7 @@ const Up5 = props => {
             await axios.get('https://charoo.herokuapp.com/event')
                 .then((res) => {
                     setTroy(res.data.data)
-                    console.log(res.data.data)
-
+                    setLoading(false)
                     // console.log(res.data.data.filter(event => event.user._id = "621e3781d083ddd88c83ad59"))
                 })
         } catch (e) {
@@ -48,8 +48,11 @@ const Up5 = props => {
     }
 
 
+
+
+
     const usersFilter = troy.filter(e => e.user._id === user.id)
-    console.log('userID', user.id)
+    console.log(!loading && usersFilter[0]._id)
 
     // link to copy : 
     let link = 'https://discord.com/channels/641221910146842644/907894478885507082'
@@ -60,11 +63,15 @@ const Up5 = props => {
         copied: false,
     };
 
+
+
     return (
+     
         <div className='CreateChallengeContainer' style={{ backgroundImage: `url(${BG})` }}>
             <div class=" justify-content-center text-center ">
                 <h2 class="heading-section title-create-challenge">CONGRATULATIONS!</h2>
             </div>
+            
             <div className='whiteboard form-challenge' >
                 <div class=" d-flex flex-column text-center justify-content-center  ">
 
@@ -79,23 +86,27 @@ const Up5 = props => {
 
                         <h5 className='font-weight-bold'></h5>
 
-                        {usersFilter && usersFilter.map(e => {
+                        
 
-                            return (
+                     {!loading && (
+                         
                                 <div style={{ display: 'flex' }}>
-                                    <a href={`http://localhost:3000/event/${e._id}`} target='_blank'>Event link here : {e._id}</a>
-                                </div>
-                            )
-                        }
-                        )
-                        }
+                                    <a href={`http://localhost:3000/donate2/${usersFilter[0]._id}`} target='_blank'>your last event</a>
+                               
+                                    <CopyToClipboard text={`http://localhost:3000/donate2/${usersFilter[0]._id}`}>
+                                     <button className='btn-light btn' style={{ width: '40px', height: '30px' }}>Copy</button>
+                                    </CopyToClipboard>
+                                 </div>
+                                 
+                     )}
 
-                        <CopyToClipboard text={link}>
-                            <button className='btn-light btn' style={{ width: '40px', height: '30px' }}>Copy</button>
-                        </CopyToClipboard>
+                 
+          
+
+                      
                     </div>
 
-                    <h5>or just click on the one of the icons:</h5>
+                    <h5>or just click on one of the icons:</h5>
 
                     <h5>  <Share /></h5>
 
