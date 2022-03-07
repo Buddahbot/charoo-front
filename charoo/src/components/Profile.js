@@ -1,35 +1,63 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import jwt_decode from "jwt-decode";
+import axios from 'axios'
+import { useNavigate, Link } from 'react-router-dom';
+import { ProfileContext } from "../context/ProfileContext";
+import { DonateContext } from "../context/DonateContext";
 import BG from '../Img/monstera.jpg'
-import { NavLink, useNavigate } from 'react-router-dom';
 import '../stylesheets/Challenge.css'
 import pic from '../Img/p.jpg'
 
+
 const Profile = () => {
 
-  const [details, setDetails] = useState({
+  const [data, setData] = useContext(ProfileContext)
+  const [troy, setTroy] = useState([])
+  const [user, setUser] = useState({
     id: "",
     firstName: "",
     lastName: "",
     email: "",
   });
 
+  console.log(data)
   useEffect(() => {
-    getProfil();
+    getUserInfo();
+
   }, []);
 
-  const getProfil = async () => {
+  const getUserInfo = async () => {
     const token = await localStorage.usertoken;
     const decoded = await jwt_decode(token);
-    console.log(decoded);
-    setDetails({
+    console.log("decoded", decoded);
+    setUser({
       id: decoded.user._id,
       firstName: decoded.user.firstName,
       lastName: decoded.user.lastName,
       email: decoded.user.email,
     })
+  }
 
-  };
+
+  const shareEvent = async () => {
+    const iD = '621e3781d083ddd88c83ad59'
+    const iDnew = user.id
+    try {
+      await axios.get('https://charoo.herokuapp.com/event')
+        .then((res) => {
+          setTroy(res.data.data)
+          // console.log(res.data.data)
+
+          // console.log(res.data.data.filter(event => event.user._id = "621e3781d083ddd88c83ad59"))
+        })
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+
+  const usersFilter = troy.filter(e => e.user._id === user.id)
+  console.log('userID', user.id)
 
   let navigate = useNavigate();
 
@@ -54,19 +82,19 @@ const Profile = () => {
             <tbody>
               <tr>
                 <td className="font-weight-bold">Id</td>
-                <td>{details.id}</td>
+                <td>{user.id}</td>
               </tr>
               <tr>
                 <td className="font-weight-bold"> First Name</td>
-                <td>{details.firstName}</td>
+                <td>{user.firstName}</td>
               </tr>
               <tr>
                 <td className="font-weight-bold"> Last Name</td>
-                <td>{details.lastName}</td>
+                <td>{user.lastName}</td>
               </tr>
               <tr>
                 <td className="font-weight-bold">Email</td>
-                <td>{details.email}</td>
+                <td>{user.email}</td>
               </tr>
             </tbody>
           </table>
@@ -80,8 +108,37 @@ const Profile = () => {
           </div>
         </div>
       </div >
-    </div>
-  );
-};
 
-export default Profile;
+
+      {usersFilter && usersFilter.map(e => {
+        return (
+          <div style={{ display: 'flex' }}>
+            <a href={`http://localhost:3000/event/${e._id}`} target='_blank'>Event link here : {e._id}</a>
+          </div>
+        )
+      }
+      )
+      }
+
+
+
+      <h1>DONATION MONSTER</h1>
+      {data.data.map((e) => {
+        if (e.donatedBy !== user.id)
+          return (
+            <Link to={`/donate2/${e._id}`}>
+              <ul>
+                <li>{e.eventTitle}</li>
+                <li>by {e.createdBy.firstName} {e.createdBy.lastName}</li>
+                <li>Amount you donated: {e.amount}</li>
+              </ul>
+            </Link>
+          )
+      })}
+    </div>
+
+  )
+}
+export default Profile
+
+

@@ -3,6 +3,7 @@ import { DonateController } from './context/DonateContext';
 import {EventController} from './context/EventContext'
 import {DonationController} from './context/DonationContext'
 import {SingleEvController} from './context/SingleEvContext'
+import { ProfileController } from './context/ProfileContext';
 // import react moralis
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       appId={process.env.NEXT_PUBLIC_APP_ID}
       serverUrl={process.env.NEXT_PUBLIC_SERVER_URL}
       initializeOnMount={false}> */}
-
+    <ProfileController>
       <EventController>
         <DonateController>
           <DonationController>
@@ -25,7 +26,7 @@ function App() {
           </DonationController>
         </DonateController>
       </EventController>
-
+    </ProfileController>
       {/* </MoralisProvider> */}
 
     </div>

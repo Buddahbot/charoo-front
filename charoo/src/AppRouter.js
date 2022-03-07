@@ -40,6 +40,8 @@ const AppRouter = () => {
         <Route exact path="/donate" element={<Donate />} />
         <Route exact path="/donate2/:id" element={<Donate2 />} />
         <Route exact path="/donate3" element={<Donate3 />} />
+
+
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 

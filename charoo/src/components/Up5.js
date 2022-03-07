@@ -9,24 +9,18 @@ import { useContext, useState, useEffect } from 'react';
 import axios from 'axios'
 import jwt_decode from 'jwt-decode';
 // import ReactDOM from "react-dom";
-// import FaFacebook from "react-icons/lib/fa/facebook";
-// import { ShareButton } from "react-custom-share";
 
-
-export default function Up5() {
-
+const Up5 = props => {
+    const [events, setEvents] = useState([])
+    const [troy, setTroy] = useState([])
     const [user, setUser] = useState({
         id: "",
-
     })
-    const [events, setEvents] = useState([])
-
-
     useEffect(() => {
         getUserInfo()
         shareEvent()
-        //filterEvent()
     }, [])
+    // const [loading, setLoading] = useState(true)
 
     const getUserInfo = async () => {
         const token = await localStorage.usertoken
@@ -37,29 +31,25 @@ export default function Up5() {
         })
     }
 
-    console.log(user.id)
-
     const shareEvent = async () => {
+        const iD = '621e3781d083ddd88c83ad59'
+        const iDnew = user.id
         try {
             await axios.get('https://charoo.herokuapp.com/event')
-                .then(res => setEvents(res.data))
-                .then(() => filterEvent())
-        } catch {
-            console.log('error')
+                .then((res) => {
+                    setTroy(res.data.data)
+                    console.log(res.data.data)
+
+                    // console.log(res.data.data.filter(event => event.user._id = "621e3781d083ddd88c83ad59"))
+                })
+        } catch (e) {
+            console.log(e)
         }
     }
 
 
-    console.log(events)
-
-    const iD = '621e3781d083ddd88c83ad59'
-
-    const filterEvent = () => {
-        const userEvents = events.data.filter(event => event.user._id === iD)
-        console.log(userEvents)
-    }
-
-    // return eachObj => eachObj.user._id === iD
+    const usersFilter = troy.filter(e => e.user._id === user.id)
+    console.log('userID', user.id)
 
     // link to copy : 
     let link = 'https://discord.com/channels/641221910146842644/907894478885507082'
@@ -71,7 +61,6 @@ export default function Up5() {
     };
 
     return (
-
         <div className='CreateChallengeContainer' style={{ backgroundImage: `url(${BG})` }}>
             <div class=" justify-content-center text-center ">
                 <h2 class="heading-section title-create-challenge">CONGRATULATIONS!</h2>
@@ -86,7 +75,20 @@ export default function Up5() {
 
                     <h5> Share the link now with your friends:</h5>
                     <div className='d-flex flex-row align-items-center text-center justify-content-center'>
-                        <h5 className='font-weight-bold'>{link}</h5>
+
+
+                        <h5 className='font-weight-bold'></h5>
+
+                        {usersFilter && usersFilter.map(e => {
+
+                            return (
+                                <div style={{ display: 'flex' }}>
+                                    <a href={`http://localhost:3000/event/${e._id}`} target='_blank'>Event link here : {e._id}</a>
+                                </div>
+                            )
+                        }
+                        )
+                        }
 
                         <CopyToClipboard text={link}>
                             <button className='btn-light btn' style={{ width: '40px', height: '30px' }}>Copy</button>
@@ -114,6 +116,9 @@ export default function Up5() {
             </div >
         </div >
 
-
     )
-}
+
+};
+
+
+export default Up5
