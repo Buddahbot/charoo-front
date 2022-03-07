@@ -11,7 +11,7 @@ export const DonateController = (props) => {
         try {
         await axios
             .get(
-            "https://charoo.herokuapp.com/event/?limit=21"
+            "https://charoo.herokuapp.com/event" ///?limit=21
             )
             .then((res) => {
             setData(res.data);

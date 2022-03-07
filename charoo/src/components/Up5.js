@@ -1,26 +1,22 @@
-import { useContext, useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode';
 // import { NavLink } from "react-router-dom";
 // import ReactDOM from "react-dom";
-// import FaFacebook from "react-icons/lib/fa/facebook";
-// import { ShareButton } from "react-custom-share"
+
 const Up5 = props => {
-     
-      const [user, setUser] = useState({
+
+  const [troy, setTroy] = useState([])
+  const [user, setUser] = useState({
         id : "",
-        
-    })
-    const [events, setEvents] = useState([])
-
-
+  })
     useEffect(() => {
-    getUserInfo()
+      getUserInfo()
       shareEvent()
-      //filterEvent()
-    }, [])
+      }, [])  
+    // const [loading, setLoading] = useState(true)
 
     const getUserInfo = async () => {
         const token = await localStorage.usertoken
@@ -31,43 +27,47 @@ const Up5 = props => {
         })
     }    
 
-console.log(user.id)
-
-  
-  
     const shareEvent = async () => {
-      try {
-        await axios.get('https://charoo.herokuapp.com/event')        
-          .then(res => setEvents(res.data))         
-          .then(() => filterEvent())
-    } catch {
-      console.log('error')
-      }
-    }
-                
-            
-  
-  console.log(events)
-
-  const iD = '621e3781d083ddd88c83ad59'
-
-  const filterEvent = () => {
-        const userEvents = events.data.filter(event => event.user._id === iD)
-        console.log(userEvents)
+      const iD = '621e3781d083ddd88c83ad59'
+      const iDnew = user.id
+    try {
+    await axios.get('https://charoo.herokuapp.com/event')        
+    .then((res) => {
+    setTroy(res.data.data)
+    console.log(res.data.data)
+    
+    // console.log(res.data.data.filter(event => event.user._id = "621e3781d083ddd88c83ad59"))
+    })
+} catch(e) {
+  console.log(e)
   }
+ } 
+ const usersFilter = troy.filter(e => e.user._id === user.id)
+ console.log('userID', user.id)
 
-    // return eachObj => eachObj.user._id === iD
- 
-  
-
-  
   return (
       <div>
-
-
-
-          Hello
+      Hello
+    <br></br>
           {user.id}
+      {/* {troy.map((e) => {
+            if (e.event.user._id !== user.id)
+            return (
+             <li>{e.user._id}</li>
+            )
+          })} */}
+          {/* {troy.filter(e => e.user._id === user.id)} */}
+        
+           {usersFilter && usersFilter.map(e => {
+           return(
+             <div style={{display : 'flex'}}>
+           <a href={`http://localhost:3000/event/${e._id}`} target='_blank'>Event link here : {e._id}</a>
+           </div>
+            )}
+           )
+            }
+          )
+          
           
       </div>
   )

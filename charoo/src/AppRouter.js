@@ -18,6 +18,8 @@ import Up5 from "./components/Up5"
 import Donate from "./components/Donate";
 import Donate2 from "./components/Donate2";
 import Donate3 from "./components/Donate3";
+import Deleteme from "./components/Deleteme"
+import AllEvents from "./components/AllEvents"
 
 const AppRouter = () => {
   return (
@@ -39,6 +41,8 @@ const AppRouter = () => {
         <Route exact path="/donate" element={<Donate />} />
         <Route exact path="/donate2/:id" element={<Donate2/>} />
         <Route exact path="/donate3" element={<Donate3 />} />
+        <Route exact path="/deleteme" element={<Deleteme />} />
+        <Route extact path="/allevents" element={<AllEvents />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 

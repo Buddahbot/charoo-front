@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { EventContext } from '../context/EventContext';
 import { useNavigate } from 'react-router-dom'
 // import { NavLink } from "react-router-dom";
@@ -7,12 +7,19 @@ import BG from '../Img/shoes.jpg'
 import '../stylesheets/Challenge.css'
 import '../stylesheets/LoginRegister.css'
 import Moment from 'moment';
+import jwt_decode from 'jwt-decode';
 
 import axios from 'axios'
 
 const Up4 = () => {
     const [event, setEvent] = useContext(EventContext)
-    
+    const [mumbai, setMumbai] = useState({})
+     
+    const [troy, setTroy] = useState({})
+      const [user, setUser] = useState({
+        id : "",
+        
+    })
 
     let navigate = useNavigate()
 
@@ -39,6 +46,10 @@ const Up4 = () => {
         // console.log(event.user.id)
         // console.log(newEvent)
         eventUpload(newEvent)
+        navigate("/up5");
+            
+        
+        
     }
 
 
@@ -47,12 +58,22 @@ const Up4 = () => {
         navigate("/Up3");
     }
 
+    
+    
     const changeTimeFormat = (date) => {
         // return Moment(date).format('dddd, Do MMMM YYYY, h:mm a')
         return Moment(date).format('DD.MM.YYYY, h:mm a')
     }
 
-  
+   
+
+    
+
+    
+      
+
+
+       
     return (
         <div style={{ backgroundImage: `url(${BG})` }} className='CreateChallengeContainer'>
 
