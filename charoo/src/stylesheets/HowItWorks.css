@@ -1,0 +1,31 @@
+.accordion-columns{
+width: 35%;
+margin: 20px;
+}
+
+.panel-heading {
+    background-color: white !important;
+
+    padding: 0px;
+}
+
+.panel-heading a {
+
+text-decoration: none !important;
+color: #212121;
+
+}
+
+.icons-question {
+    display: flex;
+ align-items: center;
+ justify-content: center;
+
+    /* width: 60px; */
+    color: rgb(185, 63, 63);
+    border-right: 1px rgb(221, 221, 221) solid;
+}
+
+.question{
+    padding: 10px 20px;
+}

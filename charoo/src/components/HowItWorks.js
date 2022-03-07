@@ -1,46 +1,130 @@
 import React from 'react'
 import BG from '../Img/white.jpg'
-// import '../stylesheets/howItWorks.css'
+import '../stylesheets/HowItWorks.css'
+import $ from 'jquery'
 
 
 export default function HowItWorks() {
+
+
     return (
-        <div style={{ height: '500px' }}>
-            <div class="accordion open " id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Accordion Item #1
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        <div style={{ height: '500px', width: '100%' }}>
+
+            <div class=" w-100 justify-content-center">
+                <h2 className='w-100'> FAQ's</h2>
+                <div className=' d-flex flex-row w-100 justify-content-center'>
+
+
+                    <div class="panel-group accordion-columns " id="accordion">
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <a className='d-flex  ' data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                    <div className='icons-question col-1 '> <i class="fa fa-question fs-4 "></i></div>
+                                    <h4 class="question col-10"> What if someone wants to create a very dangerous, life threatening challenge? </h4>
+                                    <div className='col-1 align-items-center text-center justify-content-center '><i class="fa fa-angle-down  fs-2"></i> </div>
+                                </a>
+
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">Unethical, dangerous challenges are never allowed to take place on Charoo!</div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <a className='d-flex' data-toggle="collapse" data-parent="#accordion" href="#collapse2"> <h4 class="question">Can I donate on Challenges I created myself?</h4> <i class="fa fa-angle-down fs-2"></i></a>
+
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">Yes.</div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <a className='d-flex' data-toggle="collapse" data-parent="#accordion" href="#collapse3"><h4 class="question">Can I use my donation to lower my income tax? </h4> <i class="fa fa-angle-down fs-2"></i></a>
+
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">Yes, this might be possible in your country. Please check with your tax department for further clarification.</div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <a className='d-flex' data-toggle="collapse" data-parent="#accordion" href="#collapse4"> <h4 class="question">Where can I find my lottery ticket?  </h4> <i class="fa fa-angle-down fs-2"></i></a>
+
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">You can find your ticket in "My Account/Lottery".</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Accordion Item #2
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+
+                    <div class="panel-group accordion-columns " id="accordion">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <a className='d-flex' data-toggle="collapse" data-parent="#accordion" href="#collapse5"><h4 class="question">What are the odds of me winning the Lottery as a Challenge Creator?  </h4> <i class="fa fa-angle-down fs-2"></i></a>
+
+                            </div>
+                            <div id="collapse5" class="panel-collapse collapse">
+                                <div class="panel-body">0.2% winning chance.</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <a className='d-flex' data-toggle="collapse" data-parent="#accordion" href="#collapse6"> <h4 class="question">What are the odds of me winning the Lottery as a Donator?</h4> <i class="fa fa-angle-down fs-2"></i></a>
+
+                            </div>
+                            <div id="collapse6" class="panel-collapse collapse">
+                                <div class="panel-body">This depends on the amount donated. The more you donate, the higher the winning chances.
+                                    Donators can see the winning chance of their lottery ticket on the lottery ticket itself. Check out "My Account/Lottery".</div>
+                            </div>
                         </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <a className='d-flex' data-toggle="collapse" data-parent="#accordion" href="#collapse7">  <h4 class="question">
+                                    How do I access my lottery winnings?</h4> <i class="fa fa-angle-down fs-2"></i></a>
+
+                            </div>
+                            <div id="collapse7" class="panel-collapse collapse">
+                                <div class="panel-body">Your lottery winnings are stored in an Ethereum address that you can access by downloading an external wallet such as Metamask plugin or Exodus wallet. The private keys to access the winnings that are on an Ethereum address and that you can access through the waller are stored in My Account/Lottery.</div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <a className='d-flex' data-toggle="collapse" data-parent="#accordion" href="#collapse8"><h4 class="question">
+                                    What if I don't pick up my winnings?  </h4> <i class="fa fa-angle-down fs-2"></i></a>
+
+                            </div>
+                            <div id="collapse8" class="panel-collapse collapse">
+                                <div class="panel-body">Our goal is to not waste any donation money that will not be picked up by a winner, for any reason. That's why we have programmed a smart contract that holds you private keys and will send those private keys to us in 1 year time (after the end of the lottery draw) if you haven't picked up your winnings.
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
