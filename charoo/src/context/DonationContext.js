@@ -8,8 +8,8 @@ export const DonationController = (props) => {
         eventTitle: '',
         createdBy: {},
         donatedBy: {},
-        donationAmount: Number,
-        comments: Boolean,
+        donationAmount: '',
+        comments: '',
         }
     );
 

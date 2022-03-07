@@ -8,10 +8,10 @@ export const EventController = (props) => {
         
         imageUrl: '',
         sportstype: '',
-        distance: Number,
-        start: Date,
+        distance: '',
+        start: '',
         country: '',
-        monetaryGoal: Number,
+        monetaryGoal: '',
         eventTitle: '',
         description: '',
         charity: '',

@@ -2,7 +2,11 @@ import React from 'react'
 import Logo2 from '../Img/logo4.png'
 import '../stylesheets/Navbar2.css'
 
+
+
 export default function Navbar2() {
+   
+
     return (
         <div>
             <nav class="navbar navbar-light navbar-expand-md navigation-clean">

@@ -70,13 +70,10 @@ export const donationUpload = donation => {
     return axios.post('https://charoo.herokuapp.com/donation/create', {
                 eventTitle : donation.eventTitle,
                 createdBy : donation.createdBy,
-                donations: {
-                            donatedBy: donation.donatedBy,
-                            
-                            amount: parseInt(donation.amount), // important to parseInt to make it a number, not string
-                            //payMethod : donation.donations.payMethod,
-                            comments: donation.checkedOne,
-                            }
+                donatedBy: donation.donatedBy,
+                amount: parseInt(donation.amount), // important to parseInt to make it a number, not string
+                //payMethod : donation.donations.payMethod,
+                comments: donation.checkedOne,
                 })
     .then(res => console.log('donation created'))
     .catch(err => console.log(err))

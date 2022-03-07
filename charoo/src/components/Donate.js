@@ -10,12 +10,6 @@ const Donate = ()=> {
 
     let navigate = useNavigate();
 
-    console.log(data)
-    
-    const handleClick = () => {
-        navigate('/donate2')
-    }
-    console.log(data)
     return (
         <>
             <h1>DONATION MONSTER</h1>

@@ -10,11 +10,11 @@ import '../stylesheets/LoginRegister.css'
 
 const Up1 = () => {
     const [event, setEvent] = useContext(EventContext)
-    const [sportstype, setSportstype] = useState('')
-    const [distance, setDistance] = useState(Number)
-    const [start, setStart] = useState(Date)
-    const [country, setCountry] = useState('')
-    const [monetaryGoal, setMonetaryGoal] = useState(Number)
+    const [sportstype, setSportstype] = useState(event.sportstype)
+    const [distance, setDistance] = useState(event.distance)
+    const [start, setStart] = useState(event.start)
+    const [country, setCountry] = useState(event.country)
+    const [monetaryGoal, setMonetaryGoal] = useState(event.monetaryGoal)
     const [user, setUser] = useState({
         id : "",
         
