@@ -37,6 +37,8 @@ export default function Navbar2() {
     else { loggedin = 'Login' }
     console.log(loading)
 
+    // log out :
+
     let navigate = useNavigate()
 
     const logOut = (e) => {

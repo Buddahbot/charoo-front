@@ -65,7 +65,7 @@ const Landing = () => {
                 <div class="ftco-section pb-5">
                     <div className="">
                         <div class=" row ">
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-md-6  col-lg-4">
                                 <div class=" login-wrap  ">
 
                                     <div class=" justify-content-center text-center mb-5">
