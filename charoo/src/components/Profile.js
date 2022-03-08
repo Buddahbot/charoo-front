@@ -12,7 +12,7 @@ import Moment from 'moment';
 
 const Profile = () => {
 
-  const [data, setData] = useContext(ProfileContext)
+  const [donna, setDonna] = useContext(ProfileContext)
   const [troy, setTroy] = useState([])
   const [user, setUser] = useState({
     id: "",
@@ -21,7 +21,7 @@ const Profile = () => {
     email: "",
   });
 
-  console.log(data)
+  
   useEffect(() => {
     getUserInfo();
 
@@ -222,7 +222,7 @@ const Profile = () => {
       <div className='grid'>
 
 
-        {data.data.map((e) => {
+        {donna.data.map((e) => {
           if (e.donatedBy === user.id)
             return (
 

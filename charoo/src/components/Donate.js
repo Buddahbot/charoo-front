@@ -44,7 +44,7 @@ const Donate = () => {
         return Moment(date).format('DD.MM.YYYY, h:mm a')
     }
 
-    console.log(data)
+  
     return (
         <div className='d-flex flex-column justify-content-center  ' style={{
             width: '100%', height: '', backgroundImage: `url(${BG})`, backgroundRepeat: "no-repeat",

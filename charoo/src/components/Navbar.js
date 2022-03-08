@@ -24,18 +24,18 @@ export default function Navbar2() {
             const token = await localStorage.usertoken;
             token && setLoading(false)
             const decoded = await jwt_decode(token);
-            console.log("decoded", decoded);
+            // console.log("decoded", decoded);
             setUser({
-                firstName: decoded.user.firstName
-            })
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
-    if (loading === false) { loggedin = user.firstName }
-    else { loggedin = 'Login' }
-    console.log(loading)
+            firstName: decoded.user.firstName
+                    })
+                } catch (e) {
+                console.log(e)
+                 }
+             }
+    
+    if (loading === false) {loggedin = user.firstName}
+    else {loggedin = 'Login'}
+    // console.log(loading)
 
     // log out :
 

@@ -5,7 +5,7 @@ import Profile from '../components/Profile';
 export const ProfileContext = createContext();
 
 export const ProfileController = (props) => {
-    const [data, setData] = useState([]);
+    const [donna, setDonna] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchDonations = async () => {
@@ -13,7 +13,7 @@ export const ProfileController = (props) => {
         await axios
             .get("https://charoo.herokuapp.com/donation")
             .then((res) => {
-            setData(res.data);
+            setDonna(res.data);
             });
             
         setLoading(false);
@@ -26,9 +26,9 @@ export const ProfileController = (props) => {
     useEffect(() => {
         fetchDonations();
     }, []);
-    console.log("data in profile context", data)
+  
     return (
-        <ProfileContext.Provider value={[data, setData]}>
+        <ProfileContext.Provider value={[donna, setDonna]}>
                 {!loading && props.children} 
                 {/* <Profile /> */}
         </ProfileContext.Provider>
