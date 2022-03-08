@@ -50,13 +50,14 @@ const Donate2 = () => {
     
         setDonation({
             eventTitle: tempEvent.eventTitle,
+            eventId: tempEvent._id,
             createdBy: tempEvent.user._id,
             donatedBy: userId.id,
             amount: amount,
         })
         navigate('/donate3')
     }
-
+console.log(tempEvent._id)
     const goBack = () => {
         navigate(-1);
     }

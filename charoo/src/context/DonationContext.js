@@ -8,6 +8,7 @@ export const DonationController = (props) => {
         eventTitle: '',
         createdBy: {},
         donatedBy: {},
+        eventId: '',
         donationAmount: Number,
         comments: Boolean,
         }

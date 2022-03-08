@@ -69,6 +69,7 @@ export const events = async () => {
 export const donationUpload = donation => {
     return axios.post('https://charoo.herokuapp.com/donation/create', {
                 eventTitle : donation.eventTitle,
+                eventId: donation.eventId,
                 createdBy : donation.createdBy,
                 donatedBy: donation.donatedBy,
                 amount: parseInt(donation.amount), // important to parseInt to make it a number, not string

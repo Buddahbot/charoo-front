@@ -2,6 +2,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import { DonateContext } from '../context/DonateContext';
+import { ProfileContext } from "../context/ProfileContext";
 import jwt_decode from "jwt-decode";
 import BG from '../Img/bg00.jpg'
 import '../stylesheets/EventList.css'
@@ -12,6 +13,7 @@ import Moment from 'moment';
 
 const Donate = () => {
     const [data, setData] = useContext(DonateContext)
+    const [donna, setDonna] = useContext(ProfileContext)
     const [userId, setUserId] = useState({      // ID of DONATION MONSTER 
         id: "",
         firstName: ""
