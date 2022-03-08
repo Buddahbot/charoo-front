@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { register } from '../logic/UserFunctions'
 import { NavLink, useNavigate } from 'react-router-dom'
-import BG from '../Img/hawaii.jpeg'
+import BG from '../Img/000.jpg'
 // import BG from '../Img/child-jogging.jpg'
 import '../stylesheets/Home.css'
 import Carousel from './Carousel'
@@ -69,7 +69,7 @@ const Landing = () => {
                                 <div class=" login-wrap  ">
 
                                     <div class=" justify-content-center text-center mb-5">
-                                        <h2 style={{ fontSize: '4vh', borderTop: "white 2px solid", borderBottom: "white 2px solid", backgroundColor: "rgba(0, 0, 0, 0.534)", marginBottom: '20px' }} class="  heading-section headerTitle hover14 ">Welcome to Charoo!</h2>
+                                        <h2 style={{ fontSize: '3vh', borderTop: "white 2px solid", borderBottom: "white 1px solid", backgroundColor: "rgba(0, 0, 0, 0.25)", marginBottom: '20px' }} class="  heading-section headerTitle hover14 ">Welcome to Charoo!</h2>
                                     </div>
                                     <form class="signin-form" noValidate onSubmit={createUser}>
                                         <div className="form-group">

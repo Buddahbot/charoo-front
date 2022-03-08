@@ -15,23 +15,23 @@ export default function Footer() {
                             <ul>
                                 <li><a href="/donate">Donate</a></li>
                                 <li><a href="#">Challenges</a></li>
-                                <li><a href="#">Partnerships</a></li>
+                           
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-3 item">
                             <h3>About Us</h3>
                             <ul>
-                                <li><a href="/about">Company</a></li>
-                                <li><a href="/about">Team</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/about">Cooperate</a></li>
+                                
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-3 item">
                             <h3>Careers</h3>
                             <ul>
-                                <li><a href="#">Job openings</a></li>
-                                <li><a href="#">Employee success</a></li>
-                                <li><a href="#">Benefits</a></li>
+                              
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>

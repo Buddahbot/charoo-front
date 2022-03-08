@@ -107,7 +107,7 @@ const Donate2 = () => {
 
                                 <h4 className='d-flex flex-row align-items-center'>
                                     <i class="fa fa-clock-o mr-4 py-3 justify-content-center"></i>
-                                    <h4 className=''> 12.05.2022, 1:30 p.m
+                                    <h4 className=''> {tempEvent.start}
                                     </h4> </h4>
 
 
@@ -138,14 +138,14 @@ const Donate2 = () => {
                                     <h4>{ tempEvent.sportstype}</h4> </h4>
                                 <h4 className='item-preview'>
                                     <i class="fa fa-road py-3 mb-3"></i>
-                                    <h4>{ tempEvent.distance}</h4> </h4>
+                                    <h4>{ tempEvent.distance} Km</h4> </h4>
 
                                 <h4 className='item-preview'>
                                     <i class="fa fa-group py-3 mb-3 "></i>
                                     <h4>{ tempEvent.charity}</h4> </h4>
                                 <h4 className='item-preview'>
                                     <i class="fa fa-crosshairs py-3 mb-3"></i>
-                                    <h4>{ tempEvent.monetaryGoal}</h4>
+                                    <h4>DONATION GOAL {tempEvent.monetaryGoal}€</h4>
                                 </h4>
                             </div>
 

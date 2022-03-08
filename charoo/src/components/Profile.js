@@ -24,6 +24,7 @@ const Profile = () => {
   useEffect(() => {
     getUserInfo();
 
+
   }, []);
 
   const getUserInfo = async () => {
@@ -36,6 +37,7 @@ const Profile = () => {
       lastName: decoded.user.lastName,
       email: decoded.user.email,
     })
+    shareEvent()
   }
 
 
@@ -64,7 +66,8 @@ const Profile = () => {
   const goBack = () => {
     navigate(-1);
   }
-
+  
+  console.log('whats dat', usersFilter)
   return (
 
     <div className='CreateChallengeContainer' style={{ backgroundImage: `url(${BG})` }}>
@@ -109,22 +112,23 @@ const Profile = () => {
         </div>
       </div >
 
-
+      <div>
+        <h1>SuperHero</h1>
       {usersFilter && usersFilter.map(e => {
         return (
           <div style={{ display: 'flex' }}>
-            <a href={`http://localhost:3000/event/${e._id}`} target='_blank'>Event link here : {e._id}</a>
+            <a href={`http://localhost:3000/donate2/${e._id}`} target='_blank'>{e.eventTitle}</a>
           </div>
         )
       }
       )
       }
-
+      </div>
 
 
       <h1>DONATION MONSTER</h1>
       {data.data.map((e) => {
-        if (e.donatedBy !== user.id)
+        if (e.donatedBy === user.id)
           return (
             <Link to={`/donate2/${e._id}`}>
               <ul>
