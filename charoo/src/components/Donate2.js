@@ -162,7 +162,7 @@ const Donate2 = () => {
 
                                     <div class="input-group mb-3" >
 
-                                        <input value={amount} type="number" class="form-control  fs-3 inputbg-home" placeholder="Donate" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={(e) => setAmount(e.target.value)} />
+                                        <input value={amount} type="number" class="form-control  fs-3 inputbg-home" placeholder="Donate" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={(e) => setAmount(e.target.value)} required />
                                         <div class="input-group-append">
                                             <button class="form-control btn btnSign submit fs-3" type="submit">Donate</button>
                                         </div>

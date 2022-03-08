@@ -214,7 +214,7 @@ const Profile = () => {
         })}</div>
 
       <div class=" justify-content-center text-center ">
-        <h2 class="heading-section title-create-challenge">My donatons</h2>
+        <h2 class="heading-section title-create-challenge">My donations</h2>
       </div>
 
 
