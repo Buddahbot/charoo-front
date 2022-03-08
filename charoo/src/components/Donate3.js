@@ -13,6 +13,10 @@ const Donate3 = () => {
     const [donation, setDonation] = useContext(DonationContext)
     const [checkedOne, setCheckedOne] = useState(false);
 
+
+    let navigate = useNavigate();
+
+
     const handleChangeOne = () => {
         setCheckedOne(true);
     }
@@ -31,7 +35,7 @@ const Donate3 = () => {
         console.log(newDonation)
 
         donationUpload(newDonation)
-        //navigate('./DonationThanks')
+        navigate('./donate4')
     }
 
     return (

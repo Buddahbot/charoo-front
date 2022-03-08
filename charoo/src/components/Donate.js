@@ -65,8 +65,6 @@ const Donate = () => {
 
                 </form>
 
-
-
                 <h2 style={{ fontSize: '30px', color: 'white', marginBottom: '30px' }}> Choose a challenge: </h2>
             </div>
 

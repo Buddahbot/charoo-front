@@ -143,11 +143,16 @@ body {
 
 
   .heading-section {
-     /* font-family: 'Bodoni Moda', serif; */
+     font-family: 'Bodoni Moda', serif;
     font-size: 28px;
     text-shadow: 10px 10px 15px rgba(23, 23, 23, 0.9);
     color: #fff; }
   
+    .heading-section-home {
+     font-size: 28px;
+     text-shadow: 10px 10px 15px rgba(23, 23, 23, 0.9);
+     color: #fff; }
+
 
  /* fb / twitter buttons */
  .nodec{

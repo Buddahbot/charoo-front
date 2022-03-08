@@ -36,9 +36,9 @@ width: auto;
 margin-bottom: 6%;
 margin-top: 6%;
 font-size: 40px;
-border-top: white 2px solid;
+/* border-top: white 2px solid;
 border-bottom: white 2px solid;
- background-color: rgba(0, 0, 0, 0.534);
+ background-color: rgba(0, 0, 0, 0.534); */
 }
 
 .subtitle-create-challenge{

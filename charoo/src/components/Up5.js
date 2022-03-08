@@ -1,6 +1,6 @@
 import React from 'react'
 import Share from './Share'
-import BG from '../Img/nature.jpg'
+import BG from '../Img/col.jpg'
 import { NavLink, useNavigate } from 'react-router-dom';
 import CountDown from './CountDown';
 import '../stylesheets/App.css'
@@ -16,7 +16,7 @@ const Up5 = props => {
     const [user, setUser] = useState({
         id: "",
     })
-    const [loading, setLoading]= useState(true)
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         getUserInfo()
     }, [])
@@ -66,12 +66,12 @@ const Up5 = props => {
 
 
     return (
-     
+
         <div className='CreateChallengeContainer' style={{ backgroundImage: `url(${BG})` }}>
             <div class=" justify-content-center text-center ">
                 <h2 class="heading-section title-create-challenge">CONGRATULATIONS!</h2>
             </div>
-            
+
             <div className='whiteboard form-challenge' >
                 <div class=" d-flex flex-column text-center justify-content-center  ">
 
@@ -86,24 +86,25 @@ const Up5 = props => {
 
                         <h5 className='font-weight-bold'></h5>
 
-                        
 
-                     {!loading && (
-                         
-                                <div style={{ display: 'flex' }}>
-                                    <a href={`http://localhost:3000/donate2/${usersFilter[0]._id}`} target='_blank'>your last event</a>
-                               
-                                    <CopyToClipboard text={`http://localhost:3000/donate2/${usersFilter[0]._id}`}>
-                                     <button className='btn-light btn' style={{ width: '40px', height: '30px' }}>Copy</button>
-                                    </CopyToClipboard>
-                                 </div>
-                                 
-                     )}
 
-                 
-          
+                        {!loading && (
 
-                      
+                            <div className='align-items-center' style={{ display: 'flex' }}>
+                                <h5 >   <a style={{ textDecoration: 'none', color: '#212121', fontWeight: '700' }} href={`http://localhost:3000/donate2/${usersFilter[0]._id}`} target='_blank'> {`http://localhost:3000/donate2/${usersFilter[0]._id}`} </a>
+                                </h5>
+
+                                <CopyToClipboard text={`http://localhost:3000/donate2/${usersFilter[0]._id}`}>
+                                    <button className='btn-light btn' style={{ width: '40px', height: '30px' }}>Copy</button>
+                                </CopyToClipboard>
+                            </div>
+
+                        )}
+
+
+
+
+
                     </div>
 
                     <h5>or just click on one of the icons:</h5>

@@ -4,9 +4,10 @@ import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom';
 import { ProfileContext } from "../context/ProfileContext";
 import { DonateContext } from "../context/DonateContext";
-import BG from '../Img/monstera.jpg'
+import BG from '../Img/bg.jpg'
 import '../stylesheets/Challenge.css'
 import pic from '../Img/p.jpg'
+import Moment from 'moment';
 
 
 const Profile = () => {
@@ -67,6 +68,10 @@ const Profile = () => {
     navigate(-1);
   }
 
+  const changeTimeFormat = (date) => {
+    return Moment(date).format('DD.MM.YYYY, h:mm a')
+  }
+
   console.log('whats dat', usersFilter)
   return (
 
@@ -81,7 +86,7 @@ const Profile = () => {
             <div style={{ height: '100%' }} className="d-flex flex-end">  <i className="fa fs-4 fa-pencil"></i> </div>
           </div>
 
-          <table className="table col-md-6 mx-auto mb-5">
+          <table style={{ fontSize: '15px' }} className="table my-5 col-md-6 mx-auto mb-5">
             <tbody>
               <tr>
                 <td className="font-weight-bold">Id</td>
@@ -99,6 +104,10 @@ const Profile = () => {
                 <td className="font-weight-bold">Email</td>
                 <td>{user.email}</td>
               </tr>
+              <tr>
+                <td className="font-weight-bold">Password</td>
+                <td>**********</td>
+              </tr>
             </tbody>
           </table>
 
@@ -112,8 +121,9 @@ const Profile = () => {
         </div>
       </div >
 
-      <div>
+      {/* <div>
         <h1>My Challenges:</h1>
+
         {usersFilter && usersFilter.map(e => {
           return (
             <div style={{ display: 'flex' }}>
@@ -123,10 +133,10 @@ const Profile = () => {
         }
         )
         }
-      </div>
+      </div> */}
 
 
-      <h1>My Donations:</h1>
+      {/* <h1>My Donations:</h1>
       {data.data.map((e) => {
         if (e.donatedBy === user.id)
           return (
@@ -138,7 +148,113 @@ const Profile = () => {
               </ul>
             </Link>
           )
-      })}
+      })} */}
+
+      <div class=" justify-content-center text-center ">
+        <h2 class="heading-section title-create-challenge">My Challenges</h2>
+      </div>
+
+
+      <div className='grid'>
+
+
+        {usersFilter && usersFilter.map(e => {
+          return (
+
+
+
+            <Link style={{ width: '380px', textDecoration: 'none' }} to={`http://localhost:3000/donate2/${e._id}`}>
+
+              <div class=" events-list">
+                <div class=" p-5">
+                  <div class="">
+                    <div class="card  p-4">
+
+                      <h4 class="card-title text-right"><i class="fa fa-star"></i></h4>
+
+                      <div className='img' style={{
+                        width: '100%', backgroundImage: `url(${e.imageUrl})`, backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center", backgroundSize: "cover", paddingBottom: '100px'
+                      }}>
+
+                      </div>
+
+                      <h2 class="text-center m-4"> {e.eventTitle}</h2>
+
+                      <h6 className='text-center'><i class="fa fa-clock-o mr-4 py-3 justify-content-center"></i> {changeTimeFormat(e.start)}
+                      </h6>
+
+
+                      <h6 className='text-center'><i class="fa fa-map-marker mr-4 py-3 justify-content-center"></i> {e.country}</h6>
+
+                      <h6 className='text-center'>   <i class="fa fa-road mr-4 py-3 justify-content-center"></i>
+                        {e.sportstype}</h6>
+
+                      <h6 className='text-center'>  <i class="fa fa-crosshairs mr-4 py-3 justify-content-center"></i>
+                        {e.monetaryGoal} Euro</h6>
+
+                      <h6 className='text-center'>    <i class="fa fa-group mr-4 py-3 justify-content-center "></i>
+                        Donations go to: {e.charity}</h6>
+
+
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+
+            </Link>
+
+          )
+        })}</div>
+
+      <div class=" justify-content-center text-center ">
+        <h2 class="heading-section title-create-challenge">My donatons</h2>
+      </div>
+
+
+
+      <div className='grid'>
+
+
+        {data.data.map((e) => {
+          if (e.donatedBy === user.id)
+            return (
+
+
+              <Link style={{ width: '380px', textDecoration: 'none' }} to={`/donate2/${e._id}`}>
+
+                <div class=" events-list">
+                  <div class=" p-5">
+                    <div class="">
+                      <div class="card  p-4">
+
+                        <div className="my-5">   <h4 class="card-title text-center"><i style={{ fontSize: '50px' }} class="fa fa-star"></i></h4> </div>
+
+                        <h2 class="text-center m-4"> {e.eventTitle}</h2>
+
+                        <h6 className='text-center'><i class="fa fa-user py-3 mr-4  justify-content-center"></i> Challenge Created by {e.createdBy.firstName} {e.createdBy.lastName}</h6>
+
+                        <h6 className='text-center'><i class="fa fa-map-marker mr-4 py-3 justify-content-center"></i> Amount you donated: {e.amount} Euro</h6>
+
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </Link>
+
+            )
+        })}</div>
+
     </div>
 
   )

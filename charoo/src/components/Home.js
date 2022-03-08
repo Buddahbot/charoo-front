@@ -69,7 +69,7 @@ const Landing = () => {
                                 <div class=" login-wrap  ">
 
                                     <div class=" justify-content-center text-center mb-5">
-                                        <h2 style={{ fontSize: '4vh', borderRadius: '40px', padding: '5%' }} class="  heading-section mt-5 headerTitle hover14 ">Challenge your heart for charity!</h2>
+                                        <h2 style={{ fontSize: '4vh', borderRadius: '40px', padding: '5%' }} class="  heading-section-home mt-5 headerTitle hover14 ">Challenge your heart for charity!</h2>
                                     </div>
                                     <form class="signin-form" noValidate onSubmit={createUser}>
                                         <div className="form-group">
