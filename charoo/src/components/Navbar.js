@@ -2,39 +2,49 @@ import React from 'react'
 import Logo2 from '../Img/logo4.png'
 import '../stylesheets/Navbar.css'
 import { useState, useEffect } from "react";
+import { Link, withRouter, useHistory, useNavigate } from 'react-router-dom'
 import jwt_decode from "jwt-decode";
 
 
 export default function Navbar2() {
 
     const [user, setUser] = useState({
-      firstName: ""
+        firstName: ""
     });
-    const [loading, setLoading]= useState(true)
+    const [loading, setLoading] = useState(true)
 
     let loggedin = 'Login';
-    
+
     useEffect(() => {
         getUserInfo();
-      }, []);
-    
+    }, []);
+
     const getUserInfo = async () => {
-        try{
+        try {
             const token = await localStorage.usertoken;
             token && setLoading(false)
             const decoded = await jwt_decode(token);
             console.log("decoded", decoded);
             setUser({
-            firstName: decoded.user.firstName
-                    })
-                } catch (e) {
-                console.log(e)
-                 }
-             }
-    
-    if (loading === false) {loggedin = user.firstName}
-    else {loggedin = 'Login'}
+                firstName: decoded.user.firstName
+            })
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    if (loading === false) { loggedin = user.firstName }
+    else { loggedin = 'Login' }
     console.log(loading)
+
+    let navigate = useNavigate()
+
+    const logOut = (e) => {
+        e.preventDefault()
+        localStorage.removeItem('usertoken')
+        navigate(`/`)
+    }
+
 
     return (
         <div>
@@ -61,7 +71,7 @@ export default function Navbar2() {
                                     <a class="dropdown-item" href="/register">Join</a>
                                     <a class="dropdown-item" href="/about">About Us</a>
                                     <a class="dropdown-item" href="/howitworks">How It Works</a>
-
+                                    <a onClick={logOut} class="dropdown-item" href="#">Log Out</a>
                                 </div>
                             </li>
                         </ul>
@@ -100,6 +110,7 @@ export default function Navbar2() {
                                     <a class="dropdown-item" href="/up1">Create Challange</a>
                                     <a class="dropdown-item" href="/donate">Challenges</a>
                                     <a class="dropdown-item" href="#">Partnerships</a>
+                                    <a onClick={logOut} class="dropdown-item" href="#">Log Out</a>
                                 </div>
                             </li>
                         </ul>
