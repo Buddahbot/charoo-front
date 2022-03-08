@@ -68,7 +68,7 @@ const Donate2 = () => {
     // const banana = []
     let banana = donna.data.map((e) => {
         if (e.eventId === tempEvent._id) 
-            return ({amount:  e.amount }) // else show 0
+            return ({amount:  e.amount })
     })
     const sumall = banana.map(e => e.amount).reduce((prev, curr) => prev + curr, 0);
     console.log(sumall);
