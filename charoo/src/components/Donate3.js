@@ -22,6 +22,7 @@ const Donate3 = () => {
         const newDonation = {
             eventTitle: donation.eventTitle,
             createdBy: donation.createdBy,
+            eventId: donation.eventId,
             donatedBy: donation.donatedBy,
             amount: donation.amount,
             comments: checkedOne,

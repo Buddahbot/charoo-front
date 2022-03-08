@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { DonateContext } from '../context/DonateContext';
 import { DonationContext } from '../context/DonationContext';
+import { ProfileContext } from "../context/ProfileContext";
 import jwt_decode from "jwt-decode";
 import BG from '../Img/white.jpg'
 import '../stylesheets/Challenge.css'
@@ -14,6 +15,8 @@ import ImgEvent from '../Img/group2.jpg'
 const Donate2 = () => {
     const [data, setData] = useContext(DonateContext)
     const [donation, setDonation] = useContext(DonationContext)
+    const [donna, setDonna] = useContext(ProfileContext)
+    const[cherry, setCherry] = useState([])
     const [amount, setAmount] = useState()
 
     const { id } = useParams();
@@ -32,7 +35,7 @@ const Donate2 = () => {
     const getUserId = async () => {
         const token = await localStorage.usertoken
         const decoded = await jwt_decode(token)
-        console.log(decoded)
+        // console.log(decoded)
         setUserId({
             id: decoded.user._id,
             firstName: decoded.user.firstName,
@@ -40,11 +43,11 @@ const Donate2 = () => {
     }
 
 
-    const tempEvent = data.data.find(e => { //take event id from params and find particular event
-        return e._id === id;
+    const tempEvent = data.data.find(e => { // save event in variable
+        return e._id === id; // e._id are all events. id is the event id from params
     });
 
-
+   
     const handleSubmit = (e) => {
         e.preventDefault()
     
@@ -57,33 +60,22 @@ const Donate2 = () => {
         })
         navigate('/donate3')
     }
-console.log(tempEvent._id)
+    // console.log(tempEvent._id)
+    
     const goBack = () => {
         navigate(-1);
     }
-  
- 
+    // const banana = []
+    let banana = donna.data.map((e) => {
+        if (e.eventId === tempEvent._id) 
+            return ({amount:  e.amount }) // else show 0
+    })
+    const sumall = banana.map(e => e.amount).reduce((prev, curr) => prev + curr, 0);
+    console.log(sumall);
+
+    
   return (
-      // <div><h1>Donating Monster {userId.firstName} </h1>
-
-      //   <p><img src={tempEvent.imageUrl} style={{ width: "300px" }}></img></p>
-      //   <h1>Challenge Title: {tempEvent.eventTitle}</h1>
-      //   <h1>Start: {tempEvent.dateCreated}</h1>
-      //   <h1>Description: {tempEvent.description}</h1>
-        
-      //   <form onSubmit={handleSubmit} >
-      //   <input value={amount} placeholder='Amount you donate' type='number' onChange={(e) => setAmount(e.target.value)} />
-      //   <button type='submit'>Donate Now</button>
-      //   </form>
-
-      //   <h1>Donation Goal: {tempEvent.monetaryGoal}</h1>
-      //   <h1>For Charity: {tempEvent.charity}</h1>
-      //   <h3>Challenge ID: {tempEvent._id}</h3>
-        
-      //   <h3> Creater Name: {tempEvent.user.firstName}</h3>
-      //   <h3> Creater ID: {tempEvent.user._id}</h3>
-      //   </div>
-
+     
     <div className='container-event' style={{ backgroundImage: `url(${BG})` }} >
 
     <div className='d-flex text-center  justify-content-center  '>
@@ -146,7 +138,7 @@ console.log(tempEvent._id)
                                     <h4>{ tempEvent.charity}</h4> </h4>
                                 <h4 className='item-preview'>
                                     <i class="fa fa-crosshairs py-3 mb-3"></i>
-                                    <h4>DONATION GOAL {tempEvent.monetaryGoal}€</h4>
+                                          <h4>Donations Collected: {sumall} of {tempEvent.monetaryGoal}€</h4>
                                 </h4>
                             </div>
 

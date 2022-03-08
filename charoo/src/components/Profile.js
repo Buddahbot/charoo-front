@@ -11,7 +11,7 @@ import pic from '../Img/p.jpg'
 
 const Profile = () => {
 
-  const [data, setData] = useContext(ProfileContext)
+  const [donna, setDonna] = useContext(ProfileContext)
   const [troy, setTroy] = useState([])
   const [user, setUser] = useState({
     id: "",
@@ -20,7 +20,7 @@ const Profile = () => {
     email: "",
   });
 
-  console.log(data)
+  
   useEffect(() => {
     getUserInfo();
 
@@ -127,7 +127,7 @@ const Profile = () => {
 
 
       <h1>DONATION MONSTER</h1>
-      {data.data.map((e) => {
+      {donna.data.map((e) => {
         if (e.donatedBy === user.id)
           return (
             <Link to={`/donate2/${e._id}`}>
