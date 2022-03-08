@@ -1,6 +1,6 @@
 .navbar-nav>li>a {
   padding-top: 0px !important;
-  padding-bottom: 0px !important;
+  padding-bottom: 5px !important;
 }
 
 .container {
@@ -121,11 +121,13 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  
 }
 
 #navbar-item a {
   position: relative;
   transition: all .45s ease-Out;
+  
 }
 
 #underline {
@@ -133,10 +135,12 @@
   height: 2px;
   align-self: flex-end;
   left: -200px;
-  background: #2e2b2b96;
+  /* background: #2e2b2b96; */
+  background: #7e242496;
   position: absolute;
   transition: all .3s ease-Out;
   bottom: 0;
+ 
 }
 
 #navbar-item:hover #underline {
