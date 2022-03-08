@@ -1,6 +1,22 @@
+
+.howItWorks h4{
+padding: 10px;
+}
+
+.howItWorks p{
+   
+    padding-left: 32px ;
+    }
+
+/* FAQ's: */
+
 .accordion-columns{
 width: 35%;
 margin: 20px;
+}
+
+.faq{
+    font-size: 32px;
 }
 
 .panel-heading {
@@ -16,16 +32,31 @@ color: #212121;
 
 }
 
-.icons-question {
+.panel-heading:hover a {
+
+    color: #8d1f1fea;
+  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+    
+    }
+
+.icons{
     display: flex;
  align-items: center;
  justify-content: center;
 
     /* width: 60px; */
     color: rgb(185, 63, 63);
-    border-right: 1px rgb(221, 221, 221) solid;
+   
 }
 
 .question{
     padding: 10px 20px;
+}
+
+.panel-body {
+    font-size: 14px;
+    color: #212121;
+    padding: 20px auto;
+    padding-left: 68px;
+    padding-right: 30px;
 }

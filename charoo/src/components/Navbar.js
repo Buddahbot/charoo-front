@@ -66,7 +66,7 @@ export default function Navbar2() {
                                     <a class="dropdown-item" href="/profile">My account</a>
                                     <a class="dropdown-item" href="/donate">Donate</a>
                                     <a class="dropdown-item" href="/up1">Create Challange</a>
-                                    <a class="dropdown-item" href="#">Challenges</a>
+                                    <a class="dropdown-item" href="/donate">Challenges</a>
                                     <a class="dropdown-item" href="#">Partnerships</a>
                                 </div>
                             </li>
