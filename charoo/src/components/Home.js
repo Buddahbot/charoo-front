@@ -6,8 +6,8 @@ import BG from '../Img/000.jpg'
 import '../stylesheets/Home.css'
 import Carousel from './Carousel'
 import '../stylesheets/App.css'
-import Donate from '../Img/headerpic1.jpg'
-import Sport from '../Img/run.jpg'
+import Donate from '../Img/w.png'
+import Sport from '../Img/r.jpg'
 import Header from './Header'
 
 const Landing = () => {
@@ -61,7 +61,7 @@ const Landing = () => {
     return (
         <div className="home-container">
 
-            <div class="header img " style={{ backgroundImage: `url(${BG})` }}>
+            <div class="header pb-5 img " style={{ backgroundImage: `url(${BG})` }}>
                 <div class="ftco-section pb-5">
                     <div className="">
                         <div class=" row ">

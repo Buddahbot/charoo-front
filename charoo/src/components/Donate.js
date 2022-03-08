@@ -45,26 +45,29 @@ const Donate = () => {
     console.log(data)
     return (
         <div className='d-flex flex-column justify-content-center  ' style={{
-            width: '100%', backgroundImage: `url(${BG})`, backgroundRepeat: "no-repeat",
+            width: '100%', height: '', backgroundImage: `url(${BG})`, backgroundRepeat: "no-repeat",
             backgroundPosition: "center", backgroundSize: "cover", paddingBottom: '100px'
         }}>
 
             <div className='titel-events text-center'>
                 <h1>Hi, Donating Monster {userId.firstName} ! </h1>
+
+                <form style={{ width: '100%' }} className="form-inline justify-content-center  mb-5 ">
+                    <input
+                        className="form-control mr-sm-2 input-events input-search"
+                        type="text"
+                        placeholder="Search events... "
+                        style={{ width: '30%' }}
+                    />
+                    <i style={{ color: 'white', fontSize: '40px' }} class="fa fa-search "></i>
+
+                </form>
+
+
+
                 <h2 style={{ fontSize: '30px', color: 'white', marginBottom: '30px' }}> Choose a challenge: </h2>
             </div>
 
-
-            {/* <form className="form-inline my-2 my-lg-0">
-                <input
-                    className="form-control mr-sm-2 input-search"
-                    type="text"
-                    placeholder="Search events... "
-
-                />
-                <i style={{ color: 'white', fontSize: '40px' }} class="fa fa-search "></i>
-
-            </form> */}
 
 
 

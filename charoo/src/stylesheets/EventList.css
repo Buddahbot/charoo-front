@@ -4,13 +4,23 @@ font-size: 50px;
 padding: 50px 0px;
 }
 
-.grid{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 30% 30% 30%; 
-    justify-content: center;
-}
+.input-events::placeholder {
+   font-size: 15px;
+    font-weight: 400;
+    opacity: 1;
+    padding-left: 25px;
+    
+  }
 
+.grid{
+    display: grid;
+    grid-gap: 10%;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    margin: auto 10%;
+
+}
 
 
 .events-list .img{

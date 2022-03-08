@@ -66,7 +66,7 @@ const Profile = () => {
   const goBack = () => {
     navigate(-1);
   }
-  
+
   console.log('whats dat', usersFilter)
   return (
 
@@ -113,20 +113,20 @@ const Profile = () => {
       </div >
 
       <div>
-        <h1>SuperHero</h1>
-      {usersFilter && usersFilter.map(e => {
-        return (
-          <div style={{ display: 'flex' }}>
-            <a href={`http://localhost:3000/donate2/${e._id}`} target='_blank'>{e.eventTitle}</a>
-          </div>
+        <h1>My Challenges:</h1>
+        {usersFilter && usersFilter.map(e => {
+          return (
+            <div style={{ display: 'flex' }}>
+              <a href={`http://localhost:3000/donate2/${e._id}`} target='_blank'>{e.eventTitle}</a>
+            </div>
+          )
+        }
         )
-      }
-      )
-      }
+        }
       </div>
 
 
-      <h1>DONATION MONSTER</h1>
+      <h1>My Donations:</h1>
       {data.data.map((e) => {
         if (e.donatedBy === user.id)
           return (

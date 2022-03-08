@@ -4,8 +4,10 @@ import { DonationContext } from '../context/DonationContext';
 import { donationUpload } from '../logic/UserFunctions';
 import BG from '../Img/white.jpg'
 import BG3 from '../Img/pp.png'
-import BG2 from '../Img/wc.png'
+import BG2 from '../Img/mm.png'
 import jwt_decode from "jwt-decode";
+import '../stylesheets/Carousel.css'
+import '../stylesheets/Challenge.css'
 
 const Donate3 = () => {
     const [donation, setDonation] = useContext(DonationContext)
@@ -42,11 +44,11 @@ const Donate3 = () => {
                 <div class="CreateChallengeContainer " style={{ paddingBottom: '40px' }} >
 
 
-                    <div className='whiteboard form-challenge howItWorks mt-5 ' >
-                        <div class=" d-flex flex-column  justify-content-center  ">
+                    <div className='whiteboard d-flex justify-content-center form-challenge howItWorks mt-5 ' >
+                        <div class=" d-flex flex-column w-100 justify-content-center  ">
 
 
-                            <div className='col-9 ' style={{ fontSize: '14px', marginLeft: '10%' }}>
+                            <div className=' ' style={{ fontSize: '14px', width: '100%' }}>
 
                                 <h2 className='mb-5 text-center'>Please choose a payment method: </h2>
 
@@ -58,19 +60,19 @@ const Donate3 = () => {
                 value={checkedOne}
                 onChange={handleChangeOne}
             /> */}
-                                <div className='d-flex flex-row'>
+                                <div className='d-flex flex-row justify-content-center'>
 
-
-
-                                    <div tabindex="-1" className='carousele-item carousele-charity-margin ' style={{ backgroundImage: `url(${BG3})` }} >
+                                    <div tabindex="-1" className='carousele-item carousele-charity-margin ' style={{ backgroundImage: `url(${BG3})`, width: '300px', marginTop: '30px', marginBottom: '60px', height: '220px' }} >
                                     </div>
 
-                                    <div tabindex="-1" className='carousele-item carousele-charity-margin ' style={{ backgroundImage: `url(${BG2})` }} >
+                                    <div tabindex="-1" className='carousele-item carousele-charity-margin ' style={{ backgroundImage: `url(${BG2})`, width: '300px', marginTop: '30px', marginBottom: '60px', height: '220px' }} >
                                     </div>
+                                </div>
+                                <div className='d-flex  justify-content-center'>
+                                    <button style={{ width: '300px' }} className="form-control btn btnSign submit fs-3 " onClick={createDonation}>DONATE NOW</button>
+                                </div>
 
-
-                                    <button onClick={createDonation}>DONATE NOW</button> </div>
-                            </div> </div> </div> </div> </div> </div>
+                            </div> </div> </div> </div> </div> </div >
 
     )
 }
