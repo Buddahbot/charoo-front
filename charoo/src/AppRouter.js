@@ -19,6 +19,7 @@ import Donate2 from "./components/Donate2";
 import Donate3 from "./components/Donate3";
 import Donate4 from "./components/Donate4";
 import EventPage from "./components/EventPage";
+// import DonateTest from "./components/DonateTest";
 
 const AppRouter = () => {
   return (
@@ -42,7 +43,7 @@ const AppRouter = () => {
         <Route exact path="/donate2/:id" element={<Donate2 />} />
         <Route exact path="/donate3" element={<Donate3 />} />
         <Route exact path="/donate3/donate4" element={<Donate4 />} />
-
+        {/* <Route exact path="/donatetest" element={<DonateTest />} /> */}
 
         <Route path="*" element={<ErrorPage />} />
       </Routes>

@@ -33,15 +33,10 @@ export default function Navbar2() {
                  }
              }
     
-    // const underline =  `<li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link " href="/login">{loggedin}</a></li>`
-    // const noUnderline = `<li id="navbar-item" class="nav-item"><a style={{ paddingLeft: '0px', paddingRight: '7px' }}>{loggedin}</a></li>`
-    // const linked = underline
+   
     if (loading === false ) {loggedin = user.firstName} 
     else {loggedin = 'Login'}
 
-    // if (loading === false) {linked = noUnderline} 
-    // else {linked = underline}
-    
 
     let navigate = useNavigate()
 
@@ -92,9 +87,9 @@ export default function Navbar2() {
                         </ul> </div>
                     <div id="navcol-2" style={{ justifyContent: "flex-end", marginLeft: '30%' }} class="collapse navbar-collapse">
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a style={{ paddingLeft: '3px', paddingRight: '15px' }} class="nav-link" href="/profile"><i class="fa fa-user-o fs-3 ms-auto"></i></a></li>
-                            <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link " href="/login">{loggedin}</a></li>
-
+                            <li class="nav-item"><a style={{ paddingLeft: '3px', paddingRight: '15px' }} class="nav-link" href="/login"><i class="fa fa-user-o fs-3 ms-auto"></i></a></li>
+                            {loading === false ? <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link " href="/profile">{loggedin}</a></li> :
+                                <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link " href="/login">{loggedin}</a></li>}
                             <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link" href="#">|</a></li>
                             <li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '0px' }} class="nav-link" href="/register">Join</a></li>
                         </ul> </div>
