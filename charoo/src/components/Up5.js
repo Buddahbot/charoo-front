@@ -36,22 +36,12 @@ const Up5 = props => {
         const iD = '621e3781d083ddd88c83ad59'
         const iDnew = user.id
         try {
-<<<<<<< HEAD
-            await axios.get('https://charoo.herokuapp.com/event')
-                .then((res) => {
-                    setTroy(res.data.data)
-                    setLoading(false)
-                    // console.log(res.data.data.filter(event => event.user._id = "621e3781d083ddd88c83ad59"))
-                })
+            await axios.get(process.env.BACKEND_URL + '/event')
+            setTroy(res.data.data)
+            setLoading(false)
+            // console.log(res.data.data.filter(event => event.user._id = "621e3781d083ddd88c83ad59"))
         } catch (e) {
             console.log(e)
-=======
-            await axios.get(process.env.BACKEND_URL + '/event')
-                .then(res => setEvents(res.data))
-                .then(() => filterEvent())
-        } catch {
-            console.log('error')
->>>>>>> 0bcc1a03 (use dotenv to configure backend url)
         }
     }
 
