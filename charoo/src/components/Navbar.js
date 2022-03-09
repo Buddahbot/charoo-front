@@ -33,11 +33,15 @@ export default function Navbar2() {
                  }
              }
     
-    if (loading === false) {loggedin = user.firstName}
+    // const underline =  `<li id="navbar-item" class="nav-item"><div id="underline"></div><a style={{ paddingLeft: '0px', paddingRight: '7px' }} class="nav-link " href="/login">{loggedin}</a></li>`
+    // const noUnderline = `<li id="navbar-item" class="nav-item"><a style={{ paddingLeft: '0px', paddingRight: '7px' }}>{loggedin}</a></li>`
+    // const linked = underline
+    if (loading === false ) {loggedin = user.firstName} 
     else {loggedin = 'Login'}
-    // console.log(loading)
 
-    // log out :
+    // if (loading === false) {linked = noUnderline} 
+    // else {linked = underline}
+    
 
     let navigate = useNavigate()
 
