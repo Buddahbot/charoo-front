@@ -45,7 +45,7 @@ const Donate = () => {
     return (
         <div className='d-flex flex-column justify-content-center  ' style={{
             width: '100%', height: '', backgroundImage: `url(${BG})`, backgroundRepeat: "no-repeat",
-            backgroundPosition: "center", backgroundSize: "cover", paddingBottom: '100px'
+            backgroundPosition: "center", backgroundSize: "cover"
         }}>
 
             <div className='titel-events text-center'>

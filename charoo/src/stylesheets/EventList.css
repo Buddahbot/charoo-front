@@ -65,11 +65,13 @@ padding: 50px 0px;
     cursor:pointer;
     color:#ffa710
   }
+
   .events-list  .card-title i:hover{
     transform: scale(1.25) rotate(100deg); 
     color:#18d4ca;
     
   }
+
   .events-list .card:hover{
     transform: scale(1.05);
     box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
@@ -97,3 +99,5 @@ padding: 50px 0px;
   .events-list .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
     transform: scale3d(1, 1, 1);
   }
+
+  

@@ -12,6 +12,7 @@ import '../stylesheets/Event.css'
 import Moment from 'moment';
 import ImgEvent from '../Img/group2.jpg'
 import CountDownDonate from './CountDownDonate';
+import Share from './Share'
 
 const Donate2 = () => {
     const [data, setData] = useContext(DonateContext)
@@ -95,7 +96,7 @@ const Donate2 = () => {
     return (
         <div className='container-event' style={{ backgroundImage: `url(${BG})` }} >
 
-            <div className='CreateChallengeContainer w-100'>
+            <div style={{ paddingBottom: '100px' }} className='CreateChallengeContainer w-100'>
 
                 <div style={{ padding: '0px', margin: '50px' }} className='whiteboard form-challenge' >
 
@@ -119,7 +120,7 @@ const Donate2 = () => {
                                     </div>
 
                                     <div style={{ color: '#212121', margin: '60px' }} className='heading-section-2 '>
-                                        <h1 style={{ fontSize: '40px' }} className='text-center'>{tempEvent.eventTitle}</h1>
+                                        <h1 style={{ fontSize: '42px' }} className='text-center'>{tempEvent.eventTitle}</h1>
                                     </div>
 
 
@@ -173,11 +174,16 @@ const Donate2 = () => {
                                             </h4>
                                         </div> </div>
 
-                                    <div style={{ marginTop: '30px', marginBottom: '60px' }} className='collected-donation  events-list '>
+                                    <div style={{ marginTop: '40px', marginBottom: '70px' }} className='collected-donation  events-list '>
 
                                         <h4 class="card-title text-center m-5"><i style={{ fontSize: '50px' }} class="fa fa-heart"></i></h4>
 
-                                        <h4 style={{ fontSize: '20px' }}>Collected: {sumall} of {tempEvent.monetaryGoal}€</h4>
+                                        <h4 style={{ fontSize: '22px' }}>Collected: {sumall} of {tempEvent.monetaryGoal}€</h4>
+                                    </div>
+
+                                    <div style={{ marginTop: '100px', marginBottom: '100px' }} >
+                                        <h4 style={{ margin: '30px', fontSize: '20px' }} className='text-center font-weight-bold'> Share the challenge with your friends now:</h4>
+                                        <Share />
                                     </div>
 
                                     <div class="input-group mb-5" >

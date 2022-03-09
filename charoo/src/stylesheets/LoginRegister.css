@@ -7,6 +7,10 @@
 
   }
 
+  .profile h6 {
+    font-size: 12.5px !important ;
+  }
+
 /* Login / Join : */
 
 .fullheight{

@@ -73,11 +73,11 @@ const Profile = () => {
   console.log('whats dat', usersFilter)
   return (
 
-    <div className='CreateChallengeContainer' style={{ backgroundImage: `url(${BG})` }}>
+    <div className='CreateChallengeContainer' style={{ backgroundImage: `url(${BG})`, paddingLeft: '10%', paddingRight: '10%' }}>
       <div class=" justify-content-center text-center ">
         <h2 style={{ color: '#7c3639e3' }} class="heading-section title-create-challenge">PROFILE</h2>
       </div>
-      <div className='whiteboard form-challenge' >
+      <div style={{ marginLeft: '10%', marginRight: '10%' }} className='whiteboard form-challenge' >
         <div class=" d-flex flex-column  justify-content-center  ">
           <div className=" d-flex justify-content-center" style={{ height: '100%', margin: '30px' }}>
             <img src={pic} height='150px' width='150px' alt='profile picture' style={{ borderRadius: "50%", boxShadow: ' 5px 5px 10px rgba(23, 23, 23, 0.336)' }} />
@@ -166,7 +166,7 @@ const Profile = () => {
               <div class=" events-list">
                 <div class=" p-5">
                   <div class="">
-                    <div class="card  p-4">
+                    <div class="card profile p-4">
 
                       <h4 class="card-title text-right"><i class="fa fa-star"></i></h4>
 
@@ -225,7 +225,7 @@ const Profile = () => {
             return (
 
 
-              <Link style={{ width: '380px', textDecoration: 'none' }} to={`/donate2/${e.eventId}`}>
+              <Link style={{ width: '390px', textDecoration: 'none' }} to={`/donate2/${e.eventId}`}>
 
                 <div class=" events-list">
                   <div class=" p-5">
