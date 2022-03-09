@@ -11,13 +11,13 @@ import '../stylesheets/LoginRegister.css'
 import '../stylesheets/Event.css'
 import Moment from 'moment';
 import ImgEvent from '../Img/group2.jpg'
-import CountDown from './CountDown';
+import CountDownDonate from './CountDownDonate';
 
 const Donate2 = () => {
     const [data, setData] = useContext(DonateContext)
     const [donation, setDonation] = useContext(DonationContext)
     const [donna, setDonna] = useContext(ProfileContext)
-    const[cherry, setCherry] = useState([])
+    const [cherry, setCherry] = useState([])
     const [amount, setAmount] = useState()
 
     const { id } = useParams();
@@ -51,7 +51,7 @@ const Donate2 = () => {
         return e._id === id; // e._id are all events. id is the event id from params
     });
 
-   
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -75,41 +75,50 @@ const Donate2 = () => {
         copied: false,
     };
 
-    let banana = donna.data.map((e) => {
-        if (e.eventId === tempEvent._id)
-            return ({ amount: e.amount })
-        //  else { amount: 0}
-    })
-    const sumall = banana.map(e => e.amount).reduce((prev, curr) => prev + curr, 0);
-    console.log(sumall);
+    // let banana = donna.data.map((e) => {
+    //     if (e.eventId === tempEvent._id)
+    //         return ({ amount: e.amount })
+    //     //  else { amount: 0}
+    // })
+    // const sumall = banana.map(e => e.amount).reduce((prev, curr) => prev + curr, 0);
+    // console.log(sumall);
 
 
     return (
         <div className='container-event' style={{ backgroundImage: `url(${BG})` }} >
 
 
-        <div className='container-event' style={{ backgroundImage: `url(${BG})` }} ></div>
 
-            <div className='d-flex text-center  justify-content-center  '>
-                <div className='img-event ' style={{ backgroundImage: `url(${tempEvent.imageUrl})` }}> <div className='title-event w-100'>
-                    <h1>{tempEvent.eventTitle}</h1> </div>
-                </div>
-            </div>
+
             <div className='CreateChallengeContainer w-100'>
 
-                <div className='whiteboard form-challenge' >
+                <div style={{ padding: '0px', margin: '50px' }} className='whiteboard form-challenge' >
+
+                    <div style={{ paddingTop: '0px' }} className='d-flex text-center  justify-content-center  '>
+                        <div className='img-event ' style={{ backgroundImage: `url(${tempEvent.imageUrl})` }}>
+                        </div>
+                    </div>
 
                     <div class="row  justify-content-center  ">
                         <div class=" col-md-6 col-lg-8">
 
                             <form class="signin-form" onSubmit={handleSubmit}>
 
-                                <div class="form-group ">
+                                <div class="form-group  ">
 
-                                    <h5> It starts:  </h5>
-                                    <h3 className='font-weight-bold m-4' style={{ color: 'green' }}><CountDown /></h3>
+                                    <div className='d-flex flex-column  align-items-center  w-100'>
 
+                                        <div className='countDown d-flex align-items-center  justify-content-center text-center'>
+                                            <CountDownDonate />
+
+                                        </div>
+                                    </div>
+
+                                    <div style={{ color: '#212121', margin: '60px' }} className='heading-section hover14'>
+                                        <h1 style={{ fontSize: '40px' }} className='text-center'>{tempEvent.eventTitle}</h1>
+                                    </div>
                                     <div className='event-details text-center  justify-content-center  '>
+
 
                                         <h4 className='d-flex flex-row align-items-center'>
                                             <i class="fa fa-clock-o mr-4 py-3 justify-content-center"></i>
@@ -128,7 +137,7 @@ const Donate2 = () => {
                                     </div>
 
 
-                                    <div className='event-info '>
+                                    <div className='event-info  '>
                                         <h4 className=' d-flex text-center mt-5 '>
                                             {tempEvent.description}
                                         </h4>
@@ -151,7 +160,7 @@ const Donate2 = () => {
                                             <h4>{tempEvent.charity}</h4> </h4>
                                         <h4 className='item-preview'>
                                             <i class="fa fa-crosshairs py-3 mb-3"></i>
-                                            <h4>Donations Collected: {sumall} of {tempEvent.monetaryGoal}€</h4>
+                                            <h4>Donations Collected: .. of {tempEvent.monetaryGoal}€</h4>
                                         </h4>
                                     </div>
 

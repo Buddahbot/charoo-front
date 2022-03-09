@@ -1,25 +1,29 @@
 import React from 'react'
 import { useContext } from 'react';
 import { useEffect, useState } from "react";
-import { EventContext } from '../context/EventContext';
-
+import { DonateContext } from '../context/DonateContext';
+import { useParams } from 'react-router-dom';
 
 export default function CountDown() {
-    const [event, setEvent] = useContext(EventContext)
+    const [data, setData] = useContext(DonateContext)
 
+    const { id } = useParams();
 
+    const tempEvent = data.data.find(e => { // save event in variable
+        return e._id === id; // e._id are all events. id is the event id from params
+    });
 
     const calculateTimeLeft = () => {
-        let difference = +new Date(`${event.start}`) - +new Date();
+        let difference = +new Date(`${tempEvent.start}`) - +new Date();
 
         let timeLeft = {};
 
         if (difference > 0) {
             timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / 1000 / 60) % 60),
-                seconds: Math.floor((difference / 1000) % 60)
+                DAYS: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                H: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                M: Math.floor((difference / 1000 / 60) % 60),
+                S: Math.floor((difference / 1000) % 60)
             };
         }
         return timeLeft;
@@ -48,7 +52,6 @@ export default function CountDown() {
             </span>
         );
     });
-
 
 
     return (

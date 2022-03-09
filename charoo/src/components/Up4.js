@@ -107,15 +107,9 @@ const Up4 = () => {
                                 </div>
 
                                 <div className='event-info '>
-                                    <h4 className=' d-flex text-center mt-5 '>
+                                    <h4 className=' d-flex text-center justify-content-center  mt-5 '>
                                         {event.description}
-                                        {/* {singleEv.map((e) => {
-                                            return (
-                                                <>
-                                                    <h1>{e.data}</h1>
-                                                </>
-                                            )
-                                        })} */}
+
                                     </h4>
                                 </div>
 

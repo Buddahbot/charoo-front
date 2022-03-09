@@ -54,8 +54,6 @@ const Up5 = props => {
     const usersFilter = troy.filter(e => e.user._id === user.id)
     console.log(!loading && usersFilter[0]._id)
 
-    // link to copy : 
-    let link = 'https://discord.com/channels/641221910146842644/907894478885507082'
 
     // countdown:
     let state = {
@@ -77,7 +75,7 @@ const Up5 = props => {
 
                     <h1 className='m-5 font-weight-bold'>Your challenge has been created! </h1>
 
-                    <h5> It starts:  </h5>
+                    <h5> It will start in:  </h5>
                     <h3 className='font-weight-bold m-4' style={{ color: 'green' }}><CountDown /></h3>
 
                     <h5> Share the link now with your friends:</h5>
