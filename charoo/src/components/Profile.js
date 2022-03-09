@@ -11,7 +11,7 @@ import Moment from 'moment';
 
 
 const Profile = () => {
-
+  const [data, setData] = useContext(DonateContext)
   const [donna, setDonna] = useContext(ProfileContext)
   const [troy, setTroy] = useState([])
   const [user, setUser] = useState({
@@ -109,11 +109,11 @@ const Profile = () => {
             </tbody>
           </table>
 
-          <div class="form-group d-flex ">
+          <div class="form-group d-flex  align-items-center justify-content-center  ">
 
             <button
               onClick={goBack}
-              class="form-control btn-light btn btnSign submit fs-3 ">BACK</button>
+              class="form-control btn-light btn btnSign w-50 mt-5 submit fs-3 ">BACK</button>
 
           </div>
         </div>
@@ -149,7 +149,7 @@ const Profile = () => {
       })} */}
 
       <div class=" justify-content-center text-center ">
-        <h2 class="heading-section title-create-challenge">My Challenges</h2>
+        <h2 style={{ color: '#7c3639e3' }} class="heading-section title-create-challenge">My Challenges</h2>
       </div>
 
 
@@ -161,7 +161,7 @@ const Profile = () => {
 
 
 
-            <Link style={{ width: '380px', textDecoration: 'none' }} to={`http://localhost:3000/donate2/${e._id}`}>
+            <Link style={{ width: '380px', textDecoration: 'none' }} to={`/donate2/${e._id}`}>
 
               <div class=" events-list">
                 <div class=" p-5">
@@ -225,7 +225,7 @@ const Profile = () => {
             return (
 
 
-              <Link style={{ width: '380px', textDecoration: 'none' }} to={`/donate2/${e._id}`}>
+              <Link style={{ width: '380px', textDecoration: 'none' }} to={`/donate2/${e.eventId}`}>
 
                 <div class=" events-list">
                   <div class=" p-5">

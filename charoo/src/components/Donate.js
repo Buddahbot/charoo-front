@@ -36,15 +36,12 @@ const Donate = () => {
 
     console.log(data)
 
-    const handleClick = () => {
-        navigate('/donate2')
-    }
 
     const changeTimeFormat = (date) => {
         return Moment(date).format('DD.MM.YYYY, h:mm a')
     }
 
-  
+
     return (
         <div className='d-flex flex-column justify-content-center  ' style={{
             width: '100%', height: '', backgroundImage: `url(${BG})`, backgroundRepeat: "no-repeat",

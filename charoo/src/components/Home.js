@@ -61,7 +61,7 @@ const Landing = () => {
     return (
         <div className="home-container">
 
-            <div class="header pb-5 img " style={{ backgroundImage: `url(${BG})`, height: '87vh' }}>
+            <div class="header pb-5 img " style={{ backgroundImage: `url(${BG})`, height: '87vh', paddingLeft: '60px' }}>
                 <div class="ftco-section pb-5">
                     <div className="">
                         <div class=" row ">
