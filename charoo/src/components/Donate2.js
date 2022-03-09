@@ -19,7 +19,7 @@ const Donate2 = () => {
     const [donna, setDonna] = useContext(ProfileContext)
     const [cherry, setCherry] = useState([])
     const [amount, setAmount] = useState()
-
+    const [grape, setGrape] = useState(true)
     const { id } = useParams();
     let navigate = useNavigate();
 
@@ -75,13 +75,21 @@ const Donate2 = () => {
         copied: false,
     };
 
+
+    let banana = donna.data.map((e) => {
+        if (e.eventId === tempEvent._id && { amount: e.amount }) {
+            return ({ amount: e.amount })
+        }
+        else return ({ amount: 0 })
+    })
+
     // let banana = donna.data.map((e) => {
-    //     if (e.eventId === tempEvent._id)
+    //     if (e.eventId === tempEvent._id && { amount: e.amount })
     //         return ({ amount: e.amount })
-    //     //  else { amount: 0}
-    // })
-    // const sumall = banana.map(e => e.amount).reduce((prev, curr) => prev + curr, 0);
-    // console.log(sumall);
+    //     else ({amount: 0} )
+    // }) 
+    const sumall = banana.map(e => e.amount).reduce((prev, curr) => prev + curr, 0);
+    console.log(sumall);
 
 
     return (
