@@ -20,10 +20,10 @@ export default function CountDown() {
 
         if (difference > 0) {
             timeLeft = {
-                DAYS: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                H: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                M: Math.floor((difference / 1000 / 60) % 60),
-                S: Math.floor((difference / 1000) % 60)
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                h: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                m: Math.floor((difference / 1000 / 60) % 60),
+                s: Math.floor((difference / 1000) % 60)
             };
         }
         return timeLeft;

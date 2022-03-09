@@ -95,9 +95,6 @@ const Donate2 = () => {
     return (
         <div className='container-event' style={{ backgroundImage: `url(${BG})` }} >
 
-
-
-
             <div className='CreateChallengeContainer w-100'>
 
                 <div style={{ padding: '0px', margin: '50px' }} className='whiteboard form-challenge' >
@@ -112,20 +109,26 @@ const Donate2 = () => {
 
                             <form class="signin-form" onSubmit={handleSubmit}>
 
-                                <div class="form-group  ">
+                                <div class="form-group event-page ">
 
                                     <div className='d-flex flex-column  align-items-center  w-100'>
 
                                         <div className='countDown d-flex align-items-center  justify-content-center text-center'>
                                             <CountDownDonate />
-
                                         </div>
                                     </div>
 
-                                    <div style={{ color: '#212121', margin: '60px' }} className='heading-section hover14'>
+                                    <div style={{ color: '#212121', margin: '60px' }} className='heading-section-2 '>
                                         <h1 style={{ fontSize: '40px' }} className='text-center'>{tempEvent.eventTitle}</h1>
                                     </div>
-                                    <div className='event-details text-center  justify-content-center  '>
+
+
+                                    <h4 className='text-center font-weight-bold ' style={{ marginTop: '-55px', marginBottom: '50px' }}> <span style={{ color: '#df9413' }}>Created by </span>
+                                        <span style={{ fontSize: '18px', padding: '4px' }}>{tempEvent.user.firstName}
+                                        </span> </h4>
+
+
+                                    <div className='d-flex text-center  justify-content-center  '>
 
 
                                         <h4 className='d-flex flex-row align-items-center'>
@@ -134,7 +137,7 @@ const Donate2 = () => {
                                             </h4> </h4>
 
 
-                                        <h4 className='item-preview'>|</h4>
+                                        <h4 style={{ padding: '10px', width: '70px' }}>|</h4>
 
 
                                         <h4 className='d-flex flex-row align-items-center'>
@@ -145,52 +148,61 @@ const Donate2 = () => {
                                     </div>
 
 
-                                    <div className='event-info  '>
-                                        <h4 className=' d-flex text-center mt-5 '>
-                                            {tempEvent.description}
+                                    <div style={{ marginBottom: '30px', marginTop: '40px' }} className='text-center '>
+                                        <h4 className=' '> {tempEvent.description}
                                         </h4>
                                     </div>
 
-                                    <div className='event-details text-center mt-5 '>
-                                        <h4 className='item-preview'>
-                                            <i class="fa fa-user py-3 mb-3"></i>
-                                            <h4>{tempEvent.user.firstName}</h4>
-                                        </h4>
-                                        <h4 className='item-preview'>
-                                            <i class="fa fa-trophy py-3 mb-3 "></i>
-                                            <h4>{tempEvent.sportstype}</h4> </h4>
-                                        <h4 className='item-preview'>
-                                            <i class="fa fa-road py-3 mb-3"></i>
-                                            <h4>{tempEvent.distance} Km</h4> </h4>
+                                    <div className=' d-flex justify-content-center'>
 
-                                        <h4 className='item-preview'>
-                                            <i class="fa fa-group py-3 mb-3 "></i>
-                                            <h4>{tempEvent.charity}</h4> </h4>
-                                        <h4 className='item-preview'>
-                                            <i class="fa fa-crosshairs py-3 mb-3"></i>
-                                            <h4>Donations Collected: .. of {tempEvent.monetaryGoal}€</h4>
-                                        </h4>
+                                        <div className='d-flex  text-center mt-5 '>
+
+                                            <h4 className='item-preview'>
+                                                <i class="fa fa-trophy py-3 mb-3 "></i>
+                                                <h4>{tempEvent.sportstype}</h4> </h4>
+                                            <h4 className='item-preview'>
+                                                <i class="fa fa-road py-3 mb-3"></i>
+                                                <h4>{tempEvent.distance} Km</h4> </h4>
+
+                                            <h4 className='item-preview'>
+                                                <i class="fa fa-group py-3 mb-3 "></i>
+                                                <h4>{tempEvent.charity}</h4> </h4>
+                                            <h4 className='item-preview'>
+                                                <i class="fa fa-crosshairs py-3 mb-3"></i>
+                                                <h4>Donations Goal: {tempEvent.monetaryGoal} €</h4>
+                                            </h4>
+                                        </div> </div>
+
+                                    <div style={{ marginTop: '30px', marginBottom: '60px' }} className='collected-donation  events-list '>
+
+                                        <h4 class="card-title text-center m-5"><i style={{ fontSize: '50px' }} class="fa fa-heart"></i></h4>
+
+                                        <h4 style={{ fontSize: '20px' }}>Collected: {sumall} of {tempEvent.monetaryGoal}€</h4>
                                     </div>
 
-                                    <div class="input-group mb-3" >
+                                    <div class="input-group mb-5" >
 
-                                        <input value={amount} type="number" class="form-control  fs-3 inputbg-home" placeholder="Donate" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={(e) => setAmount(e.target.value)} required />
-                                        <div class="input-group-append">
+                                        <input
+                                            // style={{ width: '50%' }}
+                                            value={amount} type="number" class="form-control  fs-3 input-event" placeholder="Donate in Euro" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={(e) => setAmount(e.target.value)} required />
+
+                                        <div style={{ marginBottom: '50px', width: '30%' }}
+                                            class="input-group-append">
                                             <button class="form-control btn btnSign submit fs-3" type="submit">Donate</button>
                                         </div>
 
                                     </div>
                                 </div>
 
-                                <div class="form-group d-flex ">
-                                    <button onClick={goBack} class="form-control btn-light btn btnSign-back submit fs-3 ">BACK</button>
+                                <div style={{ marginBottom: '100px' }} class="form-group d-flex justify-content-center ">
+                                    <button style={{ width: '50%' }} onClick={goBack} class="form-control btn-light btn btnSign-back submit fs-3 ">BACK</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div >
-            </div>
-        </div>
+            </div >
+        </div >
 
 
     )

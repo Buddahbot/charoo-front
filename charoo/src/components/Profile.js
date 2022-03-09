@@ -6,7 +6,7 @@ import { ProfileContext } from "../context/ProfileContext";
 import { DonateContext } from "../context/DonateContext";
 import BG from '../Img/bg.jpg'
 import '../stylesheets/Challenge.css'
-import pic from '../Img/p.jpg'
+import pic from '../Img/profilepic.jpg'
 import Moment from 'moment';
 
 
@@ -21,11 +21,9 @@ const Profile = () => {
     email: "",
   });
 
-  
+
   useEffect(() => {
     getUserInfo();
-
-
   }, []);
 
   const getUserInfo = async () => {
@@ -77,12 +75,12 @@ const Profile = () => {
 
     <div className='CreateChallengeContainer' style={{ backgroundImage: `url(${BG})` }}>
       <div class=" justify-content-center text-center ">
-        <h2 class="heading-section title-create-challenge">PROFILE</h2>
+        <h2 style={{ color: '#7c3639e3' }} class="heading-section title-create-challenge">PROFILE</h2>
       </div>
       <div className='whiteboard form-challenge' >
         <div class=" d-flex flex-column  justify-content-center  ">
           <div className=" d-flex justify-content-center" style={{ height: '100%', margin: '30px' }}>
-            <img src={pic} height='120px' width='120px' alt='profile picture' style={{ borderRadius: "50%", boxShadow: ' 5px 5px 10px rgba(23, 23, 23, 0.336)' }} />
+            <img src={pic} height='150px' width='150px' alt='profile picture' style={{ borderRadius: "50%", boxShadow: ' 5px 5px 10px rgba(23, 23, 23, 0.336)' }} />
             <div style={{ height: '100%' }} className="d-flex flex-end">  <i className="fa fs-4 fa-pencil"></i> </div>
           </div>
 

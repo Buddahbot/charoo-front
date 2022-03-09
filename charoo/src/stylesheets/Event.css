@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Bodoni+Moda:wght@800&family=Poppins&display=swap');
 
 .container-event{
     background-repeat: no-repeat;
@@ -47,5 +48,50 @@ width: 100%;
     border-radius: 10px;
     background-color: rgb(26, 26, 44);
     color:white;
+    /* text-shadow: 10px 10px 15px rgba(245, 245, 245, 0.952); */
     margin-top: -75px ;
+}
+
+.event-page i{
+    font-size: 25px;
+ color:#df9413
+}
+
+.collected-donation {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 22%;
+    height: 100px;
+    background-color: rgba(26, 26, 44, 0.746);
+    color: white;
+    margin: 25px auto;
+    border-radius: 10px;
+}
+
+
+.input-event {
+    border: 1px solid rgba(26, 26, 44, 0.575) !important; 
+    position: relative;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 8%), 0 1px 1px 0 rgb(0 0 0 / 4%);
+}
+    .input-event::placeholder {
+        color: rgba(15, 16, 27, 0.973) !important;
+        font-weight: 400;
+        opacity: 1;
+        
+}
+
+:is(.input-event):not(:focus) {
+    padding-left: 25px;
+}
+
+.heading-section-2 {
+    font-family: 'Poppins', sans-serif;
+   font-size: 28px;
+   /* text-shadow: 10px 10px 15px rgba(23, 23, 23, 0.246); */
+   color: #fff;
+text-transform: uppercase;
+font-weight: 700;
+
 }
