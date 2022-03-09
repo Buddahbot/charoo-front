@@ -36,6 +36,7 @@ const Up5 = props => {
         const iD = '621e3781d083ddd88c83ad59'
         const iDnew = user.id
         try {
+<<<<<<< HEAD
             await axios.get('https://charoo.herokuapp.com/event')
                 .then((res) => {
                     setTroy(res.data.data)
@@ -44,6 +45,13 @@ const Up5 = props => {
                 })
         } catch (e) {
             console.log(e)
+=======
+            await axios.get(process.env.BACKEND_URL + '/event')
+                .then(res => setEvents(res.data))
+                .then(() => filterEvent())
+        } catch {
+            console.log('error')
+>>>>>>> 0bcc1a03 (use dotenv to configure backend url)
         }
     }
 

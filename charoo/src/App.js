@@ -6,6 +6,8 @@ import {SingleEvController} from './context/SingleEvContext'
 import { ProfileController } from './context/ProfileContext';
 // import react moralis
 
+require('dotenv').config()
+
 function App() {
 
 

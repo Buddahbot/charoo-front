@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 
 export const register = abc => {
-    return axios.post('https://charoo.herokuapp.com/auth/register', {
+    return axios.post(process.env.BACKEND_URL + '/auth/register', {
         firstName: abc.firstName,
         lastName: abc.lastName,
         email : abc.email,
@@ -14,7 +14,7 @@ export const register = abc => {
 }
 
 export const login = user => {
-    return axios.post('https://charoo.herokuapp.com/auth/login', {
+    return axios.post(process.env.BACKEND_URL + '/auth/login', {
         email : user.email,
         password : user.password
     })
@@ -27,7 +27,7 @@ export const login = user => {
 }
 
 export const userInfo = (userId) => {
-    return axios.get(`https://charoo.herokuapp.com/user/${userId}`)
+    return axios.get(`${process.env.BACKEND_URL}/user/${userId}`)
                 .then(res => (res.data))
                 .catch(err => console.log(err))
 }
@@ -36,7 +36,7 @@ export const eventUpload = event => {
 
 
     // console.log(event)
-    return axios.post('https://charoo.herokuapp.com/event/create', {
+    return axios.post(process.env.BACKEND_URL + '/event/create', {
                 user: event.user,
                 sportstype : event.sportstype,
                 distance : event.distance,
@@ -56,7 +56,7 @@ export const eventUpload = event => {
 
 export const events = async () => {
     try {
-        const res = await axios.get('https://charoo.herokuapp.com/event/')
+        const res = await axios.get(process.env.BACKEND_URL + '/event/')
         console.log(res.data)
     } catch (err) {
         console.error(err)
@@ -67,7 +67,7 @@ export const events = async () => {
 // donations
 
 export const donationUpload = donation => {
-    return axios.post('https://charoo.herokuapp.com/donation/create', {
+    return axios.post(process.env.BACKEND_URL + '/donation/create', {
                 eventTitle : donation.eventTitle,
                 eventId: donation.eventId,
                 createdBy : donation.createdBy,

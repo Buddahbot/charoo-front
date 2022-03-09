@@ -20,6 +20,7 @@ const Carousel = () => {
     const chevronWidth = 80;
 
     let navigate = useNavigate()
+    const events = ['a', 'b', 'c']
 
     return (
         <div className='carousel' style={{ padding: `0 ${chevronWidth}px` }}>
@@ -34,7 +35,6 @@ const Carousel = () => {
                 chevronWidth={chevronWidth}
                 alwaysShowChevrons
             >
-
                 <NavLink style={{ textDecoration: 'none' }} to={`/donate2/${data.data[0]._id}/`} >
                     <div className='carousele-item carousele-margin ' style={{ backgroundImage: `url(${data.data[0].imageUrl})` }}>
                         <div className='carousel-text'>
@@ -61,6 +61,18 @@ const Carousel = () => {
                     <div className='carousel-text'>  <h1 className=''>{data.data[5].eventTitle}</h1> </div>
                 </div></NavLink>
 
+                {/* {   events.map(event => {
+                        return (
+                            <NavLink style={{ textDecoration: 'none' }} to="/">
+                                <div className='carousele-item carousele-margin ' 
+                                     style={{ backgroundImage: `url(${BG1})` }}>
+                                    <div className='carousel-text'>
+                                        <h1 className=''>event {event}</h1>
+                                    </div>
+                                </div>
+                            </NavLink>)
+                    })
+                }      */}
             </ItemsCarousel>
         </div>
     )

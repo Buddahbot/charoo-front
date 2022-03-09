@@ -10,9 +10,7 @@ export const DonateController = (props) => {
     const fetchEvents = async () => {
         try {
         await axios
-            .get(
-            "https://charoo.herokuapp.com/event" ///?limit=21
-            )
+            .get(process.env.BACKEND_URL + "/event/?limit=21" /*?limit=21*/)
             .then((res) => {
             setData(res.data);
             });
