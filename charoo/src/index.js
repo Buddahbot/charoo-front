@@ -15,6 +15,7 @@ ReactDOM.render(
       <MoralisProvider
         appId='o8C4ooSXYjnwMwoCmEHYbwzFZI4btzdZuwIHrSZM'
         serverUrl='https://lyzcfadfbrj6.usemoralis.com:2053/server'
+        initializeOnMount={true}
         >
           <App />
       </MoralisProvider>
