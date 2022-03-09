@@ -11,18 +11,18 @@ export default function Footer() {
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-4 col-md-3 item">
-                            <h3>Services</h3>
+                            <h3>Explore Challenges</h3>
                             <ul>
-                                <li><a href="/donate">Donate</a></li>
-                                <li><a href="#">Challenges</a></li>
-                           
+                             
+                                <li><a href="#">Explore Charities</a></li>
+                              <li><a href="/donate"></a>Learn</li>
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-3 item">
-                            <h3>About Us</h3>
+                            <h3>Ways To Give</h3>
                             <ul>
-                                <li><a href="/about">About Us</a></li>
-                                <li><a href="/about">Cooperate</a></li>
+                                <li><a href="/about">For Charities</a></li>
+                                <li><a href="/about">FAQ</a></li>
                                 
                             </ul>
                         </div>

@@ -209,7 +209,7 @@ export default function HowItWorks() {
 
                             </div>
                             <div id="collapse7" class="panel-collapse collapse">
-                                <div class="panel-body">Your lottery winnings are stored in an Ethereum address that you can access by downloading an external wallet such as Metamask plugin or Exodus wallet. The private keys to access the winnings that are on an Ethereum address and that you can access through the waller are stored in My Account/Lottery.</div>
+                                <div class="panel-body">Your lottery winnings are stored in an Ethereum address that you can access by downloading an external wallet such as Metamask plugin or Exodus wallet. The private keys to access the winnings are stored in My Account / Lottery.</div>
                             </div>
                         </div>
 
