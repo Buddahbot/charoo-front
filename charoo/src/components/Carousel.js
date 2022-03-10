@@ -41,7 +41,7 @@ const Carousel = () => {
                             <h1 className=''>{data.data[0].eventTitle}</h1>
                         </div> </div> </NavLink>
 
-                <NavLink style={{ textDecoration: 'none' }} to={`/donate2/${data.data[6]._id}/`}>  <div className='carousele-item carousele-margin' style={{ backgroundImage: `url(${data.data[6].imageUrl}})` }}>
+                <NavLink style={{ textDecoration: 'none' }} to={`/donate2/${data.data[6]._id}/`}>  <div className='carousele-item carousele-margin' style={{ backgroundImage: `url(${data.data[6].imageUrl})` }}>
                     <div className='carousel-text'> <h1 className=''>{data.data[6].eventTitle}</h1> </div>
                 </div></NavLink>
 
