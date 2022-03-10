@@ -118,7 +118,7 @@ const Up5 = props => {
                             </button>
 
                             <button
-                                className="form-control btn-new-challenge btn fs-4"> <a style={{ textDecoration: 'none', color: 'white' }} href='/up1'>CREATE NEW CHALLENGE</a></button>
+                                className="form-control btn-new-challenge btn fs-4"> <a style={{ textDecoration: 'none', color: 'white' }} href='/up1'>SHOW YOUR CHALLENGE</a></button>
                         </div>
                     </div>
 
