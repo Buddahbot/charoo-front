@@ -170,7 +170,7 @@ const Donate2 = () => {
                                                 <h4>{tempEvent.charity}</h4> </h4>
                                             <h4 className='item-preview'>
                                                 <i class="fa fa-crosshairs py-3 mb-3"></i>
-                                                <h4>Donations Goal: {tempEvent.monetaryGoal} €</h4>
+                                                <h4>Donation Goal: {tempEvent.monetaryGoal} €</h4>
                                             </h4>
                                         </div> </div>
 
