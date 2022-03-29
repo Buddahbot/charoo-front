@@ -52,7 +52,7 @@ const Up5 = props => {
 
 
     const usersFilter = troy.filter(e => e.user._id === user.id)
-    console.log(!loading && usersFilter[0]._id)
+    // console.log(!loading && usersFilter[0]._id)
 
 
     // countdown:

@@ -1,3 +1,4 @@
+
 import {
     EmailIcon,
     EmailShareButton,
@@ -38,42 +39,43 @@ padding-right:10px;
 `;
 
 const ShareRecipe = () => {
+     https://test.com/test1/
     return (
         <>
             <DivShare>
                 <DivShareInner>
-                    <EmailShareButton subject="New Recipe To Try" url={"https://test.com/test1/"}>
+                    <EmailShareButton subject="New Recipe To Try" url={'https://test.com/test1/'}>
                         <EmailIcon round size={36} ></EmailIcon>
                     </EmailShareButton>
                 </DivShareInner>
                 <DivShareInner>
                     <TwitterShareButton
-                        title={"test"}
-                        url={"https://test.com/test1/"}
-                        hashtags={["hashtag1", "hashtag2"]}>
+                        title={"Twitter"}
+                        url={'https://test.com/test1/'}
+                        hashtags={["ItsTimeToGive", "Charoo"]}>
                         <TwitterIcon size={36} round />
                     </TwitterShareButton>
                 </DivShareInner>
                 <DivShareInner>
                     <TelegramShareButton
-                        title={"test"}
-                        url={"https://test.com/test1/"}
+                        title={"Telegram"}
+                        url={'https://test.com/test1/'}
                         hashtags={["hashtag1", "hashtag2"]}>
                         <TelegramIcon size={36} round />
                     </TelegramShareButton>
                 </DivShareInner>
                 <DivShareInner>
                     <FacebookShareButton
-                        title={"test"}
-                        url={"https://test.com/test1/"}
+                        title={"Facebook"}
+                        url={'https://test.com/test1/'}
                         hashtags={["hashtag1", "hashtag2"]}>
                         <FacebookIcon size={36} round />
                     </FacebookShareButton>
                 </DivShareInner>
                 <DivShareInner>
                     <WhatsappShareButton
-                        title={"test"}
-                        url={"https://test.com/test1/"}
+                        title={"Whatsapp"}
+                        url={'https://test.com/test1/'}
                         hashtags={["hashtag1", "hashtag2"]}>
                         <WhatsappIcon size={36} round />
                     </WhatsappShareButton>

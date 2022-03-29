@@ -107,10 +107,8 @@ export default function Navbar2() {
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <a class="dropdown-item" href="/profile">My account</a>
-                                    <a class="dropdown-item" href="/donate">Donate</a>
                                     <a class="dropdown-item" href="/up1">Create Challange</a>
-                                    <a class="dropdown-item" href="/donate">Challenges</a>
-                                    <a class="dropdown-item" href="#">Partnerships</a>
+                                    <a class="dropdown-item" href="/donate">Donate</a>
                                     <a onClick={logOut} class="dropdown-item" href="#">Log Out</a>
                                 </div>
                             </li>
